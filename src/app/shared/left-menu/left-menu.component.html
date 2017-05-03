@@ -1,3 +1,14 @@
-<p>
-  left-menu works!
-</p>
+<div class="row">
+  <img class="menu-border" src="assets/left-menu/sidebartop.png">
+  <img class="logo" src="assets/left-menu/logo.png">
+  <h3>Team</h3>
+  <ul >
+    <li *ngFor="let element of data;">
+      <app-menu-element
+        [header]="element.header"
+        [route]="element.route"
+      ></app-menu-element>
+    </li>
+  </ul>
+  <img class="menu-border menu-border-bottom" src="assets/left-menu/sidebarbottom.png">
+</div>

@@ -1,0 +1,28 @@
+@import "../../styles/colors";
+
+$iconSize: 25px;
+
+a {
+  height: 45px;
+  color: white;
+  display: block;
+  width: 100%;
+  &:hover {
+    text-decoration: none;
+  }
+  &.active{
+    background-color: $activeMenuHighlight;
+  }
+}
+
+img {
+  margin-left: 5px;
+  height: $iconSize;
+  width: $iconSize;
+}
+
+span {
+  padding-left: 5px;
+  padding-top: 10px;
+  display: inline-block;
+}

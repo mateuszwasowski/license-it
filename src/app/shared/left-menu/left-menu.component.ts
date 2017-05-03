@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { MenuElementClass } from './menu-element/menu-element.class';
+import { LeftMenuData } from './left-menu.data';
 
 @Component({
   selector: 'app-left-menu',
   templateUrl: './left-menu.component.html',
   styleUrls: ['./left-menu.component.scss']
 })
-export class LeftMenuComponent implements OnInit {
+export class LeftMenuComponent {
+  data: Array<MenuElementClass>;
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor() {
+    this.data = LeftMenuData;
   }
 
 }

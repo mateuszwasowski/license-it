@@ -1,3 +1,42 @@
+@import "../styles/colors";
+
+$logoAndTitleMargin: 5px;
+
 :host {
   display: block;
+  background-color: $menuBackground;
+  height: 100%;
+}
+
+.logo{
+  margin-left: $logoAndTitleMargin;
+  width: 65%;
+  height: auto;
+}
+
+h3{
+  margin-left: $logoAndTitleMargin;
+  color: white;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+.menu-border {
+  width: 100%;
+  height: auto;
+}
+
+.menu-border-bottom {
+  position: absolute;
+  bottom: 0;
+}
+
+ul{
+  padding:0;
+  li {
+    list-style: none;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 700;
+  }
 }
