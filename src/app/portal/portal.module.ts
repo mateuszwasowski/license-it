@@ -1,16 +1,47 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+
+import { AppUxModule } from '../app-ux/app-ux.module';
+import { SharedModule } from '../shared/shared.module';
+
+import { PortalComponent } from './portal/portal.component';
 import { IndexComponent } from './index/index.component';
-import { LoginComponent } from './login/login.component';
-import {FormsModule} from '@angular/forms';
-import { NotFoundComponent } from './not-found/not-found.component';
+import { AccountComponent } from './account/account.component';
+import { LicensesComponent } from './licenses/licenses.component';
+import { UsersComponent } from './users/users.component';
+import { PermissionsComponent } from './permissions/permissions.component';
+
+import { PortalAuthGuard } from './portal-auth.guard';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule
-  ],
-  declarations: [IndexComponent, NotFoundComponent, LoginComponent],
-  exports: [IndexComponent, NotFoundComponent, LoginComponent]
+    imports: [
+        CommonModule,
+        RouterModule,
+        FormsModule,
+        AppUxModule,
+        SharedModule
+    ],
+    declarations: [
+        IndexComponent,
+        PortalComponent,
+        AccountComponent,
+        LicensesComponent,
+        UsersComponent,
+        PermissionsComponent
+    ],
+    exports: [
+        IndexComponent,
+        PortalComponent,
+        AccountComponent,
+        LicensesComponent,
+        UsersComponent,
+        PermissionsComponent
+    ],
+    providers: [
+        PortalAuthGuard
+    ]
 })
-export class PortalModule { }
+export class PortalModule {
+}
