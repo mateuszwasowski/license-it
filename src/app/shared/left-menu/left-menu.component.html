@@ -9,6 +9,9 @@
         [route]="element.route"
       ></app-menu-element>
     </li>
+    <li>
+      <app-menu-element [header]="'Logout'" (click)="logout()"></app-menu-element>
+    </li>
   </ul>
   <img class="menu-border menu-border-bottom" src="assets/left-menu/sidebarbottom.png">
 </div>

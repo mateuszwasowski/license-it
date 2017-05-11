@@ -9,6 +9,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './login/login.component';
 
+import { DashboardAuthGuard } from './dashboard-auth.guard';
 
 @NgModule({
     imports: [
@@ -20,7 +21,10 @@ import { LoginComponent } from './login/login.component';
 
     ],
     declarations: [DashboardComponent, LoginComponent, NotFoundComponent],
-    exports: [DashboardComponent, LoginComponent, NotFoundComponent]
+    exports: [DashboardComponent, LoginComponent, NotFoundComponent],
+    providers: [
+        DashboardAuthGuard
+    ]
 })
 export class DashboardModule {
 }

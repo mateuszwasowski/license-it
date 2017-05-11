@@ -5,13 +5,13 @@ import 'rxjs/add/operator/switchMap';
 
 
 @Injectable()
-export class PortalAuthGuard implements CanActivate {
+export class DashboardAuthGuard implements CanActivate {
 
     constructor(private service: AuthenticationService, private router: Router) {}
 
     canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-        if(!this.service.isLogged()) {
-            this.router.navigate(['/']);
+        if(this.service.isLogged()) {
+            this.router.navigate(['panel']);
             return false;
         }
         return true;

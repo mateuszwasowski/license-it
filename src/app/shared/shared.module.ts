@@ -6,6 +6,8 @@ import { MenuElementComponent } from './left-menu/menu-element/menu-element.comp
 
 import { CreateLinkService } from './backend-communication/create-link.service';
 import { BackendSimpleCommunicationService } from './backend-communication/backend-simple-communication.service';
+import { AuthenticationService } from './authentication/authentication.service';
+
 
 @NgModule({
     imports: [
@@ -16,7 +18,8 @@ import { BackendSimpleCommunicationService } from './backend-communication/backe
     exports: [LeftMenuComponent],
     providers: [
         CreateLinkService,
-        BackendSimpleCommunicationService
+        BackendSimpleCommunicationService,
+        AuthenticationService
     ]
 })
 export class SharedModule {

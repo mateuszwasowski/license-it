@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class CreateLinkService {
-  private mockedDataURl = 'mocked-data';
+  private mockedDataURl = 'http://localhost:4200/assets/mocked-data';
   private backendUrl = '';
 
   private prepareLink(partial: string | Array<string>, isMocked: boolean = true) {
@@ -23,8 +23,8 @@ export class CreateLinkService {
     return this.prepareLink(data);
   }
 
-  public isLoggedUrl() {
-    let data = 'login.json';
+  public getUser() {
+    let data = 'user.json';
     return this.prepareLink(data)
   }
 }
