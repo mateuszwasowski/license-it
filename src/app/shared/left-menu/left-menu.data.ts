@@ -3,14 +3,14 @@ import { MenuElementClass } from './menu-element/menu-element.class';
 export const LeftMenuData: Array<MenuElementClass> = [
   {
     header: 'Account',
-    route: ''
+    route: 'account'
   },
   {
     header: 'Licenses',
     route: 'licenses'
   },
   {
-    header: 'Users',
+    header: 'Clients',
     route: 'users'
   },
   {

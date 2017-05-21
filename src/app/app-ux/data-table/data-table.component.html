@@ -1,12 +1,18 @@
 <table class="table table-bordered table-striped">
-  <tr>
-    <th *ngIf="idColumn">ID</th>
-    <th *ngFor="let headerElement of header;">{{ headerElement }}</th>
-  </tr>
-  <tr *ngFor="let object of data;let i = index">
-    <td *ngIf="idColumn">{{ (i + 1) }}</td>
-    <td *ngFor="let element of object">
-      {{ element }}
-    </td>
-  </tr>
+  <thead>
+    <tr>
+      <th *ngIf="idColumn">ID</th>
+      <th style="display: none;">Object id</th>
+      <th *ngFor="let headerElement of header;">{{ headerElement }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let object of data;let i = index"
+        [routerLink]="singleElementUrl !== false ? singleElementUrl + '/' + object[0] : null">
+      <td *ngIf="idColumn">{{ (i + 1) }}</td>
+      <td *ngFor="let element of object" >
+        {{ element }}
+      </td>
+    </tr>
+  </tbody>
 </table>

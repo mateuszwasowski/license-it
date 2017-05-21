@@ -9,6 +9,8 @@ export class DataTableComponent {
   @Input() idColumn = true;
   @Input() header: Array<string>;
   @Input() data: Array<any>;
+  @Input() singleElementUrl: string;
 
   constructor() { }
+
 }
