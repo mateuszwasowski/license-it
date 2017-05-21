@@ -12,9 +12,5 @@ export const LeftMenuData: Array<MenuElementClass> = [
   {
     header: 'Clients',
     route: 'users'
-  },
-  {
-    header: 'Permissions',
-    route: 'permissions'
   }
 ];

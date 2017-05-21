@@ -1,4 +1,4 @@
-@import "../styles/colors";
+@import "../styles/shared";
 
 $logoAndTitleMargin: 5px;
 
@@ -17,8 +17,6 @@ $logoAndTitleMargin: 5px;
 h3{
   margin-left: $logoAndTitleMargin;
   color: white;
-  text-transform: uppercase;
-  margin-top: 10px;
 }
 
 .menu-border {
@@ -35,8 +33,6 @@ ul{
   padding:0;
   li {
     list-style: none;
-    text-transform: uppercase;
     color: white;
-    font-weight: 700;
   }
 }
