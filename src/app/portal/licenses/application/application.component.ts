@@ -10,7 +10,7 @@ import {Router, ActivatedRoute, Params} from '@angular/router';
 export class ApplicationComponent implements OnInit {
   data = [];
   appName = '';
-
+  singleElement = '/panel/licenses/application/:id/licence/add';
   header = [
     'Number',
     'Is active',
@@ -29,7 +29,7 @@ export class ApplicationComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.params.subscribe((params: Params) => {
       this.service.getApplicationLicenses(params['id']).subscribe((response) => {
-        console.log(response);
+        this.singleElement = this.singleElement.replace(':id', params['id']);
         this.appName = response.data[0].applicationModel.name;
         this.data = BackendSimpleCommunicationService.dataToTable(response.data, this.order);
       });

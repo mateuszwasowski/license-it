@@ -27,7 +27,7 @@ export class AjaxFormComponent implements OnInit {
   }
 
   ngOnInit() {
-    const id = this.route.snapshot.params['id'];
+    const id = this.route.snapshot.params['object_id'];
     this.formCreationObject.header = this.formCreationObject.headers.add;
     if (id !== undefined) {
       this.isEdit = true;
@@ -39,6 +39,11 @@ export class AjaxFormComponent implements OnInit {
 
   submitForm(object) {
     let promise;
+    if (this.formCreationObject.constData !== undefined) {
+      for (const element in this.formCreationObject.constData) {
+        object[element] = this.formCreationObject.constData[element];
+      }
+    }
     if (!this.isEdit) {
       promise = this.backendHandler.postObject(this.formCreationObject.urlList, object);
     } else {
@@ -46,7 +51,11 @@ export class AjaxFormComponent implements OnInit {
     }
     promise.subscribe(
       (res) => {
-        this.validationMessage = 'Zapisano poprawnie rekord';
+        if (res.status === 200) {
+          this.validationMessage = 'Zapisano poprawnie rekord';
+        } else {
+          this.validationMessage = 'Wystapił błąd podczas zapisu.';
+        }
       }, () => {
         this.validationMessage = 'Wystapił błąd podczas zapisu.';
       });

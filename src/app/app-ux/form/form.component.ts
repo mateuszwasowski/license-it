@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {Input, Output, EventEmitter} from '@angular/core'
 
 @Component({
-  selector: 'cuporg-form',
+  selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['form.component.scss']
 })
@@ -29,7 +29,12 @@ export class FormComponent  {
       });
 
       if(object > -1){
-        this.formObject.list[object].value = newValue.value;
+        if(this.formObject.list[object].type === 'number') {
+          this.formObject.list[object].value = Number(newValue.value);
+        }
+        else {
+          this.formObject.list[object].value = newValue.value;
+        }
       }
     }
   }

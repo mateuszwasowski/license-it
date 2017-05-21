@@ -1,19 +1,19 @@
 <section class="panel">
   <header class="panel-heading">
     {{ formObject.header }}
-    <button class="btn btn-success text-right" routerLink="{{ formObject.urlFrontedList }}">Wróć do listy</button>
+    <button class="btn btn-success text-right">Back to list</button>
   </header>
   <div class="panel-body">
     <form class="form-horizontal " method="get">
-      <cuporg-input-row
+      <app-input-row
         [item]="item"
         (valueUpdate)="handleUpdate($event)"
         *ngFor="let item of formObject.list; let i = index;">
-      </cuporg-input-row>
+      </app-input-row>
       <div class="validation-message" ng-if="validationMessage.length > 0">
         <span>{{ validationMessage }}</span>
       </div>
-      <button type="submit" class="btn btn-primary" (click)="showModel($event)">Potwierdz</button>
+      <button type="submit" class="btn btn-primary" (click)="showModel($event)">Submit</button>
     </form>
   </div>
 </section>

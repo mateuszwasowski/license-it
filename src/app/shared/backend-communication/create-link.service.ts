@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class CreateLinkService {
-  private mockedDataURl = 'http://localhost:4200/assets/mocked-data';
+  private mockedDataURl = '/assets/mocked-data';
   private backendUrl = 'http://www.licenseit.pro:5000';
 
   private prepareLink(partial: string | Array<string>, isMocked: boolean = true) {

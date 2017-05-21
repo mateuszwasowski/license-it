@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
-  selector: 'cuporg-input-row',
+  selector: 'app-input-row',
   templateUrl: './input-row.component.html',
   styleUrls: ['input-row.component.scss']
 })
