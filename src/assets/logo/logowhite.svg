@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="101.60001mm"
+   height="33.665081mm"
+   viewBox="0 0 360.00002 119.28572"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="logowhite.svg"
+   inkscape:export-filename="/Users/tVik/Documents/uczelnia/INŻ/owl.png"
+   inkscape:export-xdpi="112.49995"
+   inkscape:export-ydpi="112.49995">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="100.53933"
+     inkscape:cy="18.744443"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     inkscape:snap-grids="true"
+     inkscape:window-width="1436"
+     inkscape:window-height="855"
+     inkscape:window-x="4"
+     inkscape:window-y="1"
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0">
+    <inkscape:grid
+       type="xygrid"
+       id="grid3336"
+       originx="-299.99996"
+       originy="-829.99998" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-300,-103.07649)">
+    <path
+       style="fill:#b9c410;fill-opacity:1;fill-rule:evenodd;stroke:#b9c410;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 320,152.3622 0,-20 20,-20 20,0 20,20 0,20 -30,60 c -9.72753,-18.87272 -20.19233,-40.23495 -30,-60 z"
+       id="path4173"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccc"
+       inkscape:export-xdpi="112.49995"
+       inkscape:export-ydpi="112.49995" />
+    <path
+       style="fill:#ff961f;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 345,152.3622 10,0 -5,10 z"
+       id="path4188"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="112.49995"
+       inkscape:export-ydpi="112.49995" />
+    <path
+       style="fill:#7d961e;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 320,152.3622 20,20 -20,40 -10,-50 z"
+       id="path4190"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="112.49995"
+       inkscape:export-ydpi="112.49995" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path4192"
+       d="m 380.00001,152.3622 -20,20 20,40 10,-50 z"
+       style="fill:#7d961e;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="112.49995"
+       inkscape:export-ydpi="112.49995" />
+    <rect
+       style="fill:#7d961e;fill-opacity:0;stroke:#000000;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4350"
+       width="360"
+       height="119.28571"
+       x="300"
+       y="103.0765"
+       inkscape:export-xdpi="112.49995"
+       inkscape:export-ydpi="112.49995" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:125%;font-family:Lobster;-inkscape-font-specification:Lobster;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="409.28571"
+       y="179.50505"
+       id="text4187"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4189"
+         x="409.28571"
+         y="179.50505"
+         style="font-size:70px;fill:#ffffff;fill-opacity:1">License it</tspan></text>
+  </g>
+</svg>
