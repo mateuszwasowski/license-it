@@ -9,8 +9,8 @@ import { AuthenticationService } from '../../shared/authentication/authenticatio
     providers: [AuthenticationService]
 })
 export class LoginComponent {
-    private username: string;
-    private password: string;
+    public username: string;
+    public password: string;
 
     constructor(private service: AuthenticationService) {}
 
