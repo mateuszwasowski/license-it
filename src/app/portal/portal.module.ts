@@ -15,6 +15,7 @@ import { PermissionsComponent } from './permissions/permissions.component';
 
 import { PortalAuthGuard } from './portal-auth.guard';
 import { ApplicationComponent } from './licenses/application/application.component';
+import { UserFormComponent } from './users/user-form/user-form.component';
 
 @NgModule({
     imports: [
@@ -31,7 +32,8 @@ import { ApplicationComponent } from './licenses/application/application.compone
         LicensesComponent,
         UsersComponent,
         PermissionsComponent,
-        ApplicationComponent
+        ApplicationComponent,
+        UserFormComponent
     ],
     exports: [
         IndexComponent,
