@@ -7,10 +7,12 @@
       <app-menu-element
         [header]="element.header"
         [route]="element.route"
+        [icon]="element.icon"
       ></app-menu-element>
     </li>
     <li>
-      <app-menu-element [header]="'Logout'" (click)="logout()"></app-menu-element>
+      <app-menu-element [header]="'Logout'" (click)="logout()"
+      [icon]="data[0].icon"></app-menu-element>
     </li>
   </ul>
   <img class="menu-border menu-border-bottom" src="assets/left-menu/sidebarbottom.png">

@@ -3,18 +3,22 @@ import { MenuElementClass } from './menu-element/menu-element.class';
 export const LeftMenuData: Array<MenuElementClass> = [
   {
     header: 'Account',
-    route: 'account'
+    route: 'account',
+    icon: 'assets/icons/permissions-icon.png'
   },
   {
     header: 'Licenses',
-    route: 'licenses'
+    route: 'licenses',
+    icon: 'assets/icons/permissions-icon.png'
   },
   {
     header: 'Clients',
-    route: 'users'
+    route: 'users',
+    icon: 'assets/icons/permissions-icon.png'
   },
   {
     header: 'Permissions',
-    route: 'permissions'
+    route: 'permissions',
+    icon: 'assets/icons/permissions-icon.png'
   }
 ];

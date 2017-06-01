@@ -12,6 +12,9 @@ export class MenuElementComponent implements OnInit {
   @Input()
   route: string;
 
+  @Input()
+  icon: string;
+
   constructor() { }
 
   ngOnInit() {

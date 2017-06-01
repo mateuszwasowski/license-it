@@ -10,6 +10,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './login/login.component';
 
 import { DashboardAuthGuard } from './dashboard-auth.guard';
+import { IndexComponent } from './index/index.component';
 
 @NgModule({
     imports: [
@@ -20,8 +21,8 @@ import { DashboardAuthGuard } from './dashboard-auth.guard';
         FormsModule,
 
     ],
-    declarations: [DashboardComponent, LoginComponent, NotFoundComponent],
-    exports: [DashboardComponent, LoginComponent, NotFoundComponent],
+    declarations: [DashboardComponent, LoginComponent, NotFoundComponent, IndexComponent],
+    exports: [DashboardComponent, LoginComponent, NotFoundComponent, IndexComponent],
     providers: [
         DashboardAuthGuard
     ]
