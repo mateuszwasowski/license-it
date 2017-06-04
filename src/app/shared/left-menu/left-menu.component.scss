@@ -10,14 +10,26 @@ $logoAndTitleMargin: 5px;
 
 .logo{
   margin-left: $logoAndTitleMargin;
-  width: 65%;
+  width: 90%;
   height: auto;
+  margin-top: 10px;
 }
 
-h3{
+.team-header{
+  display: block;
   margin-left: $logoAndTitleMargin;
-  color: white;
-  font-weight: bold;
+  img{
+    height: 2em;
+    vertical-align: middle;
+    margin-bottom: 10px;
+  }
+  .team-label{
+    display: inline-block;
+    color: whitesmoke;
+    font-size: 2em;
+    font-weight: 900;
+    padding: 4px;
+  }
   margin-top: 10px;
 }
 
@@ -36,6 +48,6 @@ ul{
   li {
     list-style: none;
     color: white;
-    font-weight: 700;
+    opacity: .7;
   }
 }

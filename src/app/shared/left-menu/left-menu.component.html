@@ -1,7 +1,10 @@
 <div class="row">
-  <img class="menu-border" src="assets/left-menu/sidebartop.png">
+  <img class="menu-border" src="assets/left-menu/top.png">
   <img class="logo" src="assets/logo/logowhite.svg">
-  <h3>Team</h3>
+  <a role="button" class="team-header" href="/panel">
+    <img src="assets/icons/team-label.png">
+    <span class="team-label">Team</span>
+  </a>
   <ul >
     <li *ngFor="let element of data;">
       <app-menu-element
@@ -15,5 +18,5 @@
       [icon]="'assets/icons/logouticon.svg'"></app-menu-element>
     </li>
   </ul>
-  <img class="menu-border menu-border-bottom" src="assets/left-menu/sidebarbottom.png">
+  <img class="menu-border menu-border-bottom" src="assets/left-menu/bottom.png">
 </div>
