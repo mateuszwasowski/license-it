@@ -11,7 +11,6 @@ import { IndexComponent } from './index/index.component';
 import { AccountComponent } from './account/account.component';
 import { LicensesComponent } from './licenses/licenses.component';
 import { UsersComponent } from './users/users.component';
-import { PermissionsComponent } from './permissions/permissions.component';
 
 import { PortalAuthGuard } from './portal-auth.guard';
 import { ApplicationComponent } from './licenses/application/application.component';
@@ -32,7 +31,6 @@ import { SingleLicenseComponent } from './licenses/single-license/single-license
         AccountComponent,
         LicensesComponent,
         UsersComponent,
-        PermissionsComponent,
         ApplicationComponent,
         UserFormComponent,
         SingleLicenseComponent
@@ -42,8 +40,7 @@ import { SingleLicenseComponent } from './licenses/single-license/single-license
         PortalComponent,
         AccountComponent,
         LicensesComponent,
-        UsersComponent,
-        PermissionsComponent
+        UsersComponent
     ],
     providers: [
         PortalAuthGuard
