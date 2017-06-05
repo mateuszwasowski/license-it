@@ -24,7 +24,7 @@ export class AuthenticationService {
             const checkStatus = response && response.status;
             if (checkStatus) {
                 localStorage.setItem('currentUser', response.token);
-                this.router.navigateByUrl('/panel')
+                this.router.navigateByUrl('/panel/licenses')
             }
             subject.next(checkStatus)
         });

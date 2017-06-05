@@ -9,8 +9,8 @@ import {Router, ActivatedRoute, Params} from '@angular/router';
 export class SingleLicenseComponent implements OnInit {
   public categoryForm: any = {
     headers: {
-      add: 'Add licence',
-      edit: 'Edit licence'
+      add: 'Add a license and attach it to a client, to enable functionalities assigned in your application.',
+      edit: 'Edit license'
     },
     urlList: 'http://www.licenseit.pro:5000/api/License/Add',
     urlElement: 'http://127.0.0.1:8000/categories/:id/',

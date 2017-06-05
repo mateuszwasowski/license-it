@@ -1,7 +1,6 @@
 <section class="panel">
   <header class="panel-heading">
     {{ formObject.header }}
-    <button class="btn btn-success text-right">Back to list</button>
   </header>
   <div class="panel-body">
     <form class="form-horizontal " method="get">
@@ -13,7 +12,8 @@
       <div class="validation-message" ng-if="validationMessage.length > 0">
         <span>{{ validationMessage }}</span>
       </div>
-      <button type="submit" class="btn btn-primary" (click)="showModel($event)">Submit</button>
+      <button type="submit" class="custom-btn blue" (click)="showModel($event)">Submit</button>
+      <a class="custom-btn">Back to list</a>
     </form>
   </div>
 </section>

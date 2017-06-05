@@ -1,6 +1,5 @@
 @import "../../shared/styles/shared";
 
-
 .landing-container{
   display: block;
   width: 100%;
@@ -31,13 +30,12 @@
     font-weight: 700px;
     font-size: 1.2em;
     transition: all 0.3s ease-in-out;
-
-}
-.get-started-btn:hover {
-  box-shadow: inset 0 -4px rgba(0,0,0,.4);
-  -webkit-transform: translateY(-2px);
-  background: lighten($color1, 2%);
-}
+  }
+  .get-started-btn:hover {
+    box-shadow: inset 0 -4px rgba(0,0,0,.4);
+    -webkit-transform: translateY(-2px);
+    background: lighten($color1, 2%);
+  }
   .unfixed{
     margin-top: 425px;
     position: relative;

@@ -1,5 +1,9 @@
-<h1>Clients</h1>
-<app-form-buttons [creationLink]="'/panel/users/add'"></app-form-buttons>
+<div class="panel-header">
+  <img src="assets/icons/3.png">
+  <span class="label">Clients</span>
+  <app-form-buttons [creationLink]="'/panel/users/add'"></app-form-buttons>
+</div>
+
 <app-data-table [data]="data"
                 [header]="header"
                 [idColumn]="'true'"

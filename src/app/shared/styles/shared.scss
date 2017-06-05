@@ -35,7 +35,6 @@ $color5: rgba(153, 134, 80, 1);
   display: block;
   border-top: 2px solid rgba(0,0,1,0.1);
   padding-top: 10px;
-  padding-bottom: 10px;
   img {
     height: 2em;
     vertical-align: middle;
@@ -49,4 +48,31 @@ $color5: rgba(153, 134, 80, 1);
     padding: 4px;
     opacity: .7;
   }
+}
+
+.custom-btn {
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12) inset, 0 0 1px rgba(0, 0, 0, 0.08), 0 2px 3px rgba(0, 0, 0, 0.08), 0 2px 3px rgba(0, 0, 0, 0.08);
+  background: $color1;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  padding: 5px 20px;
+  font-weight: 700px;
+  font-size: 1em;
+  transition: all 0.3s ease-in-out;
+  white-space: nowrap;
+  text-align: center;
+  outline: none;
+  border: none;
+}
+.blue{
+  background: $color4;
+}
+.blue:hover{
+  background: lighten($color4, 2%) !important;
+}
+.custom-btn:hover {
+  box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.3) inset, 0 0 1px rgba(0, 0, 0, 0.08), 0 2px 3px rgba(0, 0, 0, 0.08), 0 2px 3px rgba(0, 0, 0, 0.08);
+  background: lighten($color1, 2%);
 }
