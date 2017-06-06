@@ -17,6 +17,7 @@ export class InputRowComponent {
       value: this.item.value,
       name: this.item.id
     });
+
     if(this.item.callback) {
       this.item.callback($event, index);
     }

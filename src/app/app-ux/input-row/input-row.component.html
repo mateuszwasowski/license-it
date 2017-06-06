@@ -12,7 +12,8 @@
 
     <div class="checkbox" *ngSwitchCase="'boolean'">
       <label>
-        <input type="checkbox" name="{{ item.id }}" id="{{ item.id }}" (change)="onChange()">
+        <input type="checkbox" [(ngModel)]="item.value" name="{{ item.id }}"
+               id="{{ item.id }}" (click)="onChange()">
       </label>
     </div>
 

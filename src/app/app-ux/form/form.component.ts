@@ -35,6 +35,9 @@ export class FormComponent {
         if (this.formObject.list[object].type === 'number') {
           this.formObject.list[object].value = Number(newValue.value);
         }
+        else if(this.formObject.list[object].type === 'boolean') {
+          this.formObject.list[object].value = newValue.value.length > 0 ? true : false;
+        }
         else {
           this.formObject.list[object].value = newValue.value;
         }
