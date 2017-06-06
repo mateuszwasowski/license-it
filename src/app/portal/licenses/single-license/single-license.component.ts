@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Params } from "@angular/router";
+import { BackendSimpleCommunicationService } from "app/shared/backend-communication/backend-simple-communication.service";
 
 @Component({
   selector: 'app-single-license',
@@ -7,6 +8,7 @@ import { ActivatedRoute, Params } from "@angular/router";
   styleUrls: ['./single-license.component.scss']
 })
 export class SingleLicenseComponent implements OnInit {
+  private clientsList = [];
   public categoryForm: any = {
     headers: {
       add: 'Add a license and attach it to a client, to enable functionalities assigned in your application.',
@@ -19,13 +21,8 @@ export class SingleLicenseComponent implements OnInit {
         id: 'idClients',
         title: 'Client',
         value: '',
-        type: 'number'
-      },
-      {
-        id: 'number',
-        title: 'Number',
-        value: '',
-        type: 'text'
+        options: this.clientsList,
+        type: 'select'
       },
       {
         id: 'assignedVersion',
@@ -53,12 +50,35 @@ export class SingleLicenseComponent implements OnInit {
     }
   };
 
-  constructor(private activatedRoute: ActivatedRoute) {
+  private client = [
+    'id',
+    'name'
+  ];
+  
+  constructor(private activatedRoute: ActivatedRoute,
+             private service: BackendSimpleCommunicationService) {
   }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe((params: Params) => {
       this.categoryForm.constData.idApplication = params['id'];
+
     });
+
+    this.service.getClients().subscribe((response) => {
+      var clients = BackendSimpleCommunicationService.dataToTable(response.data, this.client);
+      this.convertClientListToClient(clients);
+    });
+  }
+
+  convertClientListToClient(clients:any[]){
+
+    for(var i = 0; i <= clients.length; i++){
+      var client =  {
+        value: clients[i][1],
+        label: clients[i][2]
+      }
+     this.clientsList.push(client);
+    }
   }
 }
