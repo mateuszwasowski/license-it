@@ -51,7 +51,7 @@ export class AjaxFormComponent implements OnInit {
     promise.subscribe(
       (res) => {
         if (res.status === 200) {
-          this.validationMessage = 'Zapisano poprawnie rekord';
+          this.validationMessage = 'Zapisano poprawnie rekord - numer licencji: ' + res.data;
         } else {
           this.validationMessage = 'Wystapił błąd podczas zapisu.';
         }
