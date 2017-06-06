@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import {Input, Output, EventEmitter} from '@angular/core'
+import { Component, Input, Output, EventEmitter } from "@angular/core";
+import { Location } from "@angular/common";
 
 @Component({
   selector: 'app-form',
@@ -7,29 +7,32 @@ import {Input, Output, EventEmitter} from '@angular/core'
   styleUrls: ['form.component.scss']
 })
 
-export class FormComponent  {
+export class FormComponent {
   class = 'relative';
-  @Input() formObject:any;
-  @Input() validationMessage:string;
+  @Input() formObject: any;
+  @Input() validationMessage: string;
   @Output() formUpdate = new EventEmitter();
+
+  constructor(private _location: Location) {
+  }
 
   showModel(event) {
     event.preventDefault();
     let emittedObject = {};
-    for(let item of this.formObject.list) {
+    for (let item of this.formObject.list) {
       emittedObject[item.id] = item.value;
     }
     this.formUpdate.emit(emittedObject);
   }
 
-  handleUpdate(newValue){
-    if(newValue !== undefined) {
-      let object = this.formObject.list.findIndex((item:any) => {
+  handleUpdate(newValue) {
+    if (newValue !== undefined) {
+      let object = this.formObject.list.findIndex((item: any) => {
         return item.id === newValue.name;
       });
 
-      if(object > -1){
-        if(this.formObject.list[object].type === 'number') {
+      if (object > -1) {
+        if (this.formObject.list[object].type === 'number') {
           this.formObject.list[object].value = Number(newValue.value);
         }
         else {
@@ -37,5 +40,9 @@ export class FormComponent  {
         }
       }
     }
+  }
+
+  backToPrevious() {
+    this._location.back();
   }
 }

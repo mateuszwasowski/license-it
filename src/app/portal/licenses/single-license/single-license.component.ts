@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {Router, ActivatedRoute, Params} from '@angular/router';
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute, Params } from "@angular/router";
 
 @Component({
   selector: 'app-single-license',
@@ -37,13 +37,13 @@ export class SingleLicenseComponent implements OnInit {
         id: 'isActive',
         title: 'Active',
         value: '',
-        type: 'number',
+        type: 'boolean',
       },
       {
         id: 'isActivated',
         title: 'Activated',
         value: '',
-        type: 'number',
+        type: 'boolean',
       }
     ],
     constData: {

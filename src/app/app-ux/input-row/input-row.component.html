@@ -1,5 +1,7 @@
 <div class="form-group">
-  <label for="{{ item.id }}" class="col-sm-2 control-label">{{ item.title }}</label>
+  <label for="{{ item.id }}" class="col-sm-2 control-label" >
+    {{ item.title }}
+  </label>
   <div class="col-sm-10" [ngSwitch]="item.type">
     <input type="text" name="{{ item.id }}" id="{{ item.id }}" class="form-control"
            [(ngModel)]="item.value" (change)="onChange()" *ngSwitchCase="'text'">
@@ -7,6 +9,13 @@
            [(ngModel)]="item.value" (change)="onChange()" *ngSwitchCase="'number'">
     <input type="hidden" name="{{ item.id }}" id="{{ item.id }}" class="form-control"
            [(ngModel)]="item.value" (change)="onChange()" *ngSwitchCase="'text'">
+
+    <div class="checkbox" *ngSwitchCase="'boolean'">
+      <label>
+        <input type="checkbox" name="{{ item.id }}" id="{{ item.id }}" (change)="onChange()">
+      </label>
+    </div>
+
     <select type="text" name="{{ item.id }}" id="{{ item.id }}" class="form-control"
             [(ngModel)]="item.value" (change)="onChange($event, index)" *ngSwitchCase="'select'">
       <option *ngFor="let option of item.options" value="{{ option.value }}" data-label="{{ option.label }}">
