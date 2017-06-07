@@ -13,12 +13,14 @@ export class ApplicationComponent implements OnInit {
   singleElement = '/panel/licenses/application/:id/licence/add';
   header = [
     'Number',
+    'Client',
     'Is active',
     'Is activated'
   ];
 
   private order = [
     'number',
+    'clientName',
     'isActive',
     'isActivated'
   ];
