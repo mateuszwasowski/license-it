@@ -10,8 +10,8 @@
         *ngFor="let item of formObject.list; let i = index;">
       </app-input-row>
       <div class="validation-message" *ngIf="validationMessage.length > 0">
-        <p *ngIf="isErrorValidation === true" class="alert alert-danger">{{ validationMessage }}</p>
-        <p *ngIf="isErrorValidation  === false" class="alert alert-success">{{ validationMessage }}</p>
+        <p *ngIf="isErrorValidation" class="alert alert-danger">{{ validationMessage }}</p>
+        <p *ngIf="!isErrorValidation" class="alert alert-success">{{ validationMessage }}</p>
       </div>
 
       <button type="submit" class="custom-btn blue" (click)="showModel($event)">Submit</button>

@@ -53,10 +53,10 @@ export class AjaxFormComponent implements OnInit {
       (res) => {
         if (res.status === 200) {
           this.isErrorValidation = false;
-          this.validationMessage = 'Zapisano poprawnie rekord - numer licencji: ' + res.data;
+          this.validationMessage = 'Zapisano poprawnie rekord - numer: ' + res.data;
         } else {
           this.isErrorValidation = true;
-          this.validationMessage = 'Wystapił błąd podczas zapisu.';
+          this.validationMessage = 'Wystapił błąd podczas zapisu: ' + res.description;
         }
       }, () => {
         this.isErrorValidation = true;

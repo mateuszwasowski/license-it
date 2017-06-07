@@ -33,13 +33,13 @@ export class SingleLicenseComponent implements OnInit {
       {
         id: 'isActive',
         title: 'Active',
-        value: '',
+        value: 'true',
         type: 'boolean',
       },
       {
         id: 'isActivated',
         title: 'Activated',
-        value: '',
+        value: 'false',
         type: 'boolean',
       }
     ],
@@ -56,7 +56,7 @@ export class SingleLicenseComponent implements OnInit {
   ];
   
   constructor(private activatedRoute: ActivatedRoute,
-             private service: BackendSimpleCommunicationService) {
+              private service: BackendSimpleCommunicationService) {
   }
 
   ngOnInit() {
@@ -67,18 +67,18 @@ export class SingleLicenseComponent implements OnInit {
 
     this.service.getClients().subscribe((response) => {
       var clients = BackendSimpleCommunicationService.dataToTable(response.data, this.client);
+      
       this.convertClientListToClient(clients);
     });
   }
 
   convertClientListToClient(clients:any[]){
-
-    for(var i = 0; i <= clients.length; i++){
-      var client =  {
-        value: clients[i][1],
-        label: clients[i][2]
-      }
-     this.clientsList.push(client);
+    for(var i = 0; i < clients.length; i++){
+          var client =  {
+              value: clients[i][1],
+              label: clients[i][2]
+          }
+          this.clientsList.push(client);
     }
   }
 }
