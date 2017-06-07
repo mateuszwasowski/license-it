@@ -18,7 +18,7 @@ export class SingleLicenseComponent implements OnInit {
     urlElement: 'http://127.0.0.1:8000/categories/:id/',
     list: [
       {
-        id: 'idClients',
+        id: 'idClient',
         title: 'Client',
         value: '',
         options: this.clientsList,
