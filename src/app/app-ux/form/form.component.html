@@ -9,9 +9,11 @@
         (valueUpdate)="handleUpdate($event)"
         *ngFor="let item of formObject.list; let i = index;">
       </app-input-row>
-      <div class="validation-message" ng-if="validationMessage.length > 0">
-        <span>{{ validationMessage }}</span>
+      <div class="validation-message" *ngIf="validationMessage.length > 0">
+        <p *ngIf="isErrorValidation === true" class="alert alert-danger">{{ validationMessage }}</p>
+        <p *ngIf="isErrorValidation  === false" class="alert alert-success">{{ validationMessage }}</p>
       </div>
+
       <button type="submit" class="custom-btn blue" (click)="showModel($event)">Submit</button>
       <a class="custom-btn" (click)="backToPrevious()">Back to list</a>
     </form>
