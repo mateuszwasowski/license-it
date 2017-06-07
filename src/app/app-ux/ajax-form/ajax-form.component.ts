@@ -15,6 +15,7 @@ export class AjaxFormComponent implements OnInit {
   currentObject: any;
   editUrl: string;
   validationMessage = '';
+  isErrorValidation = false;
 
   private prepareObjectRequest(res) {
     this.formCreationObject = this.backendHandler.addValuesToFormObject(this.formCreationObject, res);
@@ -51,11 +52,14 @@ export class AjaxFormComponent implements OnInit {
     promise.subscribe(
       (res) => {
         if (res.status === 200) {
+          this.isErrorValidation = false;
           this.validationMessage = 'Zapisano poprawnie rekord - numer licencji: ' + res.data;
         } else {
+          this.isErrorValidation = true;
           this.validationMessage = 'Wystapił błąd podczas zapisu.';
         }
       }, () => {
+        this.isErrorValidation = true;
         this.validationMessage = 'Wystapił błąd podczas zapisu.';
       });
   }

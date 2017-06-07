@@ -11,6 +11,7 @@ export class FormComponent {
   class = 'relative';
   @Input() formObject: any;
   @Input() validationMessage: string;
+  @Input() isErrorValidation: boolean;
   @Output() formUpdate = new EventEmitter();
 
   constructor(private _location: Location) {
