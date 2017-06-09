@@ -3,6 +3,8 @@ import {NgModule} from '@angular/core';
 import {HttpModule} from '@angular/http';
 import {RouterModule} from '@angular/router';
 
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+
 import {AppUxModule} from './app-ux/app-ux.module';
 import {SharedModule} from './shared/shared.module';
 import {PortalModule} from './portal/portal.module';
@@ -11,7 +13,6 @@ import {DashboardModule} from './dashboard/dashboard.module';
 import {appRoutes} from './routes';
 
 import {AppComponent} from './app.component';
-
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import {AppComponent} from './app.component';
     PortalModule,
     DashboardModule
   ],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule {
