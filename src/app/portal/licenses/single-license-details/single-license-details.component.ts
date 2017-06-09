@@ -14,6 +14,8 @@ export class SingleLicenseDetailsComponent implements OnInit {
     "Is activated": 1
   };
 
+  url = 'http://www.licenseit.pro:5000/api/License/Get/';
+
   constructor() { }
 
   ngOnInit() {

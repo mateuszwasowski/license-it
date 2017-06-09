@@ -12,8 +12,6 @@ export class ObjectDetailRowComponent implements OnInit {
   @Input()
   value = '';
 
-  constructor() { }
-
   ngOnInit() {
   }
 
