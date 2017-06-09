@@ -16,6 +16,7 @@ import { PortalAuthGuard } from './portal-auth.guard';
 import { ApplicationComponent } from './licenses/application/application.component';
 import { UserFormComponent } from './users/user-form/user-form.component';
 import { SingleLicenseComponent } from './licenses/single-license/single-license.component';
+import { SingleLicenseDetailsComponent } from './licenses/single-license-details/single-license-details.component';
 
 @NgModule({
     imports: [
@@ -33,7 +34,8 @@ import { SingleLicenseComponent } from './licenses/single-license/single-license
         UsersComponent,
         ApplicationComponent,
         UserFormComponent,
-        SingleLicenseComponent
+        SingleLicenseComponent,
+        SingleLicenseDetailsComponent
     ],
     exports: [
         IndexComponent,

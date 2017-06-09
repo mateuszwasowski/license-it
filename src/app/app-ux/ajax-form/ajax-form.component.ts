@@ -17,8 +17,8 @@ export class AjaxFormComponent implements OnInit {
   validationMessage = '';
 
   private prepareObjectRequest(res) {
-    this.formCreationObject = this.backendHandler.addValuesToFormObject(this.formCreationObject, res);
-    this.currentObject = res;
+    this.formCreationObject = this.backendHandler.addValuesToFormObject(this.formCreationObject, res.data);
+    this.currentObject = res.data;
   }
 
   constructor(private backendHandler: BackendSimpleCommunicationService,

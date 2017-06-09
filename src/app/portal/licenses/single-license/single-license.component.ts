@@ -13,7 +13,7 @@ export class SingleLicenseComponent implements OnInit {
       edit: 'Edit license'
     },
     urlList: 'http://www.licenseit.pro:5000/api/License/Add',
-    urlElement: 'http://127.0.0.1:8000/categories/:id/',
+    urlElement: 'http://www.licenseit.pro:5000/api/License/Get/:id',
     list: [
       {
         id: 'idClients',

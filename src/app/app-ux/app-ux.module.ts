@@ -8,6 +8,8 @@ import { AjaxFormComponent } from "./ajax-form/ajax-form.component";
 import { CommonModule } from "@angular/common";
 import { DataTableComponent } from "./data-table/data-table.component";
 import { FormButtonsComponent } from "./form-buttons/form-buttons.component";
+import { ObjectDetailsComponent } from './object-details/object-details.component';
+import { ObjectDetailRowComponent } from './object-detail-row/object-detail-row.component';
 
 @NgModule({
   imports: [
@@ -21,9 +23,11 @@ import { FormButtonsComponent } from "./form-buttons/form-buttons.component";
     InputRowComponent,
     FormComponent,
     AjaxFormComponent,
-    FormButtonsComponent
+    FormButtonsComponent,
+    ObjectDetailsComponent,
+    ObjectDetailRowComponent
   ],
-  exports: [DataTableComponent, InputRowComponent, FormComponent, AjaxFormComponent,
+  exports: [DataTableComponent, InputRowComponent, FormComponent, AjaxFormComponent, ObjectDetailsComponent,
     FormButtonsComponent],
 })
 export class AppUxModule {
