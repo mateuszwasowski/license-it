@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from "@angular/router";
 
 @Component({
   selector: 'app-single-license-details',
@@ -7,18 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SingleLicenseDetailsComponent implements OnInit {
   collection = {
-    "Client": 1,
-    "Number": 1,
-    "Version": 1,
-    "Is active": 1,
-    "Is activated": 1
+    "Client": 'clientName',
+    "Number": 'number',
+    "Version": 'applicationModel.version',
+    "Is active": 'isActive',
+    "Is activated": 'isActivated'
   };
 
   url = 'http://www.licenseit.pro:5000/api/License/Get/';
+  editUrl = '/panel/licenses/application/:id/license/edit/:object_id';
 
-  constructor() { }
+  constructor(private activatedRoute: ActivatedRoute) {
+  }
 
   ngOnInit() {
+    this.activatedRoute.params.subscribe((params: Params) => {
+      this.editUrl = this.editUrl.replace(':id', params['id'])
+        .replace(':object_id', params['object_id']);
+    });
   }
 
 }

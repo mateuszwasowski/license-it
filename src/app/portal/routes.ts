@@ -14,9 +14,9 @@ export const portalRoutes: Routes = [
     {path: 'account', component: AccountComponent},
     {path: 'licenses', component: LicensesComponent},
     {path: 'licenses/application/:id', component: ApplicationComponent},
-    {path: 'licenses/application/:id/licence/add', component: SingleLicenseComponent},
-    {path: 'licenses/application/:id/licence/edit/:object_id', component: SingleLicenseComponent},
-    {path: 'licenses/application/:id/licence/:object_id', component: SingleLicenseDetailsComponent},
+    {path: 'licenses/application/:id/license/add', component: SingleLicenseComponent},
+    {path: 'licenses/application/:id/license/edit/:object_id', component: SingleLicenseComponent},
+    {path: 'licenses/application/:id/license/:object_id', component: SingleLicenseDetailsComponent},
     {path: 'users', component: UsersComponent},
     {path: 'users/add', component: UserFormComponent}
 ];

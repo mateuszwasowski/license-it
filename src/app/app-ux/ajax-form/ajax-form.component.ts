@@ -31,9 +31,11 @@ export class AjaxFormComponent implements OnInit {
     this.formCreationObject.header = this.formCreationObject.headers.add;
     if (id !== undefined) {
       this.isEdit = true;
-      this.editUrl = this.formCreationObject.urlElement.replace(':id', id);
+      const getUrl = this.formCreationObject.urlElement.replace(':id', id);
+      this.editUrl = this.formCreationObject.editElement.replace(':id', id) + '/';
       this.formCreationObject.header = this.formCreationObject.headers.edit;
-      this.backendHandler.getObjects(this.editUrl).subscribe(this.prepareObjectRequest.bind(this));
+      this.formCreationObject.header = this.formCreationObject.headers.edit;
+      this.backendHandler.getObjects(getUrl).subscribe(this.prepareObjectRequest.bind(this));
     }
   }
 

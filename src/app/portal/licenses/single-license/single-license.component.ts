@@ -16,6 +16,7 @@ export class SingleLicenseComponent implements OnInit {
     },
     urlList: 'http://www.licenseit.pro:5000/api/License/Add',
     urlElement: 'http://www.licenseit.pro:5000/api/License/Get/:id',
+    editElement: 'http://www.licenseit.pro:5000/api/License/Edit/:id',
     list: [
       {
         id: 'idClient',
@@ -54,7 +55,7 @@ export class SingleLicenseComponent implements OnInit {
     'id',
     'name'
   ];
-  
+
   constructor(private activatedRoute: ActivatedRoute,
               private service: BackendSimpleCommunicationService) {
   }
@@ -67,7 +68,7 @@ export class SingleLicenseComponent implements OnInit {
 
     this.service.getClients().subscribe((response) => {
       var clients = BackendSimpleCommunicationService.dataToTable(response.data, this.client);
-      
+
       this.convertClientListToClient(clients);
     });
   }
