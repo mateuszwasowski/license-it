@@ -19,8 +19,9 @@
    inkscape:export-filename="/Users/tVik/Documents/uczelnia/INŻ/owl.png"
    inkscape:export-xdpi="112.49995"
    inkscape:export-ydpi="112.49995">
-  <defs
-     id="defs4" />
+   <defs>
+     <style type="text/css">@import url('http://fonts.googleapis.com/css?family=Lobster');</style>
+   </defs>
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
