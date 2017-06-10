@@ -32,7 +32,7 @@ export class AjaxFormComponent implements OnInit {
     if (id !== undefined) {
       this.isEdit = true;
       const getUrl = this.formCreationObject.urlElement.replace(':id', id);
-      this.editUrl = this.formCreationObject.editElement.replace(':id', id) + '/';
+      this.formCreationObject.constData.id = id;
       this.formCreationObject.header = this.formCreationObject.headers.edit;
       this.formCreationObject.header = this.formCreationObject.headers.edit;
       this.backendHandler.getObjects(getUrl).subscribe(this.prepareObjectRequest.bind(this));
@@ -49,7 +49,7 @@ export class AjaxFormComponent implements OnInit {
     if (!this.isEdit) {
       promise = this.backendHandler.postObject(this.formCreationObject.urlList, object);
     } else {
-      promise = this.backendHandler.postObject(this.editUrl, object);
+      promise = this.backendHandler.editObject(this.formCreationObject.editElement, object);
     }
     promise.subscribe(
       (res) => {

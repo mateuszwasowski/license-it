@@ -27,6 +27,12 @@ export class BackendSimpleCommunicationService {
     return this.http.post(url, data, options).map(response => response.json());
   }
 
+  editObject(url, data) {
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+    return this.http.put(url, data, options).map(response => response.json());
+  }
+
   public getObjects(url) {
     return this.http.get(url).map(response => response.json());
   }

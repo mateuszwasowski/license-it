@@ -1,6 +1,6 @@
-import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute, Params } from "@angular/router";
-import { BackendSimpleCommunicationService } from "app/shared/backend-communication/backend-simple-communication.service";
+import {Component, OnInit} from "@angular/core";
+import {ActivatedRoute, Params} from "@angular/router";
+import {BackendSimpleCommunicationService} from "app/shared/backend-communication/backend-simple-communication.service";
 
 @Component({
   selector: 'app-single-license',
@@ -16,7 +16,7 @@ export class SingleLicenseComponent implements OnInit {
     },
     urlList: 'http://www.licenseit.pro:5000/api/License/Add',
     urlElement: 'http://www.licenseit.pro:5000/api/License/Get/:id',
-    editElement: 'http://www.licenseit.pro:5000/api/License/Edit/:id',
+    editElement: 'http://www.licenseit.pro:5000/api/License/Edit  ',
     list: [
       {
         id: 'idClient',
@@ -46,8 +46,8 @@ export class SingleLicenseComponent implements OnInit {
     ],
     constData: {
       idApplication: 0,
-      inclusion:	'2017-05-21T13:55:32',
-      expiration:	'9999-12-31T23:59:59'
+      inclusion: '2017-05-21T13:55:32',
+      expiration: '9999-12-31T23:59:59'
     }
   };
 
@@ -67,19 +67,18 @@ export class SingleLicenseComponent implements OnInit {
     });
 
     this.service.getClients().subscribe((response) => {
-      var clients = BackendSimpleCommunicationService.dataToTable(response.data, this.client);
-
+      const clients = BackendSimpleCommunicationService.dataToTable(response.data, this.client);
       this.convertClientListToClient(clients);
     });
   }
 
-  convertClientListToClient(clients:any[]){
-    for(var i = 0; i < clients.length; i++){
-          var client =  {
-              value: clients[i][1],
-              label: clients[i][2]
-          }
-          this.clientsList.push(client);
+  convertClientListToClient(clients: any[]) {
+    for (let i = 0; i < clients.length; i++) {
+      const client = {
+        value: clients[i][1],
+        label: clients[i][2]
+      }
+      this.clientsList.push(client);
     }
   }
 }
