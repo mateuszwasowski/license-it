@@ -16,7 +16,7 @@
     top: 0;
     right: 0;
     left: 0;
-    height: 900px;
+    height: 100%;
     text-align: center;
   }
   .get-started-btn {
@@ -37,7 +37,7 @@
     background: lighten($color1, 2%);
   }
   .unfixed{
-    margin-top: 425px;
+    margin-top: 40%;
     position: relative;
     z-index: 1000;
     -webkit-font-smoothing: antialiased;
@@ -52,7 +52,7 @@
       margin-top:-155px;
       background-color: #323543;
       text-align: center;
-      height: 600px;
+      height: 900px;
       padding-bottom: -130px;
     }
   }

@@ -1,9 +1,10 @@
-<div class="row button-row">
+<div class="row">
   <div class="col-xs-12">
-    <button class="btn btn-success" [routerLink]="editUrl">Edit object</button>
-    <button class="btn btn-danger" (click)="back()">Back</button>
+    <button class="custom-btn success" [routerLink]="editUrl">Edit object</button>
+    <button class="custom-btn success" (click)="back()">Back</button>
   </div>
 </div>
+<br>
 <app-object-detail-row
   [header]="object"
   [value]="getValue(collections[object])"
