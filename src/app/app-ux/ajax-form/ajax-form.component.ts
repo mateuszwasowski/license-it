@@ -65,7 +65,8 @@ export class AjaxFormComponent implements OnInit {
       (res) => {
         if (res.status === 200) {
           this.isErrorValidation = false;
-          if (!this.isEdit && this.route.snapshot.component['name'] === "SingleLicenseComponent"){
+          if (!this.isEdit && this.route.component['name'] === "SingleLicenseComponent"){
+            console.log(this.route.component['name']);
             this.validationMessage = 'Zapisano poprawnie rekord - numer: ' + res.data;
             this.router.navigateByUrl('panel/licenses/application/'+res.data+'/license/'+res.data);
           } 
