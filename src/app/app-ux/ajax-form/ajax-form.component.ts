@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { BackendSimpleCommunicationService } from "../../shared/backend-communication/backend-simple-communication.service";
 
 @Component({
@@ -16,6 +16,7 @@ export class AjaxFormComponent implements OnInit {
   editUrl: string;
   validationMessage = '';
   isErrorValidation = false;
+  id =0;
 
   private prepareObjectRequest(res) {
     this.formCreationObject = this.backendHandler.addValuesToFormObject(this.formCreationObject, res.data);
@@ -23,7 +24,8 @@ export class AjaxFormComponent implements OnInit {
   }
 
   constructor(private backendHandler: BackendSimpleCommunicationService,
-              private route: ActivatedRoute) {
+              private route: ActivatedRoute,
+              private router: Router) {
   }
 
   ngOnInit() {
@@ -34,6 +36,7 @@ export class AjaxFormComponent implements OnInit {
     else{
       id = parseInt(this.route.snapshot.params['object_id']);
     }
+    this.id = id;
 
     this.formCreationObject.header = this.formCreationObject.headers.add;
     if (id !== undefined) {
@@ -64,6 +67,7 @@ export class AjaxFormComponent implements OnInit {
           this.isErrorValidation = false;
           if (!this.isEdit) {
             this.validationMessage = 'Zapisano poprawnie rekord - numer: ' + res.data;
+            this.router.navigateByUrl('panel/licenses/application/'+res.data+'/license/'+res.data);
           } 
           else{
             this.validationMessage = 'Zapisano poprawnie rekord';

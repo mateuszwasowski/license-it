@@ -14,7 +14,7 @@ export class SingleLicenseComponent implements OnInit {
       add: 'Add a license and attach it to a client, to enable functionalities assigned in your application.',
       edit: 'Edit license'
     },
-    urlList: 'http://www.licenseit.pro:5000/api/License/Add',
+    urlList: 'http://www.licenseit.pro:5000/api/License/AddReturnId',
     urlElement: 'http://www.licenseit.pro:5000/api/License/Get/:id',
     editElement: 'http://www.licenseit.pro:5000/api/License/Edit  ',
     list: [
