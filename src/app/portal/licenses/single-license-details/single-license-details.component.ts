@@ -10,7 +10,7 @@ export class SingleLicenseDetailsComponent implements OnInit {
   collection = {
     "Client": 'clientName',
     "Number": 'number',
-    "Version": 'applicationModel.version',
+    "Version": 'assignedVersion',
     "Is active": 'isActive',
     "Is activated": 'isActivated'
   };
