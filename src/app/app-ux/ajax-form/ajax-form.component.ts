@@ -36,8 +36,8 @@ export class AjaxFormComponent implements OnInit {
     else{
       id = parseInt(this.route.snapshot.params['object_id']);
     }
+   
     this.id = id;
-
     this.formCreationObject.header = this.formCreationObject.headers.add;
     if (id !== undefined) {
       this.isEdit = true;
@@ -65,7 +65,7 @@ export class AjaxFormComponent implements OnInit {
       (res) => {
         if (res.status === 200) {
           this.isErrorValidation = false;
-          if (!this.isEdit) {
+          if (!this.isEdit && this.route.snapshot.component['name'] === "SingleLicenseComponent"){
             this.validationMessage = 'Zapisano poprawnie rekord - numer: ' + res.data;
             this.router.navigateByUrl('panel/licenses/application/'+res.data+'/license/'+res.data);
           } 
