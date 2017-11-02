@@ -1,5 +1,5 @@
-import { Component, Input, Output, EventEmitter } from "@angular/core";
-import { Location } from "@angular/common";
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-form',
@@ -19,8 +19,8 @@ export class FormComponent {
 
   showModel(event) {
     event.preventDefault();
-    let emittedObject = {};
-    for (let item of this.formObject.list) {
+    const emittedObject = {};
+    for (const item of this.formObject.list) {
       emittedObject[item.id] = item.value;
     }
     this.formUpdate.emit(emittedObject);
@@ -28,7 +28,7 @@ export class FormComponent {
 
   handleUpdate(newValue) {
     if (newValue !== undefined) {
-      let object = this.formObject.list.findIndex((item: any) => {
+      const object = this.formObject.list.findIndex((item: any) => {
         return item.id === newValue.name;
       });
 
@@ -36,7 +36,7 @@ export class FormComponent {
         if (this.formObject.list[object].type === 'number') {
           this.formObject.list[object].value = Number(newValue.value);
         }
-        else if(this.formObject.list[object].type === 'boolean') {
+        else if (this.formObject.list[object].type === 'boolean') {
           this.formObject.list[object].value = newValue.value.length > 0 ? true : false;
         }
         else {

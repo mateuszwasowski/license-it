@@ -8,12 +8,12 @@ export class BackendSimpleCommunicationService {
   isMocked: boolean;
 
   public static dataToTable(object, order) {
-    let array = [];
-    for (let elementKey in object) {
-      let element = object[elementKey];
-      let singleElement = [element['id']];
-      for (let singleTableElement of order) {
-        let value = element[singleTableElement];
+    const array = [];
+    for (const elementKey in object) {
+      const element = object[elementKey];
+      const singleElement = [element['id']];
+      for (const singleTableElement of order) {
+        const value = element[singleTableElement];
         singleElement.push(value !== undefined ? value : '');
       }
       array.push(singleElement);
@@ -22,14 +22,14 @@ export class BackendSimpleCommunicationService {
   }
 
   public postObject(url, data) {
-    let headers = new Headers({'Content-Type': 'application/json'});
-    let options = new RequestOptions({headers: headers});
+    const headers = new Headers({'Content-Type': 'application/json'});
+    const options = new RequestOptions({headers: headers});
     return this.http.post(url, data, options).map(response => response.json());
   }
 
   editObject(url, data) {
-    let headers = new Headers({ 'Content-Type': 'application/json' });
-    let options = new RequestOptions({ headers: headers });
+    const headers = new Headers({ 'Content-Type': 'application/json' });
+    const options = new RequestOptions({ headers: headers });
     return this.http.put(url, data, options).map(response => response.json());
   }
 

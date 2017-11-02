@@ -10,7 +10,7 @@ export class DashboardAuthGuard implements CanActivate {
     constructor(private service: AuthenticationService, private router: Router) {}
 
     canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-        if(this.service.isLogged()) {
+        if (this.service.isLogged()) {
             this.router.navigate(['panel']);
             return false;
         }

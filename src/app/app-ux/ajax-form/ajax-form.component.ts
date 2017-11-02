@@ -1,6 +1,6 @@
-import { Component, OnInit, Input } from "@angular/core";
-import { ActivatedRoute, Router } from "@angular/router";
-import { BackendSimpleCommunicationService } from "../../shared/backend-communication/backend-simple-communication.service";
+import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { BackendSimpleCommunicationService } from '../../shared/backend-communication/backend-simple-communication.service';
 
 @Component({
   selector: 'app-ajax-form',
@@ -16,7 +16,7 @@ export class AjaxFormComponent implements OnInit {
   editUrl: string;
   validationMessage = '';
   isErrorValidation = false;
-  id =0;
+  id = 0;
 
   private prepareObjectRequest(res) {
     this.formCreationObject = this.backendHandler.addValuesToFormObject(this.formCreationObject, res.data);
@@ -30,13 +30,13 @@ export class AjaxFormComponent implements OnInit {
 
   ngOnInit() {
     let id;
-    if(this.route.snapshot.params['object_id'] === undefined){
+    if (this.route.snapshot.params['object_id'] === undefined){
       id = undefined;
     }
     else{
       id = parseInt(this.route.snapshot.params['object_id']);
     }
-   
+
     this.id = id;
     this.formCreationObject.header = this.formCreationObject.headers.add;
     if (id !== undefined) {
@@ -68,12 +68,12 @@ export class AjaxFormComponent implements OnInit {
           if (!this.isEdit && this.formCreationObject.newResponse){
             console.log(this.route);
             this.validationMessage = 'Zapisano poprawnie rekord - numer: ' + res.data;
-            this.router.navigateByUrl('panel/licenses/application/'+res.data+'/license/'+res.data);
-          } 
+            this.router.navigateByUrl('panel/licenses/application/' + res.data + '/license/' + res.data);
+          }
           else{
             this.validationMessage = 'Zapisano poprawnie rekord';
           }
-        
+
         } else {
           this.isErrorValidation = true;
           this.validationMessage = 'Wystapił błąd podczas zapisu: ' + res.description;

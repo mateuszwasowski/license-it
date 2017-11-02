@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
-import { MenuElementClass } from './menu-element/menu-element.class';
-import { AuthenticationService } from '../authentication/authentication.service';
-import { LeftMenuData } from './left-menu.data';
+import {Component} from '@angular/core';
+import {MenuElementClass} from './menu-element/menu-element.class';
+import {AuthenticationService} from '../authentication/authentication.service';
+import {UserService} from '../../portal/user.service';
+import {LeftMenuData} from './left-menu.data';
 
 @Component({
   selector: 'app-left-menu',
@@ -12,13 +13,14 @@ import { LeftMenuData } from './left-menu.data';
 export class LeftMenuComponent {
   data: Array<MenuElementClass>;
 
-  constructor(private service: AuthenticationService) {
+  constructor(private authService: AuthenticationService, private userService: UserService) {
     this.data = LeftMenuData;
   }
 
   logout() {
-    if(this.service.isLogged()) {
-      this.service.logout();
+    if (this.authService.isLogged()) {
+      this.authService.logout();
+      this.userService.removeGroup();
     }
   }
 }

@@ -7,6 +7,7 @@ import { MenuElementComponent } from './left-menu/menu-element/menu-element.comp
 import { CreateLinkService } from './backend-communication/create-link.service';
 import { BackendSimpleCommunicationService } from './backend-communication/backend-simple-communication.service';
 import { AuthenticationService } from './authentication/authentication.service';
+import { SingleChooseContainerComponent } from './single-choose-container/single-choose-container.component';
 
 
 @NgModule({
@@ -14,8 +15,8 @@ import { AuthenticationService } from './authentication/authentication.service';
         CommonModule,
         RouterModule
     ],
-    declarations: [LeftMenuComponent, MenuElementComponent],
-    exports: [LeftMenuComponent],
+    declarations: [LeftMenuComponent, MenuElementComponent, SingleChooseContainerComponent],
+    exports: [LeftMenuComponent, SingleChooseContainerComponent],
     providers: [
         CreateLinkService,
         BackendSimpleCommunicationService,

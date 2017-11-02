@@ -1,7 +1,7 @@
 import {Component, OnInit, Input} from '@angular/core';
-import {BackendSimpleCommunicationService} from "../../shared/backend-communication/backend-simple-communication.service";
-import {ActivatedRoute} from "@angular/router";
-import { Location } from "@angular/common";
+import {BackendSimpleCommunicationService} from '../../shared/backend-communication/backend-simple-communication.service';
+import {ActivatedRoute} from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-object-details',

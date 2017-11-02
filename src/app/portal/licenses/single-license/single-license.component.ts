@@ -1,6 +1,6 @@
-import {Component, OnInit} from "@angular/core";
-import {ActivatedRoute, Params} from "@angular/router";
-import {BackendSimpleCommunicationService} from "app/shared/backend-communication/backend-simple-communication.service";
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Params} from '@angular/router';
+import {BackendSimpleCommunicationService} from 'app/shared/backend-communication/backend-simple-communication.service';
 
 @Component({
   selector: 'app-single-license',
@@ -78,7 +78,7 @@ export class SingleLicenseComponent implements OnInit {
       const client = {
         value: clients[i][1],
         label: clients[i][2]
-      }
+      };
       this.clientsList.push(client);
     }
   }

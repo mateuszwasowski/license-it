@@ -14,8 +14,8 @@ export class AuthenticationService {
     }
 
     login(username: string, password: string): Observable<boolean> {
-        let subject = new Subject<boolean>();
-        let data = {
+        const subject = new Subject<boolean>();
+        const data = {
             username: username,
             password: password
         };
@@ -24,9 +24,9 @@ export class AuthenticationService {
             const checkStatus = response && response.status;
             if (checkStatus) {
                 localStorage.setItem('currentUser', response.token);
-                this.router.navigateByUrl('/panel/licenses')
+                this.router.navigateByUrl('/group');
             }
-            subject.next(checkStatus)
+            subject.next(checkStatus);
         });
         return subject.asObservable().first();
     }

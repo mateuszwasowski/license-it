@@ -9,7 +9,7 @@ import {Input, Output, EventEmitter} from '@angular/core';
 
 export class InputRowComponent {
   class = 'relative';
-  @Input() item:any;
+  @Input() item: any;
   @Output() valueUpdate = new EventEmitter();
 
   onChange($event, index) {
@@ -18,7 +18,7 @@ export class InputRowComponent {
       name: this.item.id
     });
 
-    if(this.item.callback) {
+    if (this.item.callback) {
       this.item.callback($event, index);
     }
   }

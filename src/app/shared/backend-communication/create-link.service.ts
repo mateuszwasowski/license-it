@@ -7,10 +7,10 @@ export class CreateLinkService {
 
   private prepareLink(partial: string | Array<string>, isMocked: boolean = true) {
     let array = [this.backendUrl];
-    if(isMocked) {
+    if (isMocked) {
       array = [this.mockedDataURl];
     }
-    if(Array.isArray(partial)) {
+    if (Array.isArray(partial)) {
       array = array.concat(partial);
     } else {
       array.push(partial);
@@ -19,27 +19,27 @@ export class CreateLinkService {
   }
 
   public getLoginUrl() {
-    let data = 'login.json';
+    const data = 'login.json';
     return this.prepareLink(data);
   }
 
   public getUser() {
-    let data = 'user.json';
+    const data = 'user.json';
     return this.prepareLink(data);
   }
 
   public getApplications() {
-    let data = 'api/Applications/Get';
+    const data = 'api/Applications/Get';
     return this.prepareLink(data, false);
   }
 
   public getApplicationLicenses(id) {
-    let data = ['api/License/GetByApplication', id];
+    const data = ['api/License/GetByApplication', id];
     return this.prepareLink(data, false);
   }
 
   public getClients() {
-    let data = 'api/Clients/Get';
+    const data = 'api/Clients/Get';
     return this.prepareLink(data, false);
   }
 }

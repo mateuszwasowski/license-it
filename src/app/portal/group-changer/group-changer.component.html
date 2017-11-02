@@ -1,0 +1,21 @@
+<app-single-choose-container [header]="'Set your current group'">
+  <form name="form" (ngSubmit)="changeGroup()">
+    <div class="form-group">
+      <label for="group">Group</label>
+      <select id="group"
+              type="text"
+              name="group"
+              class="form-control"
+              [(ngModel)]="group"
+              required>
+        <option value="{{ option.value }}" *ngFor="let option of options">
+          {{ option.name }}
+        </option>
+      </select>
+    </div>
+    <div>
+      <a [routerLink]="'/group/new'">Create new group</a>
+    </div>
+    <button class="custom-btn submit-form-btn">Submit</button>
+  </form>
+</app-single-choose-container>
