@@ -79,4 +79,9 @@ export class BackendSimpleCommunicationService {
     const url = this.urlCreator.getApplicationLicenses(id);
     return this.getObjects(url);
   }
+
+  isAdministratorOfGroup(group) {
+    const url = this.urlCreator.groupAdmin(group);
+    return this.getObjects(url);
+  }
 }

@@ -1,3 +1,15 @@
 <app-single-choose-container [header]="'Create new group'">
-
+  <form name="form" (ngSubmit)="addGroup()">
+    <div class="form-group">
+      <label for="group">Name</label>
+      <input id="group"
+              type="text"
+              name="group"
+              class="form-control"
+              [(ngModel)]="groupName"
+              required />
+    </div>
+    <button class="custom-btn submit-form-btn">Submit</button>
+    <button class="custom-btn submit-form-btn" [routerLink]="['/group']">Back to previous screen</button>
+  </form>
 </app-single-choose-container>

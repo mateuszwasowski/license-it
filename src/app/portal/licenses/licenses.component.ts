@@ -6,7 +6,7 @@ import { BackendSimpleCommunicationService} from '../../shared/backend-communica
     templateUrl: './licenses.component.html',
     styleUrls: ['./licenses.component.scss']
 })
-export class LicensesComponent implements OnInit{
+export class LicensesComponent implements OnInit {
   data = [];
 
   header = [

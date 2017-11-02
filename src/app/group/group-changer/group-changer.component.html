@@ -13,9 +13,7 @@
         </option>
       </select>
     </div>
-    <div>
-      <a [routerLink]="'/group/new'">Create new group</a>
-    </div>
     <button class="custom-btn submit-form-btn">Submit</button>
+    <button class="custom-btn submit-form-btn" [routerLink]="['/group', 'new']">Crete new group</button>
   </form>
 </app-single-choose-container>

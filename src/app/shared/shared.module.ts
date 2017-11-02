@@ -9,7 +9,7 @@ import {BackendSimpleCommunicationService} from './backend-communication/backend
 import {AuthenticationService} from './authentication/authentication.service';
 import {SingleChooseContainerComponent} from './single-choose-container/single-choose-container.component';
 
-import {UserService} from "./user/user.service";
+import {UserService} from './user/user.service';
 
 @NgModule({
   imports: [

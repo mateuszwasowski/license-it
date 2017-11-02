@@ -63,7 +63,7 @@ export class SingleLicenseComponent implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.params.subscribe((params: Params) => {
-      this.categoryForm.constData.idApplication = parseInt(params['id']);
+      this.categoryForm.constData.idApplication = parseInt(params['id'], 10);
 
     });
 

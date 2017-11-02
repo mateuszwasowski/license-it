@@ -15,5 +15,10 @@ export const LeftMenuData: Array<MenuElementClass> = [
     header: 'Clients',
     route: 'clients',
     icon: 'assets/icons/groupicon1.svg'
+  },
+  {
+    header: 'Group',
+    route: 'group',
+    icon: 'assets/icons/groupicon1.svg'
   }
 ];

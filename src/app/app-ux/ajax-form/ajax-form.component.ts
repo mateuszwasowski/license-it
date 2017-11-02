@@ -30,7 +30,7 @@ export class AjaxFormComponent implements OnInit {
 
   ngOnInit() {
     this.id = this.route.snapshot.params['object_id'] === undefined ? undefined :
-      parseInt(this.route.snapshot.params['object_id'], 0);
+      parseInt(this.route.snapshot.params['object_id'], 10);
     this.formCreationObject.header = this.formCreationObject.headers.add;
     if (this.id !== undefined) {
       this.isEdit = true;

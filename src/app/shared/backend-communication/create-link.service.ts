@@ -42,4 +42,9 @@ export class CreateLinkService {
     const data = 'api/Clients/Get';
     return this.prepareLink(data, false);
   }
+
+  public groupAdmin(group) {
+    const data = ['api/Group/get', group];
+    return this.prepareLink(data, false);
+  }
 }

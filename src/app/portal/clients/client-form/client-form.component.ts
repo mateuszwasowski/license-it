@@ -1,15 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
-import { BackendSimpleCommunicationService } from 'app/shared/backend-communication/backend-simple-communication.service';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-client-form',
   templateUrl: './client-form.component.html',
   styleUrls: ['./client-form.component.scss']
 })
-export class ClientFormComponent implements OnInit {
+export class ClientFormComponent {
 
-public categoryForm: any = {
+  public categoryForm: any = {
     headers: {
       add: 'Add a new client.',
       edit: 'Edit client'
@@ -31,13 +29,4 @@ public categoryForm: any = {
       }
     ],
   };
-
-   constructor(private activatedRoute: ActivatedRoute,
-              private service: BackendSimpleCommunicationService) {
-  }
-
-  ngOnInit() {
-
-  }
-
 }
