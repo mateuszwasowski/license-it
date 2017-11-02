@@ -7,38 +7,40 @@ import 'rxjs/add/operator/map';
 export class BackendSimpleCommunicationService {
   isMocked: boolean;
 
-  public static dataToTable(object, order) {
+  static dataToTable(object, order) {
     const array = [];
     for (const elementKey in object) {
-      const element = object[elementKey];
-      const singleElement = [element['id']];
-      for (const singleTableElement of order) {
-        const value = element[singleTableElement];
-        singleElement.push(value !== undefined ? value : '');
+      if (object.hasOwnProperty(elementKey)) {
+        const element = object[elementKey];
+        const singleElement = [element['id']];
+        for (const singleTableElement of order) {
+          const value = element[singleTableElement];
+          singleElement.push(value !== undefined ? value : '');
+        }
+        array.push(singleElement);
       }
-      array.push(singleElement);
     }
     return array;
   }
 
-  public postObject(url, data) {
+  constructor(private urlCreator: CreateLinkService, private http: Http) {
+    this.isMocked = true;
+  }
+
+  postObject(url, data) {
     const headers = new Headers({'Content-Type': 'application/json'});
     const options = new RequestOptions({headers: headers});
     return this.http.post(url, data, options).map(response => response.json());
   }
 
   editObject(url, data) {
-    const headers = new Headers({ 'Content-Type': 'application/json' });
-    const options = new RequestOptions({ headers: headers });
+    const headers = new Headers({'Content-Type': 'application/json'});
+    const options = new RequestOptions({headers: headers});
     return this.http.put(url, data, options).map(response => response.json());
   }
 
-  public getObjects(url) {
+  getObjects(url) {
     return this.http.get(url).map(response => response.json());
-  }
-
-  constructor(private urlCreator: CreateLinkService, private http: Http) {
-    this.isMocked = true;
   }
 
   getUser() {
@@ -66,13 +68,15 @@ export class BackendSimpleCommunicationService {
 
   getApplicationLicenses(id) {
     const url = this.urlCreator.getApplicationLicenses(id);
-    console.log(url);
     return this.getObjects(url);
   }
 
   addValuesToFormObject(form, response) {
     for (const formElement in form.list) {
-      form.list[formElement].value = response[form.list[formElement].id];
+      if (form.list.hasOwnProperty(formElement)) {
+        form.list[formElement].value = response[form.list[formElement].id];
+
+      }
     }
     return form;
   }

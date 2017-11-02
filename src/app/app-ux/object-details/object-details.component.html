@@ -1,12 +1,13 @@
-<div class="row">
+<div class="row button-row">
   <div class="col-xs-12">
     <button class="custom-btn success" [routerLink]="editUrl">Edit object</button>
     <button class="custom-btn success" (click)="back()">Back</button>
   </div>
 </div>
-<br>
-<app-object-detail-row
-  [header]="object"
-  [value]="getValue(collections[object])"
-  *ngFor="let object of keys">
-</app-object-detail-row>
+<div>
+  <app-object-detail-row
+    [header]="object"
+    [value]="getValue(collections[object])"
+    *ngFor="let object of keys">
+  </app-object-detail-row>
+</div>

@@ -66,11 +66,9 @@ export class AjaxFormComponent implements OnInit {
         if (res.status === 200) {
           this.isErrorValidation = false;
           if (!this.isEdit && this.formCreationObject.newResponse){
-            console.log(this.route);
             this.validationMessage = 'Zapisano poprawnie rekord - numer: ' + res.data;
             this.router.navigateByUrl('panel/licenses/application/' + res.data + '/license/' + res.data);
-          }
-          else{
+          } else {
             this.validationMessage = 'Zapisano poprawnie rekord';
           }
 

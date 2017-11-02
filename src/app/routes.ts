@@ -4,11 +4,11 @@ import {PortalComponent} from './portal/portal/portal.component';
 import {NotFoundComponent} from './dashboard/not-found/not-found.component';
 import {PortalAuthGuard} from './portal/portal-auth.guard';
 import {DashboardAuthGuard} from './dashboard/dashboard-auth.guard';
+import {GroupGuard} from './group/group.guard';
+
 import {portalRoutes} from './portal/routes';
 import {dashboardRoutes} from './dashboard/routes';
-import {GroupChangerComponent} from './portal/group-changer/group-changer.component';
-import { GroupFormComponent } from './portal/group-form/group-form.component';
-import {GroupGuard} from './portal/group.guard';
+import {groupRoutes} from './group/routes';
 
 export const appRoutes: Routes = [
   {
@@ -21,16 +21,7 @@ export const appRoutes: Routes = [
   },
   {
     path: 'group',
-    children: [
-      {
-        path: '',
-        component: GroupChangerComponent,
-      },
-      {
-        path: 'new',
-        component: GroupFormComponent,
-      }
-    ],
+    children: groupRoutes,
     canActivate: [
       PortalAuthGuard
     ]

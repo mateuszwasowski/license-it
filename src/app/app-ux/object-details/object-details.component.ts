@@ -1,7 +1,7 @@
 import {Component, OnInit, Input} from '@angular/core';
 import {BackendSimpleCommunicationService} from '../../shared/backend-communication/backend-simple-communication.service';
 import {ActivatedRoute} from '@angular/router';
-import { Location } from '@angular/common';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-object-details',
@@ -20,17 +20,16 @@ export class ObjectDetailsComponent implements OnInit {
   editUrl = '';
 
   keys = [];
-
-
   data = {};
 
   getValue(key) {
     const elements = key.split('.');
+
     let value = this.data;
     for (const element of elements) {
       value = value[element];
     }
-    console.log(elements, value);
+
     return value;
   }
 
@@ -43,7 +42,6 @@ export class ObjectDetailsComponent implements OnInit {
     if (id !== undefined) {
       this.keys = Object.keys(this.collections);
       this.backendHandler.getObjects(this.url + id).subscribe((response) => {
-        console.log(response.data);
         this.data = response.data;
       });
     }

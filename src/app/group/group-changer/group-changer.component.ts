@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {UserService} from '../user.service';
+import {UserService} from '../../shared/user/user.service';
 import {Router} from '@angular/router';
 
 @Component({
@@ -28,7 +28,6 @@ export class GroupChangerComponent implements OnInit {
     if (!isNaN(number)) {
       this.service.setGroup(number);
       this.router.navigate(['panel']);
-      console.log('redirect');
     }
   }
 }

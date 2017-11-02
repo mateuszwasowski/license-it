@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {MenuElementClass} from './menu-element/menu-element.class';
 import {AuthenticationService} from '../authentication/authentication.service';
-import {UserService} from '../../portal/user.service';
+import {UserService} from '../user/user.service';
 import {LeftMenuData} from './left-menu.data';
 
 @Component({

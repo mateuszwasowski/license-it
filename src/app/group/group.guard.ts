@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {CanActivate, ActivatedRouteSnapshot, Router, RouterStateSnapshot} from '@angular/router';
 import { Observable } from 'rxjs/Observable';
-import {UserService} from './user.service';
+import {UserService} from '../shared/user/user.service';
 
 @Injectable()
 export class GroupGuard implements CanActivate {
