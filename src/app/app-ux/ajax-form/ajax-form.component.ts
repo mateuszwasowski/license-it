@@ -1,6 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { BackendSimpleCommunicationService } from '../../shared/backend-communication/backend-simple-communication.service';
+import {Component, OnInit, Input} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+import {BackendSimpleCommunicationService} from '../../shared/backend-communication/backend-simple-communication.service';
 
 @Component({
   selector: 'app-ajax-form',
@@ -19,7 +19,7 @@ export class AjaxFormComponent implements OnInit {
   id = 0;
 
   private prepareObjectRequest(res) {
-    this.formCreationObject = this.backendHandler.addValuesToFormObject(this.formCreationObject, res.data);
+    this.formCreationObject = BackendSimpleCommunicationService.addValuesToFormObject(this.formCreationObject, res.data);
     this.currentObject = res.data;
   }
 
@@ -29,20 +29,13 @@ export class AjaxFormComponent implements OnInit {
   }
 
   ngOnInit() {
-    let id;
-    if (this.route.snapshot.params['object_id'] === undefined){
-      id = undefined;
-    }
-    else{
-      id = parseInt(this.route.snapshot.params['object_id']);
-    }
-
-    this.id = id;
+    this.id = this.route.snapshot.params['object_id'] === undefined ? undefined :
+      parseInt(this.route.snapshot.params['object_id'], 0);
     this.formCreationObject.header = this.formCreationObject.headers.add;
-    if (id !== undefined) {
+    if (this.id !== undefined) {
       this.isEdit = true;
-      const getUrl = this.formCreationObject.urlElement.replace(':id', id);
-      this.formCreationObject.constData.id = id;
+      const getUrl = this.formCreationObject.urlElement.replace(':id', this.id);
+      this.formCreationObject.constData.id = this.id;
       this.formCreationObject.header = this.formCreationObject.headers.edit;
       this.formCreationObject.header = this.formCreationObject.headers.edit;
       this.backendHandler.getObjects(getUrl).subscribe(this.prepareObjectRequest.bind(this));
@@ -53,7 +46,9 @@ export class AjaxFormComponent implements OnInit {
     let promise;
     if (this.formCreationObject.constData !== undefined) {
       for (const element in this.formCreationObject.constData) {
-        object[element] = this.formCreationObject.constData[element];
+        if (this.formCreationObject.constData.hasOwnProperty(element)) {
+          object[element] = this.formCreationObject.constData[element];
+        }
       }
     }
     if (!this.isEdit) {
@@ -65,7 +60,7 @@ export class AjaxFormComponent implements OnInit {
       (res) => {
         if (res.status === 200) {
           this.isErrorValidation = false;
-          if (!this.isEdit && this.formCreationObject.newResponse){
+          if (!this.isEdit && this.formCreationObject.newResponse) {
             this.validationMessage = 'Zapisano poprawnie rekord - numer: ' + res.data;
             this.router.navigateByUrl('panel/licenses/application/' + res.data + '/license/' + res.data);
           } else {

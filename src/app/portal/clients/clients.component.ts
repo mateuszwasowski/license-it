@@ -2,11 +2,11 @@ import {Component, OnInit} from '@angular/core';
 import {BackendSimpleCommunicationService} from '../../shared/backend-communication/backend-simple-communication.service';
 
 @Component({
-  selector: 'app-users',
-  templateUrl: './users.component.html',
-  styleUrls: ['./users.component.scss']
+  selector: 'app-clients',
+  templateUrl: './clients.component.html',
+  styleUrls: ['./clients.component.scss']
 })
-export class UsersComponent implements OnInit {
+export class ClientsComponent implements OnInit {
   data = [];
 
   header = [

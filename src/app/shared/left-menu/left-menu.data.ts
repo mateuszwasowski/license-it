@@ -13,7 +13,7 @@ export const LeftMenuData: Array<MenuElementClass> = [
   },
   {
     header: 'Clients',
-    route: 'users',
+    route: 'clients',
     icon: 'assets/icons/groupicon1.svg'
   }
 ];

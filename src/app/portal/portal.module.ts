@@ -11,11 +11,11 @@ import {PortalComponent} from './portal/portal.component';
 import {IndexComponent} from './index/index.component';
 import {AccountComponent} from './account/account.component';
 import {LicensesComponent} from './licenses/licenses.component';
-import {UsersComponent} from './users/users.component';
+import {ClientsComponent} from './clients/clients.component';
 
 import {PortalAuthGuard} from './portal-auth.guard';
 import {ApplicationComponent} from './licenses/application/application.component';
-import {UserFormComponent} from './users/user-form/user-form.component';
+import {ClientFormComponent} from './clients/client-form/client-form.component';
 import {SingleLicenseComponent} from './licenses/single-license/single-license.component';
 import {SingleLicenseDetailsComponent} from './licenses/single-license-details/single-license-details.component';
 
@@ -33,9 +33,9 @@ import {SingleLicenseDetailsComponent} from './licenses/single-license-details/s
     PortalComponent,
     AccountComponent,
     LicensesComponent,
-    UsersComponent,
+    ClientsComponent,
     ApplicationComponent,
-    UserFormComponent,
+    ClientFormComponent,
     SingleLicenseComponent,
     SingleLicenseDetailsComponent
   ],
@@ -44,7 +44,7 @@ import {SingleLicenseDetailsComponent} from './licenses/single-license-details/s
     PortalComponent,
     AccountComponent,
     LicensesComponent,
-    UsersComponent
+    ClientsComponent
   ],
   providers: [
     PortalAuthGuard

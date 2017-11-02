@@ -3,11 +3,11 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { BackendSimpleCommunicationService } from 'app/shared/backend-communication/backend-simple-communication.service';
 
 @Component({
-  selector: 'app-user-form',
-  templateUrl: './user-form.component.html',
-  styleUrls: ['./user-form.component.scss']
+  selector: 'app-client-form',
+  templateUrl: './client-form.component.html',
+  styleUrls: ['./client-form.component.scss']
 })
-export class UserFormComponent implements OnInit {
+export class ClientFormComponent implements OnInit {
 
 public categoryForm: any = {
     headers: {

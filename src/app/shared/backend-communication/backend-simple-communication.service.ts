@@ -22,6 +22,15 @@ export class BackendSimpleCommunicationService {
     }
     return array;
   }
+  static addValuesToFormObject(form, response) {
+    for (const formElement in form.list) {
+      if (form.list.hasOwnProperty(formElement)) {
+        form.list[formElement].value = response[form.list[formElement].id];
+
+      }
+    }
+    return form;
+  }
 
   constructor(private urlCreator: CreateLinkService, private http: Http) {
     this.isMocked = true;
@@ -69,15 +78,5 @@ export class BackendSimpleCommunicationService {
   getApplicationLicenses(id) {
     const url = this.urlCreator.getApplicationLicenses(id);
     return this.getObjects(url);
-  }
-
-  addValuesToFormObject(form, response) {
-    for (const formElement in form.list) {
-      if (form.list.hasOwnProperty(formElement)) {
-        form.list[formElement].value = response[form.list[formElement].id];
-
-      }
-    }
-    return form;
   }
 }
