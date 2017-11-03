@@ -15,13 +15,13 @@ export class ClientsComponent implements OnInit {
     'Creation'
   ];
 
-  private order = [
+  order = [
     'name',
     'isActive',
     'creation'
   ];
 
-  public callbacks = {
+  callbacks = {
     'Creation': (value) => {
       const date = new Date(value);
       const month = date.getMonth() > 9 ? date.getMonth() : '0' + date.getMonth().toString();
@@ -35,7 +35,7 @@ export class ClientsComponent implements OnInit {
 
   ngOnInit() {
     this.service.getClients().subscribe((response) => {
-      this.data = BackendSimpleCommunicationService.dataToTable(response.data, this.order);
+      this.data = response.data;
     });
   }
 

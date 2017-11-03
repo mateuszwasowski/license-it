@@ -14,9 +14,7 @@ export class GroupManageComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.userService.currentGroup().subscribe((resp) => {
-      this.group = resp;
-    });
+
   }
 
 }

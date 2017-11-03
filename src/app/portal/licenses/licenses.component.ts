@@ -16,7 +16,7 @@ export class LicensesComponent implements OnInit {
     'Created'
   ];
 
-  private order = [
+  order = [
     'name',
     'version',
     'isActive',
@@ -28,7 +28,7 @@ export class LicensesComponent implements OnInit {
 
   ngOnInit() {
     this.service.getApplications().subscribe((response) => {
-      this.data = BackendSimpleCommunicationService.dataToTable(response.data, this.order);
+      this.data = response.data;
     });
   }
 }

@@ -1,12 +1,18 @@
 <app-single-choose-container [header]="'Login'">
-  <form name="form" (ngSubmit)="login()">
+  <form name="form" (submit)="login()" [formGroup]="loginForm">
+    <div class="errors" *ngIf="!(isValid$ | async)">
+      <div class="bg-primary">Invalid username or password.</div>
+    </div>
+    <div class="errors" *ngIf="!loginForm.valid && submitted">
+      <div class="bg-primary">All fields are required.</div>
+    </div>
     <div class="form-group">
       <label for="username">Username</label>
       <input id="username"
              type="text"
              class="form-control"
              name="username"
-             [(ngModel)]="username"
+             formControlName="username"
              required/>
     </div>
     <div class="form-group">
@@ -15,7 +21,7 @@
              type="password"
              class="form-control"
              name="password"
-             [(ngModel)]="password"
+             formControlName="password"
              required/>
     </div>
     <button class="custom-btn submit-form-btn">Submit</button>

@@ -2,14 +2,10 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class CreateLinkService {
-  private mockedDataURl = '/assets/mocked-data';
   private backendUrl = 'http://www.licenseit.pro:5000';
 
-  private prepareLink(partial: string | Array<string>, isMocked: boolean = true) {
+  private prepareLink(partial: string | Array<string>) {
     let array = [this.backendUrl];
-    if (isMocked) {
-      array = [this.mockedDataURl];
-    }
     if (Array.isArray(partial)) {
       array = array.concat(partial);
     } else {
@@ -19,7 +15,7 @@ export class CreateLinkService {
   }
 
   public getLoginUrl() {
-    const data = 'login.json';
+    const data = 'api/token';
     return this.prepareLink(data);
   }
 
@@ -30,21 +26,21 @@ export class CreateLinkService {
 
   public getApplications() {
     const data = 'api/Applications/Get';
-    return this.prepareLink(data, false);
+    return this.prepareLink(data);
   }
 
   public getApplicationLicenses(id) {
     const data = ['api/License/GetByApplication', id];
-    return this.prepareLink(data, false);
+    return this.prepareLink(data);
   }
 
   public getClients() {
     const data = 'api/Clients/Get';
-    return this.prepareLink(data, false);
+    return this.prepareLink(data);
   }
 
-  public groupAdmin(group) {
+  public getGroup(group) {
     const data = ['api/Group/get', group];
-    return this.prepareLink(data, false);
+    return this.prepareLink(data);
   }
 }

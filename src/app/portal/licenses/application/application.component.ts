@@ -35,7 +35,7 @@ export class ApplicationComponent implements OnInit {
       this.singleElement = this.singleElement.replace(':id', params['id'].toString());
       this.service.getApplicationLicenses(params['id']).subscribe((response) => {
         this.appName = response.data[0].applicationModel.name;
-        this.data = BackendSimpleCommunicationService.dataToTable(response.data, this.order);
+        this.data = response.data;
       });
     });
   }

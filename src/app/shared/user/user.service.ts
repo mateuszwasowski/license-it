@@ -4,8 +4,9 @@ import {BackendSimpleCommunicationService} from '../backend-communication/backen
 @Injectable()
 export class UserService {
   private storageName = 'user-group-storage';
+  private userTokenStorage = 'currentUser';
 
-  constructor(private backendService: BackendSimpleCommunicationService) {
+  constructor() {
   }
 
   getGroup() {
@@ -20,7 +21,15 @@ export class UserService {
     localStorage.removeItem(this.storageName);
   }
 
-  currentGroup() {
-    return this.backendService.isAdministratorOfGroup(this.getGroup());
+  getToken(): string {
+    return localStorage.getItem(this.userTokenStorage);
+  }
+
+  removeToken() {
+    localStorage.removeItem(this.userTokenStorage);
+  }
+
+  setToken(token) {
+    localStorage.setItem(this.userTokenStorage, token);
   }
 }

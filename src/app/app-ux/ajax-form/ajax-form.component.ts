@@ -12,16 +12,9 @@ import {BackendSimpleCommunicationService} from '../../shared/backend-communicat
 export class AjaxFormComponent implements OnInit {
   @Input() formCreationObject: any = {};
   isEdit = false;
-  currentObject: any;
-  editUrl: string;
   validationMessage = '';
   isErrorValidation = false;
   id = 0;
-
-  private prepareObjectRequest(res) {
-    this.formCreationObject = BackendSimpleCommunicationService.addValuesToFormObject(this.formCreationObject, res.data);
-    this.currentObject = res.data;
-  }
 
   constructor(private backendHandler: BackendSimpleCommunicationService,
               private route: ActivatedRoute,
@@ -31,14 +24,15 @@ export class AjaxFormComponent implements OnInit {
   ngOnInit() {
     this.id = this.route.snapshot.params['object_id'] === undefined ? undefined :
       parseInt(this.route.snapshot.params['object_id'], 10);
-    this.formCreationObject.header = this.formCreationObject.headers.add;
+    this.formCreationObject.header = this.id !== undefined ? this.formCreationObject.headers.add :
+      this.formCreationObject.headers.edit;
+
     if (this.id !== undefined) {
-      this.isEdit = true;
       const getUrl = this.formCreationObject.urlElement.replace(':id', this.id);
+
+      this.isEdit = true;
       this.formCreationObject.constData.id = this.id;
-      this.formCreationObject.header = this.formCreationObject.headers.edit;
-      this.formCreationObject.header = this.formCreationObject.headers.edit;
-      this.backendHandler.getObjects(getUrl).subscribe(this.prepareObjectRequest.bind(this));
+      this.backendHandler.getObjects(getUrl).subscribe(this.prepareObjectRequest());
     }
   }
 
@@ -58,22 +52,27 @@ export class AjaxFormComponent implements OnInit {
     }
     promise.subscribe(
       (res) => {
-        if (res.status === 200) {
-          this.isErrorValidation = false;
-          if (!this.isEdit && this.formCreationObject.newResponse) {
-            this.validationMessage = 'Zapisano poprawnie rekord - numer: ' + res.data;
-            this.router.navigateByUrl('panel/licenses/application/' + res.data + '/license/' + res.data);
-          } else {
-            this.validationMessage = 'Zapisano poprawnie rekord';
-          }
-
-        } else {
-          this.isErrorValidation = true;
-          this.validationMessage = 'Wystapił błąd podczas zapisu: ' + res.description;
-        }
+        this.isErrorValidation = false;
+        this.validationMessage = 'Zapisano poprawnie rekord';
       }, () => {
         this.isErrorValidation = true;
         this.validationMessage = 'Wystapił błąd podczas zapisu.';
       });
+  }
+
+  private addValuesToFormObject(response) {
+    const form = this.formCreationObject;
+    for (const formElement in form.list) {
+      if (form.list.hasOwnProperty(formElement)) {
+        form.list[formElement].value = response[form.list[formElement].id];
+      }
+    }
+    return form;
+  }
+
+  private prepareObjectRequest() {
+    return (response) => {
+      this.formCreationObject = this.addValuesToFormObject(response.data);
+    };
   }
 }
