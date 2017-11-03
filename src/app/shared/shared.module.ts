@@ -10,19 +10,23 @@ import {AuthenticationService} from './authentication/authentication.service';
 import {SingleChooseContainerComponent} from './single-choose-container/single-choose-container.component';
 
 import {UserService} from './user/user.service';
+import {BooleanIconPipe} from './boolean-icon/boolean-icon.pipe';
+import {SimpleDateStringPipe} from './simple-date-string/simple-date-string.pipe';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule
   ],
-  declarations: [LeftMenuComponent, MenuElementComponent, SingleChooseContainerComponent],
+  declarations: [LeftMenuComponent, MenuElementComponent, SingleChooseContainerComponent, BooleanIconPipe, SimpleDateStringPipe],
   exports: [LeftMenuComponent, SingleChooseContainerComponent],
   providers: [
     CreateLinkService,
     BackendSimpleCommunicationService,
     AuthenticationService,
-    UserService
+    UserService,
+    BooleanIconPipe,
+    SimpleDateStringPipe
   ]
 })
 export class SharedModule {

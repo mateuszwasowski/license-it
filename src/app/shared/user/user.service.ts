@@ -3,11 +3,8 @@ import {BackendSimpleCommunicationService} from '../backend-communication/backen
 
 @Injectable()
 export class UserService {
-  private storageName = 'user-group-storage';
+  private storageName = 'userGroupStorage';
   private userTokenStorage = 'currentUser';
-
-  constructor() {
-  }
 
   getGroup() {
     return localStorage.getItem(this.storageName);
@@ -32,4 +29,15 @@ export class UserService {
   setToken(token) {
     localStorage.setItem(this.userTokenStorage, token);
   }
+
+  getUserData() {
+    return this.parseJwt(this.getToken());
+  }
+
+  private parseJwt(token) {
+    const base64Url = token.split('.')[1];
+    const base64 = base64Url.replace('-', '+').replace('_', '/');
+
+    return JSON.parse(window.atob(base64));
+  };
 }

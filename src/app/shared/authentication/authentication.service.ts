@@ -17,18 +17,17 @@ export class AuthenticationService {
       username: value.username,
       password: value.password
     };
+    const subject = new Subject();
+    this.backendService.login(data).subscribe(response => {
+      response = JSON.parse(response._body);
+      this.userService.setToken(response.token.toString());
+      this.router.navigateByUrl('/group');
+      subject.next(true);
+    }, response => {
+      subject.next(false);
+    });
 
-    return new Observable<boolean>(observer => {
-      this.backendService.login(data).subscribe(response => {
-        response = JSON.parse(response._body);
-        this.userService.setToken(response.token.toString());
-        this.router.navigateByUrl('/group');
-        observer.next(true);
-      }, response => {
-        observer.next(false);
-      });
-    }).first();
-
+    return subject.asObservable().first();
   }
 
   logout(): void {

@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-group-form',
@@ -6,12 +7,17 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./group-form.component.scss']
 })
 export class GroupFormComponent implements OnInit {
-  groupName: string;
+  groupForm: FormGroup;
 
   ngOnInit() {
+    this.groupForm = new FormGroup({
+      name: new FormControl()
+    });
   }
 
   addGroup() {
+    if (this.groupForm) {
 
+    }
   }
 }

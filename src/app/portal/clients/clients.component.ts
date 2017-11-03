@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {BackendSimpleCommunicationService} from '../../shared/backend-communication/backend-simple-communication.service';
+import {BooleanIconPipe} from "../../shared/boolean-icon/boolean-icon.pipe";
+import {SimpleDateStringPipe} from "../../shared/simple-date-string/simple-date-string.pipe";
 
 @Component({
   selector: 'app-clients',
@@ -23,15 +25,17 @@ export class ClientsComponent implements OnInit {
 
   callbacks = {
     'Creation': (value) => {
-      const date = new Date(value);
-      const month = date.getMonth() > 9 ? date.getMonth() : '0' + date.getMonth().toString();
-      const day = date.getDate() > 9 ? date.getDate() : '0' + date.getDate().toString();
-
-      return day + '.' + month + '.' + date.getFullYear();
+      return this.dateStringPipe.transform(value);
+    },
+    'Is active': (value) => {
+      return this.booleanPipe.transform(value);
     }
   };
 
-  constructor(private service: BackendSimpleCommunicationService) {}
+  constructor(private service: BackendSimpleCommunicationService,
+              private booleanPipe: BooleanIconPipe,
+              private dateStringPipe: SimpleDateStringPipe) {
+  }
 
   ngOnInit() {
     this.service.getClients().subscribe((response) => {

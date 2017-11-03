@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {BackendSimpleCommunicationService} from '../../../shared/backend-communication/backend-simple-communication.service';
 import {Router, ActivatedRoute, Params} from '@angular/router';
+import {BooleanIconPipe} from "../../../shared/boolean-icon/boolean-icon.pipe";
 
 @Component({
   selector: 'app-application',
@@ -19,14 +20,25 @@ export class ApplicationComponent implements OnInit {
     'Is activated'
   ];
 
-  private order = [
+  order = [
     'number',
     'clientName',
     'isActive',
     'isActivated'
   ];
 
-  constructor(private service: BackendSimpleCommunicationService, private activatedRoute: ActivatedRoute) {
+  callbacks = {
+    'Is activated': (value) => {
+      return this.booleanPipe.transform(value);
+    },
+    'Is active': (value) => {
+      return this.booleanPipe.transform(value);
+    }
+  };
+
+  constructor(private service: BackendSimpleCommunicationService,
+              private booleanPipe: BooleanIconPipe,
+              private activatedRoute: ActivatedRoute) {
   }
 
   ngOnInit() {

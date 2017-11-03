@@ -25,9 +25,9 @@ export class LoginComponent {
   }
 
   login() {
+    this.submitted = true;
     if (this.loginForm.valid) {
       this.isValid$ = this.service.login(this.loginForm.value);
-      this.submitted = true;
     }
   }
 

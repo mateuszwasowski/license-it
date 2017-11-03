@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
+import {ReactiveFormsModule} from '@angular/forms';
 import {FormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 
@@ -15,6 +16,7 @@ import { GroupManageComponent } from './group-manage/group-manage.component';
   imports: [
     CommonModule,
     SharedModule,
+    ReactiveFormsModule,
     FormsModule,
     RouterModule,
     AppUxModule
