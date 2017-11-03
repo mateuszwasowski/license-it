@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {BackendSimpleCommunicationService} from '../../../shared/backend-communication/backend-simple-communication.service';
 import {Router, ActivatedRoute, Params} from '@angular/router';
-import {BooleanIconPipe} from "../../../shared/boolean-icon/boolean-icon.pipe";
+import {BooleanIconPipe} from '../../../shared/boolean-icon/boolean-icon.pipe';
 
 @Component({
   selector: 'app-application',

@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
+import {ReactiveFormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 
 import {AppUxModule} from '../app-ux/app-ux.module';
@@ -18,12 +19,15 @@ import {ApplicationComponent} from './licenses/application/application.component
 import {ClientFormComponent} from './clients/client-form/client-form.component';
 import {SingleLicenseComponent} from './licenses/single-license/single-license.component';
 import {SingleLicenseDetailsComponent} from './licenses/single-license-details/single-license-details.component';
+import {GroupsComponent} from './account/groups/groups.component';
+import {ChangePasswordComponent} from './account/change-password/change-password.component';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
     FormsModule,
+    ReactiveFormsModule,
     AppUxModule,
     SharedModule,
     GroupModule
@@ -37,7 +41,9 @@ import {SingleLicenseDetailsComponent} from './licenses/single-license-details/s
     ApplicationComponent,
     ClientFormComponent,
     SingleLicenseComponent,
-    SingleLicenseDetailsComponent
+    SingleLicenseDetailsComponent,
+    GroupsComponent,
+    ChangePasswordComponent
   ],
   exports: [
     IndexComponent,

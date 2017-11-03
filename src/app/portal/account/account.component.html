@@ -1,1 +1,19 @@
-Account managment
+<div class="panel-header">
+  <img src="assets/icons/3.png">
+  <span class="label">Account management</span>
+</div>
+
+<ul class="nav nav-tabs" role="tablist">
+  <li role="presentation" [routerLinkActive]="'active'">
+    <a [routerLink]="['/panel', 'account', 'groups']">My groups</a>
+  </li>
+  <li role="presentation" [routerLinkActive]="'active'">
+    <a [routerLink]="['/panel', 'account', 'password']">Change password</a>
+  </li>
+</ul>
+
+<div class="account-options">
+  <router-outlet>
+
+  </router-outlet>
+</div>

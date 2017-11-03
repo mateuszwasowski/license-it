@@ -3,7 +3,7 @@ import { MenuElementClass } from './menu-element/menu-element.class';
 export const LeftMenuData: Array<MenuElementClass> = [
   {
     header: 'Account',
-    route: 'account',
+    route: 'account/groups',
     icon: 'assets/icons/accounticon.svg'
   },
   {

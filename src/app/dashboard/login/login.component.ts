@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {AuthenticationService} from '../../shared/authentication/authentication.service';
-import {Observable} from "rxjs/Observable";
-import {FormGroup, FormControl} from "@angular/forms";
+import {Observable} from 'rxjs/Observable';
+import {FormGroup, FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-login',

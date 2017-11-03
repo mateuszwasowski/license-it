@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {BackendSimpleCommunicationService} from '../../shared/backend-communication/backend-simple-communication.service';
-import {BooleanIconPipe} from "../../shared/boolean-icon/boolean-icon.pipe";
-import {SimpleDateStringPipe} from "../../shared/simple-date-string/simple-date-string.pipe";
+import {BooleanIconPipe} from '../../shared/boolean-icon/boolean-icon.pipe';
+import {SimpleDateStringPipe} from '../../shared/simple-date-string/simple-date-string.pipe';
 
 @Component({
   selector: 'app-clients',

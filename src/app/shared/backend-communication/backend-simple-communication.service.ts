@@ -4,7 +4,7 @@ import {Http, Headers, RequestOptions} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
-import {UserService} from "../user/user.service";
+import {UserService} from '../user/user.service';
 
 @Injectable()
 export class BackendSimpleCommunicationService {
@@ -13,7 +13,7 @@ export class BackendSimpleCommunicationService {
 
   postObject(url, data) {
     const headers = this.prepareAuthorizationHeader();
-    headers.append('Content-Type', 'application/json')
+    headers.append('Content-Type', 'application/json');
     const options = new RequestOptions({headers: headers});
 
     return this.post(url, data, options);
@@ -21,7 +21,7 @@ export class BackendSimpleCommunicationService {
 
   editObject(url, data) {
     const headers = this.prepareAuthorizationHeader();
-    headers.append('Content-Type', 'application/json')
+    headers.append('Content-Type', 'application/json');
     const options = new RequestOptions({headers: headers});
 
     return this.put(url, data, options);

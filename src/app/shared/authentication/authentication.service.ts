@@ -3,7 +3,7 @@ import {Router} from '@angular/router';
 import {Observable, Subject} from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import {BackendSimpleCommunicationService} from '../backend-communication/backend-simple-communication.service';
-import {UserService} from "../user/user.service";
+import {UserService} from '../user/user.service';
 
 @Injectable()
 export class AuthenticationService {
