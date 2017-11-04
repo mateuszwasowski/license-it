@@ -1,6 +1,6 @@
 <app-single-choose-container [header]="'Login'">
   <form name="form" (submit)="login()" [formGroup]="loginForm">
-    <div class="errors" *ngIf="!(isValid$ | async)">
+    <div class="errors" *ngIf="!isValid$">
       <div class="bg-primary">Invalid username or password.</div>
     </div>
     <div class="errors" *ngIf="!loginForm.valid && submitted">
@@ -10,7 +10,7 @@
       <label for="username">Username</label>
       <input id="username"
              type="text"
-             class="form-control"
+             class="form-control input-box"
              name="username"
              formControlName="username"
              required/>
@@ -19,7 +19,7 @@
       <label for="password">Password</label>
       <input id="password"
              type="password"
-             class="form-control"
+             class="form-control input-box"
              name="password"
              formControlName="password"
              required/>
