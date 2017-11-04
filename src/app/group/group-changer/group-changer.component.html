@@ -1,4 +1,4 @@
-<app-single-choose-container [header]="'Set your current group'">
+<app-single-choose-container [header]="'Select group'">
   <form name="form" (ngSubmit)="changeGroup()">
     <div class="form-group">
       <label for="group">Group</label>
@@ -13,7 +13,7 @@
         </option>
       </select>
     </div>
-    <button class="custom-btn submit-form-btn">Submit</button>
-    <button class="custom-btn submit-form-btn" [routerLink]="['/group', 'new']">Crete new group</button>
+    <button class="custom-btn submit-form-btn">Log in</button>
+    <button class="custom-btn submit-form-btn" [routerLink]="['/group', 'new']">Create</button>
   </form>
 </app-single-choose-container>
