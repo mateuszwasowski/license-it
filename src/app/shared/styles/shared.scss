@@ -8,6 +8,9 @@ $color3: #447604;
 $color4: #30343F;
 $color5: #6CC551;
 
+$error-color: #ff3333;
+$success-color: yellowgreen;
+
 * {
  font-family: 'Lato', sans-serif !important;
  text-decoration: none !important;
@@ -29,7 +32,6 @@ $color5: #6CC551;
     opacity: .7;
   }
 }
-
 
 .panel-header1   {
   display: block;

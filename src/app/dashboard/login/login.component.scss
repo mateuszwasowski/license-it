@@ -54,6 +54,15 @@
   }
 }
 
-.errors > div{
+.errors > div {
   padding: 10px;
+  margin-bottom: 10px;
+}
+
+.danger {
+  background-color: $error-color;
+  border-radius: 5px;
+}
+.success {
+  background-color: $success-color;
 }

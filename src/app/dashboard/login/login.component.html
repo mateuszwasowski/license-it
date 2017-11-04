@@ -1,10 +1,10 @@
 <app-single-choose-container [header]="'Login'">
   <form name="form" (submit)="login()" [formGroup]="loginForm">
     <div class="errors" *ngIf="!isValid$">
-      <div class="bg-primary">Invalid username or password.</div>
+      <div class="danger">Invalid username or password.</div>
     </div>
     <div class="errors" *ngIf="!loginForm.valid && submitted">
-      <div class="bg-primary">All fields are required.</div>
+      <div class="danger">All fields are required.</div>
     </div>
     <div class="form-group">
       <label for="username">Username</label>
