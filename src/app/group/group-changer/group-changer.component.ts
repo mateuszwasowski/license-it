@@ -30,7 +30,7 @@ export class GroupChangerComponent implements OnInit {
       value: '4'
     },
     {
-      name: 'Testowa5LOOOOOOOOOOOOOOOOOOONNNGG',
+      name: 'Testowa5',
       value: '5'
     }
   ];

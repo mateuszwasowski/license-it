@@ -4,7 +4,7 @@ $logoAndTitleMargin: 5px;
 
 :host {
   display: block;
-  background-color: lighten($color4, 10%);
+  background-color: $color4;
   height: 100%;
 }
 

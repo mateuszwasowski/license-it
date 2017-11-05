@@ -5,11 +5,18 @@
   margin: 5px;
   border-bottom: 1px solid rgba(256,256,256,0.5);
 }
-.dynamicTile .col-sm-3.col-xs-4{
-    padding:5px;
+
+.dynamicTile .col-sm-3.col-xs-4 {
+  padding:5px;
 }
-.dynamicTile .col-sm-4.col-xs-8{
-    padding:5px;
+
+.dynamicTile .col-sm-4.col-xs-8 {
+  padding:5px;
+}
+
+.tile {
+  padding: 2px;
+  background: white;
 }
 
 .tile-label {
