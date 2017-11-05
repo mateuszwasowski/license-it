@@ -1,7 +1,11 @@
 @import "../styles/shared";
 
-.single-choose-container {
+
+html {
   background: $menuBackground;
+}
+
+.single-choose-container {
   height: 100%;
   padding-top: 100px;
   .logo-container{
@@ -18,6 +22,7 @@
   .container-body{
     background: lighten($color4, 20%);
     margin-top: 20px;
+    margin-bottom: 50px;
     padding: 0px;
 
     .header-container {

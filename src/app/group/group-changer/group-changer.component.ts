@@ -10,8 +10,28 @@ import {Router} from '@angular/router';
 export class GroupChangerComponent implements OnInit {
   options = [
     {
-      name: 'Testowa',
+      name: 'Testowa0',
+      value: '0'
+    },
+    {
+      name: 'Testowa1',
       value: '1'
+    },
+    {
+      name: 'Testowa2',
+      value: '2'
+    },
+    {
+      name: 'Testowa3',
+      value: '3'
+    },
+    {
+      name: 'Testowa4',
+      value: '4'
+    },
+    {
+      name: 'Testowa5LOOOOOOOOOOOOOOOOOOONNNGG',
+      value: '5'
     }
   ];
 
