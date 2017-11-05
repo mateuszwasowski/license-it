@@ -6,6 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./single-choose-container.component.scss']
 })
 export class SingleChooseContainerComponent implements OnInit {
+  darkBody = true;
   @Input()
   header: string;
 
