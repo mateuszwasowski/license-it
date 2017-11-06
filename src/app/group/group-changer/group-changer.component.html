@@ -1,43 +1,33 @@
 <app-single-choose-container [header]="'Select group'">
-  <form name="form" (ngSubmit)="changeGroup()">
-    <div class='row'>
-      <div class='header-label'>
-        <label for="group">Sign in to existing group</label>
-      </div>
-      <div class="form-group">
-        <div *ngFor="let option of options" class="dynamicTile">
-          <div class="col-sm-3 col-xs-4">
-            <div class="tile group-tile">
-              <input name="group" [(ngModel)]="group" value="{{ option.value }}" type='image' src="/assets/icons/default-group-icon.png" class="img-responsive"/>
-              <div class="tile-label">{{ option.name }}</div>
-            </div>
-          </div>
-        </div>
-      </div>
+  <div class="row">
+    <div class='header-label'>
+      <span>Sign in to existing group</span>
     </div>
-    <div class='row'>
-      <div class='header-label'>
-        <label for="group">Create a new group</label>
-      </div>
-      <div class="dynamicTile">
+    <div class="form-group">
+      <div *ngFor="let option of options" class="dynamicTile">
         <div class="col-sm-3 col-xs-4">
-          <div class="tile">
-            <input type='image' [routerLink]="['/group', 'new']" src="/assets/icons/plus.png" class="img-responsive"/>
+          <div class="tile group-tile">
+            <button (click)="submitGroup(option.value)">
+              <img src="/assets/icons/default-group-icon.png" class="img-responsive"/>
+              <div class="tile-label">{{ option.name }}</div>
+            </button>
           </div>
         </div>
       </div>
     </div>
-
-    <select id="group"
-            type="text"
-            name="group"
-            class="form-control"
-            [(ngModel)]="group"
-            required>
-      <option value="{{ option.value }}" *ngFor="let option of options">
-        {{ option.name }}
-      </option>
-    </select>
-    <button class="custom-btn submit-form-btn">Log in</button>
-  </form>
+  </div>
+  <div class="row">
+    <div class="header-label">
+      <span>Create a new group</span>
+    </div>
+    <div class="dynamicTile">
+      <div class="col-sm-3 col-xs-4">
+        <div class="tile">
+          <button [routerLink]="['/group', 'new']">
+            <img src="/assets/icons/plus.png" class="img-responsive"/>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </app-single-choose-container>

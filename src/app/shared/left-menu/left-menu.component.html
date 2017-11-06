@@ -1,11 +1,13 @@
 <div class="row">
   <img class="menu-border" src="assets/left-menu/top.png">
-  <img class="logo" src="assets/logo/logo.png">
-  <a role="button" class="team-header" routerLink="../panel" routerLinkActive="active">
-    <img src="assets/icons/team-label.png">
-    <span class="team-label">Team</span>
+  <a role="button" [routerLink]="['/panel']">
+    <img class="logo" src="assets/logo/logo.png">
   </a>
-  <ul >
+  <a role="button" class="team-header" [routerLink]="['/group']" routerLinkActive="active">
+    <img src="assets/icons/team-label.png">
+    <span class="team-label">Team {{ teamName }}</span>
+  </a>
+  <ul>
     <li *ngFor="let element of data;">
       <app-menu-element
         [header]="element.header"
@@ -15,7 +17,7 @@
     </li>
     <li>
       <app-menu-element [header]="'Logout'" (click)="logout()" class="logout"
-      [icon]="'assets/icons/logouticon.svg'"></app-menu-element>
+                        [icon]="'assets/icons/logouticon.svg'"></app-menu-element>
     </li>
   </ul>
   <img class="menu-border menu-border-bottom" src="assets/left-menu/bottom.png">

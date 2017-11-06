@@ -62,6 +62,12 @@ export class BackendSimpleCommunicationService {
     return this.get(url, this.getRequestOptionsWithAuthorization());
   }
 
+  getUserGroups() {
+    const url = this.urlCreator.getUserGroup(1);
+    console.log(this.userService.getUserData());
+    return this.get(url, this.getRequestOptionsWithAuthorization());
+  }
+
   private prepareAuthorizationHeader() {
     const string = `Bearer ${this.userService.getToken()}`;
     return new Headers({'Authorization': string});

@@ -43,4 +43,9 @@ export class CreateLinkService {
     const data = ['api/Group/get', group];
     return this.prepareLink(data);
   }
+
+  public getUserGroup(user) {
+    const data = ['api/UserGroup/GetByIdUser/', user];
+    return this.prepareLink(data);
+  }
 }

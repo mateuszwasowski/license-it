@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {UserService} from '../../shared/user/user.service';
 import {Router} from '@angular/router';
+import {BackendSimpleCommunicationService} from "../../shared/backend-communication/backend-simple-communication.service";
 
 @Component({
   selector: 'app-group-changer',
@@ -35,18 +36,20 @@ export class GroupChangerComponent implements OnInit {
     }
   ];
 
-  group: string;
-
-  constructor(private service: UserService, private router: Router) {
+  constructor(private userService: UserService, private router: Router,
+              private backendService: BackendSimpleCommunicationService) {
   }
 
   ngOnInit() {
+    this.backendService.getUserGroups().subscribe(response => {
+
+    });
   }
 
-  changeGroup() {
-    const number = Number(this.group);
+  submitGroup(value) {
+    const number = Number(value);
     if (!isNaN(number)) {
-      this.service.setGroup(number);
+      this.userService.setGroup(number);
       this.router.navigate(['panel']);
     }
   }

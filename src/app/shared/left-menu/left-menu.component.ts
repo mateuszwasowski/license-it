@@ -12,9 +12,11 @@ import {LeftMenuData} from './left-menu.data';
 })
 export class LeftMenuComponent {
   data: Array<MenuElementClass>;
+  teamName: string;
 
   constructor(private authService: AuthenticationService, private userService: UserService) {
     this.data = LeftMenuData;
+    this.teamName = userService.getGroup();
   }
 
   logout() {
