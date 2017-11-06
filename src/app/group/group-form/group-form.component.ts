@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
+import {BackendSimpleCommunicationService} from "../../shared/backend-communication/backend-simple-communication.service";
 
 @Component({
   selector: 'app-group-form',
@@ -9,6 +10,8 @@ import {FormControl, FormGroup} from '@angular/forms';
 export class GroupFormComponent implements OnInit {
   groupForm: FormGroup;
 
+  constructor(private backendService: BackendSimpleCommunicationService){}
+
   ngOnInit() {
     this.groupForm = new FormGroup({
       name: new FormControl()
@@ -16,8 +19,10 @@ export class GroupFormComponent implements OnInit {
   }
 
   addGroup() {
-    if (this.groupForm) {
+    if (this.groupForm.valid) {
+      this.backendService.addGroup().subscribe(() => {
 
+      })
     }
   }
 }

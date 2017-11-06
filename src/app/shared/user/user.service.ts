@@ -5,6 +5,7 @@ import {BackendSimpleCommunicationService} from '../backend-communication/backen
 export class UserService {
   private storageName = 'userGroupStorage';
   private userTokenStorage = 'currentUser';
+  private userData: any;
 
   getGroup() {
     return localStorage.getItem(this.storageName);
@@ -31,7 +32,10 @@ export class UserService {
   }
 
   getUserData() {
-    return this.parseJwt(this.getToken());
+    if (!this.userData) {
+      this.userData = this.parseJwt(this.getToken());
+    }
+    return this.userData;
   }
 
   private parseJwt(token) {

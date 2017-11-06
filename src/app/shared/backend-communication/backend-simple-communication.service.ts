@@ -63,9 +63,18 @@ export class BackendSimpleCommunicationService {
   }
 
   getUserGroups() {
-    const url = this.urlCreator.getUserGroup(1);
-    console.log(this.userService.getUserData());
+    const user = this.userService.getUserData().id;
+
+    const url = this.urlCreator.getUserGroup(user);
     return this.get(url, this.getRequestOptionsWithAuthorization());
+  }
+
+  addGroup(name) {
+    const user = this.userService.getUserData().id;
+    const data = {user, name};
+    const url = this.urlCreator.getGroupAddition();
+
+    return this.postObject(url, data);
   }
 
   private prepareAuthorizationHeader() {
