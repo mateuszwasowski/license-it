@@ -31,12 +31,13 @@
   .errors{
     margin-top: 10px;
     .danger{
-      background-color: indianred;
+      background-color: $error-color;
     }
     .success{
-      background-color: yellowgreen;
+      background-color: $success-color;
     }
   }
+
   .panel-body {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;

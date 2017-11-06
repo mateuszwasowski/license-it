@@ -1,12 +1,15 @@
-$menuBackground: #2C2626;
+$menuBackground: #30343F;
 $activeMenuHighlight: #1B1717;
-
+$logo-color: #7d961e;
 /* RGB PALLETE */
 $color1: rgba(185, 196, 16, 1);
 $color2: rgba(216, 247, 147, 1);
-$color3: rgba(160, 202, 146, 1);
-$color4: rgba(117, 176, 156, 1);
-$color5: rgba(153, 134, 80, 1);
+$color3: #447604;
+$color4: #30343F;
+$color5: #6CC551;
+
+$error-color: #ff3333;
+$success-color: yellowgreen;
 
 * {
  font-family: 'Lato', sans-serif !important;
@@ -30,7 +33,6 @@ $color5: rgba(153, 134, 80, 1);
   }
 }
 
-
 .panel-header1   {
   display: block;
   border-top: 2px solid rgba(0,0,1,0.1);
@@ -48,6 +50,10 @@ $color5: rgba(153, 134, 80, 1);
     padding: 4px;
     opacity: .7;
   }
+}
+
+.input-box {
+  background-color: lighten($color4, 70%);
 }
 
 .custom-btn {

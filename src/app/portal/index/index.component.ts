@@ -6,30 +6,6 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./index.component.scss']
 })
 export class IndexComponent implements OnInit {
-    data = [
-        [
-            'Test',
-            'Test',
-            'test'
-        ],
-        [
-            'Test',
-            'Test',
-            'test'
-        ],
-        [
-            'Test',
-            'Test',
-            'test'
-        ]
-    ];
-
-    header = [
-        'Test',
-        'Test',
-        'test'
-    ];
-
     constructor() {
     }
 
