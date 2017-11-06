@@ -1,4 +1,5 @@
 import {Component, Input, OnChanges} from '@angular/core';
+import {DomSanitizer} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-data-table',
@@ -13,6 +14,8 @@ export class DataTableComponent implements OnChanges {
   @Input() callbacks = {};
   @Input() order = [];
 
+  constructor(private _sanitizer: DomSanitizer) {}
+
   ngOnChanges() {
     if (this.order.length > 0) {
       this.data = this.prepareData();
@@ -22,7 +25,7 @@ export class DataTableComponent implements OnChanges {
   getValue(index, element) {
     const name = this.header[index - 1];
     if (name && this.callbacks[name]) {
-      return this.callbacks[name](element);
+      return this._sanitizer.bypassSecurityTrustHtml(this.callbacks[name](element));
     }
 
     return element;

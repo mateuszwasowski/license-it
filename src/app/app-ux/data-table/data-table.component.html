@@ -8,7 +8,7 @@
   </thead>
   <tbody>
     <tr *ngFor="let object of data;let i = index"
-        [routerLink]="singleElementUrl !== false ? singleElementUrl + '/' + object[0] : null">
+        [routerLink]="singleElementUrl ? singleElementUrl + '/' + object[0] : null">
       <td *ngIf="idColumn">{{ (i + 1) }}</td>
       <td *ngFor="let element of object; let name = index" [innerHtml]="getValue(name, element)">
       </td>

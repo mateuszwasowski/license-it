@@ -7,7 +7,7 @@
       <div *ngFor="let option of options" class="dynamicTile">
         <div class="col-sm-3 col-xs-4">
           <div class="tile group-tile">
-            <button (click)="submitGroup(option.value)">
+            <button (click)="submitGroup(option)">
               <img src="/assets/icons/default-group-icon.png" class="img-responsive"/>
               <div class="tile-label">{{ option.name }}</div>
             </button>
