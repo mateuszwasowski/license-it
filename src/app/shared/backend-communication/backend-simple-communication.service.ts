@@ -70,7 +70,8 @@ export class BackendSimpleCommunicationService {
   }
 
   addGroup(name) {
-    const data = {name};
+    const idUserCreator = this.userService.getUserData().userId;
+    const data = {name, idUserCreator};
     const url = this.urlCreator.getGroupAddition();
 
     return this.postObject(url, data);

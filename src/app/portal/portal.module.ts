@@ -21,6 +21,7 @@ import {SingleLicenseComponent} from './licenses/single-license/single-license.c
 import {SingleLicenseDetailsComponent} from './licenses/single-license-details/single-license-details.component';
 import {GroupsComponent} from './account/groups/groups.component';
 import {ChangePasswordComponent} from './account/change-password/change-password.component';
+import {ApplicationFormComponent} from './licenses/application/application-form/application-form.component';
 
 @NgModule({
   imports: [
@@ -43,7 +44,8 @@ import {ChangePasswordComponent} from './account/change-password/change-password
     SingleLicenseComponent,
     SingleLicenseDetailsComponent,
     GroupsComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    ApplicationFormComponent
   ],
   exports: [
     IndexComponent,

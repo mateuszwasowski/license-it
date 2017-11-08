@@ -5,9 +5,8 @@
 <div class="panel-header1">
   <img src="assets/icons/4.png">
   <span class="label">Licenses list for application <span>{{ appName }}</span></span>
+  <app-form-buttons [creationLink]="singleElement"></app-form-buttons>
 </div>
-<br>
-<app-form-buttons [creationLink]="singleElement"></app-form-buttons>
 <app-data-table [data]="data"
                 [header]="header"
                 [idColumn]="'true'"

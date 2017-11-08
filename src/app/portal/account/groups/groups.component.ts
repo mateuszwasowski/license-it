@@ -14,7 +14,7 @@ export class GroupsComponent implements OnInit {
   ];
 
   order = [
-    'idGroup',
+    'groupName',
     'id',
   ];
 
