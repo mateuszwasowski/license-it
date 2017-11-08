@@ -77,14 +77,6 @@ export class BackendSimpleCommunicationService {
     return this.postObject(url, data);
   }
 
-  addUserToGroup(idGroup) {
-    const idUser = this.userService.getUserData().id;
-    const data = {idUser, idGroup};
-    const url = this.urlCreator.getUserGroupAddition();
-
-    return this.postObject(url, data);
-  }
-
   private prepareAuthorizationHeader() {
     const string = `Bearer ${this.userService.getToken()}`;
     return new Headers({'Authorization': string});
