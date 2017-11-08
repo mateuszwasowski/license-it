@@ -20,9 +20,11 @@ export class GroupFormComponent implements OnInit {
 
   addGroup() {
     if (this.groupForm.valid) {
-      this.backendService.addGroup().subscribe(() => {
-
-      })
+      this.backendService.addGroup(this.groupForm.controls.name.value).subscribe((data) => {
+        this.backendService.addUserToGroup(data['data']).subscribe((resp) => {
+          console.log('added', resp);
+        });
+      });
     }
   }
 }

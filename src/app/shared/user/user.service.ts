@@ -7,12 +7,12 @@ export class UserService {
   private userTokenStorage = 'currentUser';
   private userData: any;
 
-  getGroup() {
-    return localStorage.getItem(this.storageName);
+  getGroup(): any {
+    return JSON.parse(localStorage.getItem(this.storageName));
   }
 
-  setGroup(value: number) {
-    localStorage.setItem(this.storageName, value.toString());
+  setGroup(value) {
+    localStorage.setItem(this.storageName, JSON.stringify(value));
   }
 
   removeGroup() {

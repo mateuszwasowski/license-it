@@ -16,7 +16,7 @@ export class LeftMenuComponent {
 
   constructor(private authService: AuthenticationService, private userService: UserService) {
     this.data = LeftMenuData;
-    this.teamName = userService.getGroup();
+    this.teamName = userService.getGroup().groupName;
   }
 
   logout() {

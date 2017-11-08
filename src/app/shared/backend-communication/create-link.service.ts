@@ -24,8 +24,8 @@ export class CreateLinkService {
     return this.prepareLink(data);
   }
 
-  public getApplications() {
-    const data = 'api/Applications/Get';
+  public getApplications(groupId) {
+    const data = ['api/Applications/GetByGroup', groupId];
     return this.prepareLink(data);
   }
 
@@ -34,8 +34,8 @@ export class CreateLinkService {
     return this.prepareLink(data);
   }
 
-  public getClients() {
-    const data = 'api/Clients/Get';
+  public getClients(groupId) {
+    const data = ['api/Clients/GetByGroup', groupId];
     return this.prepareLink(data);
   }
 
@@ -51,6 +51,11 @@ export class CreateLinkService {
 
   getGroupAddition() {
     const data = 'api/Groups/Add';
+    return this.prepareLink(data);
+  }
+
+  getUserGroupAddition() {
+    const data = 'api/UserGroup/Add';
     return this.prepareLink(data);
   }
 }

@@ -43,12 +43,12 @@ export class BackendSimpleCommunicationService {
   }
 
   getApplications() {
-    const url = this.urlCreator.getApplications();
+    const url = this.urlCreator.getApplications(this.userService.getGroup().idGroup);
     return this.get(url, this.getRequestOptionsWithAuthorization());
   }
 
   getClients() {
-    const url = this.urlCreator.getClients();
+    const url = this.urlCreator.getClients(this.userService.getGroup().idGroup);
     return this.get(url, this.getRequestOptionsWithAuthorization());
   }
 
@@ -63,16 +63,23 @@ export class BackendSimpleCommunicationService {
   }
 
   getUserGroups() {
-    const user = this.userService.getUserData().id;
+    const user = this.userService.getUserData().userId;
 
     const url = this.urlCreator.getUserGroup(user);
     return this.get(url, this.getRequestOptionsWithAuthorization());
   }
 
   addGroup(name) {
-    const user = this.userService.getUserData().id;
-    const data = {user, name};
+    const data = {name};
     const url = this.urlCreator.getGroupAddition();
+
+    return this.postObject(url, data);
+  }
+
+  addUserToGroup(idGroup) {
+    const idUser = this.userService.getUserData().id;
+    const data = {idUser, idGroup};
+    const url = this.urlCreator.getUserGroupAddition();
 
     return this.postObject(url, data);
   }
