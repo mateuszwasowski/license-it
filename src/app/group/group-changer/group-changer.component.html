@@ -8,8 +8,10 @@
         <div class="col-sm-3 col-xs-4">
           <div class="tile group-tile">
             <button (click)="submitGroup(option)">
-              <img src="/assets/icons/default-group-icon.png"/>
-              <div class="tile-label">{{ option.groupName }}</div>
+              <div class="img-container">
+                <img src="/assets/logo/logo.png" class="img-responsive"/>
+              </div>
+              <div>{{ option.groupName }}</div>
             </button>
           </div>
         </div>
@@ -22,8 +24,8 @@
     </div>
     <div class="dynamicTile">
       <div class="col-sm-3 col-xs-4">
-        <div class="tile">
-          <button [routerLink]="['/group', 'new']">
+        <div class="tile ">
+          <button [routerLink]="['/group', 'new']" class="create-new-group">
             <img src="/assets/icons/plus.png" class="img-responsive"/>
           </button>
         </div>
