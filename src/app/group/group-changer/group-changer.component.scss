@@ -11,18 +11,37 @@
 }
 
 .tile {
-  border: 2px solid white;
-  height: 167px;
+  //border: 2px solid white;
+  //height: 167px;
   button {
     border: none;
     margin: 0;
     padding: 0;
     height: 100%;
-    img {
-      height: 100%;
-      width: 100%;
+    width: 100%;
+    background: #4b4e58;
+    div{
+      padding: 0 5px 5px 5px;
+      height: 50px;
+      color: #bdbec2;
     }
+    .img-container{
+      height: 75px;
+      width: 100%;
+
+      img {
+        margin: 0 auto;
+        padding: 28px 10px 10px 10px;
+      }
+    }
+    
   }
+  .create-new-group{
+      background: transparent; 
+      img {
+        max-height: 50px;
+      }
+    }
 }
 
 .tile-label {
