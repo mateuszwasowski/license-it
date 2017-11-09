@@ -4,7 +4,6 @@ import {AuthenticationService} from '../authentication/authentication.service';
 import {UserService} from '../user/user.service';
 import {LeftMenuData} from './left-menu.data';
 import {BackendSimpleCommunicationService} from "../backend-communication/backend-simple-communication.service";
-import {Observable} from "rxjs/Observable";
 
 @Component({
   selector: 'app-left-menu',
@@ -15,17 +14,17 @@ import {Observable} from "rxjs/Observable";
 export class LeftMenuComponent implements OnInit {
   data: Array<MenuElementClass>;
   teamName: string;
-  isAdmin: boolean;
 
   constructor(private authService: AuthenticationService, private userService: UserService,
               private backendService: BackendSimpleCommunicationService) {
-    this.data = LeftMenuData;
     this.teamName = userService.getGroup().groupName;
   }
 
   ngOnInit() {
     this.backendService.isCurrentGroupAdmin().subscribe(isAdmin => {
-      this.isAdmin = isAdmin;
+      this.data = LeftMenuData;
+      const index = this.data.findIndex((a: MenuElementClass) => a.header === 'Group');
+      this.data[index]['conditional'] = !isAdmin;
       this.userService.insertToUserData('isGroupAdmin', isAdmin);
     });
   }

@@ -15,6 +15,9 @@ export class MenuElementComponent implements OnInit {
   @Input()
   icon: string;
 
+  @Input()
+  conditional: boolean;
+
   constructor() { }
 
   ngOnInit() {

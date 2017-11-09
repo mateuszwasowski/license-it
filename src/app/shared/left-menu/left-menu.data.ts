@@ -7,14 +7,14 @@ export const LeftMenuData: Array<MenuElementClass> = [
     icon: 'assets/icons/accounticon.svg'
   },
   {
-    header: 'Licenses',
-    route: 'licenses',
-    icon: 'assets/icons/permissionsicon.svg'
-  },
-  {
     header: 'Clients',
     route: 'clients',
     icon: 'assets/icons/groupicon1.svg'
+  },
+  {
+    header: 'Licenses',
+    route: 'licenses',
+    icon: 'assets/icons/permissionsicon.svg'
   },
   {
     header: 'Group',

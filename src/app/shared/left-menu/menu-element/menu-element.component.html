@@ -1,6 +1,7 @@
 <a role="button" [routerLink]="route"
    routerLinkActive #rla="routerLinkActive"
-   [ngClass]="{active: rla.isActive}">
+   [ngClass]="{active: rla.isActive}" *ngIf="!conditional">
   <img src="{{ icon }}">
   <span>{{ header }}</span>
+  {{ conditional }}
 </a>
