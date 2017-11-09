@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {UserService} from "../../../shared/user/user.service";
 
 @Component({
   selector: 'app-client-form',
@@ -7,7 +8,7 @@ import {Component} from '@angular/core';
 })
 export class ClientFormComponent {
 
-  public categoryForm: any = {
+  public clientForm: any = {
     headers: {
       add: 'Add a new client.',
       edit: 'Edit client'
@@ -28,5 +29,10 @@ export class ClientFormComponent {
         type: 'boolean',
       }
     ],
+    constData: {
+      idGroup: this.userService.getGroup().idGroup
+    }
   };
+
+  constructor(private userService: UserService) { }
 }

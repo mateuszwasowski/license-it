@@ -19,6 +19,7 @@ export const LeftMenuData: Array<MenuElementClass> = [
   {
     header: 'Group',
     route: 'group',
-    icon: 'assets/icons/groupicon1.svg'
+    icon: 'assets/icons/groupicon1.svg',
+    conditional: true
   }
 ];

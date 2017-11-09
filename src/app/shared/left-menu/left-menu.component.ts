@@ -21,8 +21,9 @@ export class LeftMenuComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.data = LeftMenuData;
+
     this.backendService.isCurrentGroupAdmin().subscribe(isAdmin => {
-      this.data = LeftMenuData;
       const index = this.data.findIndex((a: MenuElementClass) => a.header === 'Group');
       this.data[index]['conditional'] = !isAdmin;
       this.userService.insertToUserData('isGroupAdmin', isAdmin);
