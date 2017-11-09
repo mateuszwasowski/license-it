@@ -1,6 +1,8 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
+import {TooltipModule} from "ngx-tooltip";
+
 import {LeftMenuComponent} from './left-menu/left-menu.component';
 import {MenuElementComponent} from './left-menu/menu-element/menu-element.component';
 
@@ -16,7 +18,8 @@ import {SimpleDateStringPipe} from './simple-date-string/simple-date-string.pipe
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    TooltipModule
   ],
   declarations: [LeftMenuComponent, MenuElementComponent, SingleChooseContainerComponent, BooleanIconPipe, SimpleDateStringPipe],
   exports: [LeftMenuComponent, SingleChooseContainerComponent],

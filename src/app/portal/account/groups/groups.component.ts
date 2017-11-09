@@ -9,20 +9,12 @@ import {BackendSimpleCommunicationService} from "../../../shared/backend-communi
 export class GroupsComponent implements OnInit {
   data = [];
   header = [
-    'Name',
-    'Action'
+    'Name'
   ];
 
   order = [
     'groupName',
-    'id',
   ];
-
-  callbacks = {
-    'Action': (value) => {
-      return `<a class="btn btn-danger" (click)="removeFromGroup($event, ${value})">Remove from group</a>`;
-    }
-  };
 
   constructor(private backendService: BackendSimpleCommunicationService) {
   }
@@ -31,10 +23,5 @@ export class GroupsComponent implements OnInit {
     this.backendService.getUserGroups().subscribe(response => {
       this.data = response.data;
     });
-  }
-
-  removeFromGroup($event, id) {
-    $event.stopPropagation();
-    console.log(id);
   }
 }

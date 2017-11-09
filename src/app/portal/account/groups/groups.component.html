@@ -1,1 +1,5 @@
-<app-data-table [data]="data" [header]="header" [order]="order" [callbacks]="callbacks"></app-data-table>
+<app-data-table [data]="data" [header]="header" [order]="order">
+  <ng-template #temp let-id="id">
+    <app-group-action-button [id]="id"></app-group-action-button>
+  </ng-template>
+</app-data-table>

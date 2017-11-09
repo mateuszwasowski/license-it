@@ -4,8 +4,13 @@
     <img class="logo" src="assets/logo/logo.png">
   </a>
   <a role="button" class="team-header" [routerLink]="['/group']" routerLinkActive="active">
-    <img src="assets/icons/team-label.png">
-    <span class="team-label">Team {{ teamName }}</span>
+    <div tooltip="{{ teamName }}"
+         [tooltipDisabled]="false"
+         [tooltipAnimation]="true"
+         tooltipPlacement="top">
+      <img src="assets/icons/team-label.png">
+      <span class="team-label">{{ teamName }}</span>
+    </div>
   </a>
   <ul>
     <li *ngFor="let element of data;">

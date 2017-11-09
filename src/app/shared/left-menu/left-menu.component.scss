@@ -8,28 +8,38 @@ $logoAndTitleMargin: 5px;
   height: 100%;
 }
 
-.logo{
+.logo {
   margin-left: $logoAndTitleMargin;
   width: 90%;
   height: auto;
   margin-top: 10px;
 }
 
-.team-header{
+.team-header {
   display: block;
   margin-left: $logoAndTitleMargin;
-  img{
-    height: 2em;
-    vertical-align: middle;
-    margin-bottom: 10px;
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      height: 2em;
+      vertical-align: middle;
+      width: 7px;
+    }
+    .team-label {
+      display: inline-block;
+      color: whitesmoke;
+      font-size: 2em;
+      font-weight: 900;
+      padding: 4px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      width: calc(100% - 12px);
+    }
   }
-  .team-label{
-    display: inline-block;
-    color: whitesmoke;
-    font-size: 2em;
-    font-weight: 900;
-    padding: 4px;
-  }
+
   margin-top: 10px;
 }
 
@@ -43,8 +53,8 @@ $logoAndTitleMargin: 5px;
   bottom: 0;
 }
 
-ul{
-  padding:0;
+ul {
+  padding: 0;
   li {
     list-style: none;
     color: white;

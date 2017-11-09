@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges} from '@angular/core';
+import {Component, Input, OnChanges, TemplateRef, ContentChild} from '@angular/core';
 import {DomSanitizer} from "@angular/platform-browser";
 
 @Component({
@@ -13,8 +13,10 @@ export class DataTableComponent implements OnChanges {
   @Input() singleElementUrl: string;
   @Input() callbacks = {};
   @Input() order = [];
+  @ContentChild('temp') actionTemp: TemplateRef<any>;
 
-  constructor(private _sanitizer: DomSanitizer) {}
+  constructor(private _sanitizer: DomSanitizer) {
+  }
 
   ngOnChanges() {
     if (this.order.length > 0) {
