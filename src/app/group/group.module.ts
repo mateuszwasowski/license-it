@@ -10,6 +10,7 @@ import {SharedModule} from '../shared/shared.module';
 import {GroupChangerComponent} from './group-changer/group-changer.component';
 import {GroupFormComponent} from './group-form/group-form.component';
 import {GroupGuard} from './group.guard';
+import {GroupAdminGuard} from "./group-admin.guard";
 import { GroupManageComponent } from './group-manage/group-manage.component';
 
 @NgModule({
@@ -27,7 +28,8 @@ import { GroupManageComponent } from './group-manage/group-manage.component';
     GroupManageComponent
   ],
   providers: [
-    GroupGuard
+    GroupGuard,
+    GroupAdminGuard
   ]
 })
 export class GroupModule {

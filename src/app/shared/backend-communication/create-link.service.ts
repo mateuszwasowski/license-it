@@ -30,7 +30,7 @@ export class CreateLinkService {
   }
 
   getGroup(group) {
-    const data = ['api/Group/get', group];
+    const data = ['api/Groups/GetById', group];
     return this.prepareLink(data);
   }
 
@@ -41,6 +41,11 @@ export class CreateLinkService {
 
   getGroupAddition() {
     const data = 'api/Groups/Add';
+    return this.prepareLink(data);
+  }
+
+  getApplicationsAddition() {
+    const data = 'api/Applications/Add';
     return this.prepareLink(data);
   }
 

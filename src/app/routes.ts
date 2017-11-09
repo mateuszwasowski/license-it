@@ -5,7 +5,6 @@ import {NotFoundComponent} from './dashboard/not-found/not-found.component';
 import {PortalAuthGuard} from './portal/portal-auth.guard';
 import {DashboardAuthGuard} from './dashboard/dashboard-auth.guard';
 import {GroupGuard} from './group/group.guard';
-
 import {portalRoutes} from './portal/routes';
 import {dashboardRoutes} from './dashboard/routes';
 import {groupRoutes} from './group/routes';

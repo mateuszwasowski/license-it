@@ -42,6 +42,15 @@ export class BackendSimpleCommunicationService {
     return this.post(url, body.toString(), options);
   }
 
+  isCurrentGroupAdmin() {
+    const currentGroup = this.userService.getGroup().idGroup;
+    const currentUser = this.userService.getUserData().userId;
+
+    return this.getGroup(currentGroup).map(response => {
+      return Number(response.data.idUserCreator) === Number(currentUser);
+    });
+  }
+
   getApplications() {
     const url = this.urlCreator.getApplications(this.userService.getGroup().idGroup);
     return this.get(url, this.getRequestOptionsWithAuthorization());
@@ -73,6 +82,14 @@ export class BackendSimpleCommunicationService {
     const idUserCreator = this.userService.getUserData().userId;
     const data = {name, idUserCreator};
     const url = this.urlCreator.getGroupAddition();
+
+    return this.postObject(url, data);
+  }
+
+  addApplication(name, version) {
+    const idGroup = this.userService.getGroup().idGroup;
+    const data = {name, idGroup, version};
+    const url = this.urlCreator.getApplicationsAddition();
 
     return this.postObject(url, data);
   }

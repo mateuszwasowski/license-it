@@ -8,6 +8,7 @@ import {ClientFormComponent} from './clients/client-form/client-form.component';
 import {GroupManageComponent} from '../group/group-manage/group-manage.component';
 import {accountRoutes} from './account/routes';
 import {licenseRoutes} from './licenses/routes';
+import {GroupAdminGuard} from "../group/group-admin.guard";
 
 export const portalRoutes: Routes = [
   {path: '', component: IndexComponent},
@@ -22,5 +23,5 @@ export const portalRoutes: Routes = [
   },
   {path: 'clients', component: ClientsComponent},
   {path: 'clients/add', component: ClientFormComponent},
-  {path: 'group', component: GroupManageComponent}
+  {path: 'group', component: GroupManageComponent, canActivate: [GroupAdminGuard]}
 ];

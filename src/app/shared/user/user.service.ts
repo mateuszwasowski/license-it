@@ -38,6 +38,10 @@ export class UserService {
     return this.userData;
   }
 
+  insertToUserData(field, name) {
+    this.userData[field] = name;
+  }
+
   private parseJwt(token) {
     const base64Url = token.split('.')[1];
     const base64 = base64Url.replace('-', '+').replace('_', '/');
