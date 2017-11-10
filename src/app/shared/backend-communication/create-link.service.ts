@@ -49,6 +49,11 @@ export class CreateLinkService {
     return this.prepareLink(data);
   }
 
+  getUserEdit() {
+    const data = 'api/User/Edit';
+    return this.prepareLink(data);
+  }
+
   private prepareLink(partial: string | Array<string>) {
     let array = [this.backendUrl];
     if (Array.isArray(partial)) {

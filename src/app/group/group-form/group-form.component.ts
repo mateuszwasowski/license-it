@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
-import {BackendSimpleCommunicationService} from "../../shared/backend-communication/backend-simple-communication.service";
+import {BackendSimpleCommunicationService} from '../../shared/backend-communication/backend-simple-communication.service';
 import {Observable, Subject} from 'rxjs/Rx';
-import {Router} from "@angular/router";
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-group-form',
@@ -13,7 +13,7 @@ export class GroupFormComponent implements OnInit {
   groupForm: FormGroup;
   isValid$: Observable<boolean>;
 
-  constructor(private backendService: BackendSimpleCommunicationService, private router: Router){}
+  constructor(private backendService: BackendSimpleCommunicationService, private router: Router) {}
 
   ngOnInit() {
     this.groupForm = new FormGroup({

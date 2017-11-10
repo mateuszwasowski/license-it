@@ -1,12 +1,12 @@
 import {Injectable} from '@angular/core';
 import {CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router} from '@angular/router';
 import {Observable} from 'rxjs/Observable';
-import {UserService} from "../shared/user/user.service";
-import {BackendSimpleCommunicationService} from "../shared/backend-communication/backend-simple-communication.service";
+import {UserService} from '../shared/user/user.service';
+import {BackendSimpleCommunicationService} from '../shared/backend-communication/backend-simple-communication.service';
 
 @Injectable()
 export class GroupAdminGuard implements CanActivate {
-  constructor(private userService: UserService, private backendService: BackendSimpleCommunicationService, private router: Router) {
+  constructor(private userService: UserService, private router: Router) {
   }
 
   canActivate(next: ActivatedRouteSnapshot,
@@ -17,6 +17,7 @@ export class GroupAdminGuard implements CanActivate {
       }
       return response;
     };
+
     return callback(this.userService.getUserData().isGroupAdmin);
   }
 }

@@ -16,7 +16,6 @@ export class GroupActionButtonComponent implements OnInit {
 
   removeFromGroup($event) {
     $event.stopPropagation();
-    console.log(this.id);
   }
 
 }

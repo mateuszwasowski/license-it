@@ -3,7 +3,7 @@ import {MenuElementClass} from './menu-element/menu-element.class';
 import {AuthenticationService} from '../authentication/authentication.service';
 import {UserService} from '../user/user.service';
 import {LeftMenuData} from './left-menu.data';
-import {BackendSimpleCommunicationService} from "../backend-communication/backend-simple-communication.service";
+import {BackendSimpleCommunicationService} from '../backend-communication/backend-simple-communication.service';
 
 @Component({
   selector: 'app-left-menu',

@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
-import {TooltipModule} from "ngx-tooltip";
+import {TooltipModule} from 'ngx-tooltip';
 
 import {LeftMenuComponent} from './left-menu/left-menu.component';
 import {MenuElementComponent} from './left-menu/menu-element/menu-element.component';

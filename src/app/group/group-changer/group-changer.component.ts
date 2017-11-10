@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {UserService} from '../../shared/user/user.service';
 import {Router} from '@angular/router';
-import {BackendSimpleCommunicationService} from "../../shared/backend-communication/backend-simple-communication.service";
+import {BackendSimpleCommunicationService} from '../../shared/backend-communication/backend-simple-communication.service';
 
 @Component({
   selector: 'app-group-changer',

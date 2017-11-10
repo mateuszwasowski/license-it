@@ -94,6 +94,13 @@ export class BackendSimpleCommunicationService {
     return this.postObject(url, data);
   }
 
+  setUserPassword(password, oldPassword) {
+    const data = {password, oldPassword};
+    const url = this.urlCreator.getUserEdit();
+
+    return this.editObject(url, data);
+  }
+
   private prepareAuthorizationHeader() {
     const string = `Bearer ${this.userService.getToken()}`;
     return new Headers({'Authorization': string});
