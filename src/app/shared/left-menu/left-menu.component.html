@@ -29,8 +29,24 @@
   <img class="menu-border menu-border-bottom" src="assets/left-menu/bottom.png">
 </div>
 
-<div id="topnav" class="hidden-md hidden-lg navbar navbar-inverse">
-  <div class="container-fluid">
-    HELLO
+<div id="topnav" class="hidden-md hidden-lg col-sm-12 col-xs-12 hidden-md hidden-lg">
+  <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+  <label for="nav-trigger">☰</label>
+
+  <div class="nav-collapsed">
+    <ul>
+      <li *ngFor="let element of data;">
+        <app-menu-element
+          [header]="element.header"
+          [route]="element.route"
+          [icon]="element.icon"
+          [conditional]="element.conditional"
+        ></app-menu-element>
+      </li>
+      <li>
+        <app-menu-element [header]="'Logout'" (click)="logout()" class="logout"
+                          [icon]="'assets/icons/logouticon.svg'"></app-menu-element>
+      </li>
+    </ul>
   </div>
 </div>

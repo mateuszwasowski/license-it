@@ -4,12 +4,13 @@ $logoAndTitleMargin: 5px;
 
 #sidenav {
   height: 100%;
-  padding: 0px;
+  padding: 0;
   background: darken($color4, 10%);
 }
 
 #topnav {
-
+  padding: 0;
+  background: darken($color4, 10%);
 }
 
 .logo {
@@ -64,4 +65,27 @@ ul {
     color: white;
     opacity: .7;
   }
+}
+
+.nav-trigger {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+
+label[for="nav-trigger"] {
+  position: fixed;
+  right: 30px; top: 15px;
+  z-index: 2;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+.nav-trigger + label, .nav-collapsed {
+  transition: top 0.2s;
+}
+
+
+.nav-trigger:checked ~ .nav-collapsed {
+  top: 200px;
+  box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
 }
