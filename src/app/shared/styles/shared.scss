@@ -2,11 +2,13 @@ $menuBackground: #30343F;
 $activeMenuHighlight: #1B1717;
 $logo-color: #7d961e;
 /* RGB PALLETE */
-$color1: rgba(185, 196, 16, 1);
-$color2: rgba(216, 247, 147, 1);
+$color1: #B9C410;
+$color2: #D8F793;
 $color3: #447604;
 $color4: #30343F;
-$color5: #6CC551;
+$color5: #3C6E71;
+$color6: lighten($color5, 5%);
+$color7: darken($color5, 5%);
 
 $error-color: #ff3333;
 $success-color: yellowgreen;
