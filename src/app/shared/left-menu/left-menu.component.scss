@@ -5,57 +5,97 @@ $logoAndTitleMargin: 5px;
 #sidenav {
   height: 100%;
   padding: 0;
-  background: darken($color4, 10%);
+  background: darken($color4, 5%);
+
+  .logo {
+    margin-left: $logoAndTitleMargin;
+    width: 90%;
+    height: auto;
+    margin-top: 10px;
+  }
+
+  .team-header {
+    display: block;
+    margin-left: $logoAndTitleMargin;
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        height: 2em;
+        vertical-align: middle;
+        width: 7px;
+      }
+      .team-label {
+        display: inline-block;
+        color: whitesmoke;
+        font-size: 2em;
+        font-weight: 900;
+        padding: 4px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: calc(100% - 12px);
+      }
+    }
+
+    margin-top: 10px;
+  }
+
+  .menu-border {
+    width: 100%;
+    height: auto;
+  }
+
+  .menu-border-bottom {
+    position: absolute;
+    bottom: 0;
+  }
 }
 
 #topnav {
   padding: 0;
-  background: darken($color4, 10%);
-}
 
-.logo {
-  margin-left: $logoAndTitleMargin;
-  width: 90%;
-  height: auto;
-  margin-top: 10px;
-}
-
-.team-header {
-  display: block;
-  margin-left: $logoAndTitleMargin;
-  div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    img {
-      height: 2em;
-      vertical-align: middle;
-      width: 7px;
-    }
-    .team-label {
-      display: inline-block;
-      color: whitesmoke;
-      font-size: 2em;
-      font-weight: 900;
-      padding: 4px;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      overflow: hidden;
-      width: calc(100% - 12px);
-    }
+  .nav-header {
+    height: 50px;
+    background: darken($color4, 5%);
   }
 
-  margin-top: 10px;
-}
+  .nav-trigger {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+  }
 
-.menu-border {
-  width: 100%;
-  height: auto;
-}
+  label[for="nav-trigger"] {
+    float: right;
+    font-size: 2em;
+    cursor: pointer;
+    margin-top: 2px; margin-right: 15px;
+    color: white;
+  }
+  .nav-collapsed {
+    background: $logo-color;
+    top: -1em;
+  }
+  .nav-trigger:checked + label {
+    top: 1em;
+  }
+  .nav-trigger + label, .nav-collapsed {
+    transition: top 0.2s;
+    position: relative;
+  }
 
-.menu-border-bottom {
-  position: absolute;
-  bottom: 0;
+
+  .nav-trigger:checked ~ .nav-collapsed {
+    top: 0em;
+    box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
+  }
+
+  .logo {
+    float:left;
+    max-height: 40px;
+    margin-top: 5px; margin-left: 15px;
+  }
 }
 
 ul {
@@ -65,27 +105,4 @@ ul {
     color: white;
     opacity: .7;
   }
-}
-
-.nav-trigger {
-  position: absolute;
-  clip: rect(0, 0, 0, 0);
-}
-
-label[for="nav-trigger"] {
-  position: fixed;
-  right: 30px; top: 15px;
-  z-index: 2;
-  font-size: 2em;
-  cursor: pointer;
-}
-
-.nav-trigger + label, .nav-collapsed {
-  transition: top 0.2s;
-}
-
-
-.nav-trigger:checked ~ .nav-collapsed {
-  top: 200px;
-  box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
 }

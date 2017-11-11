@@ -30,9 +30,11 @@
 </div>
 
 <div id="topnav" class="hidden-md hidden-lg col-sm-12 col-xs-12 hidden-md hidden-lg">
-  <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-  <label for="nav-trigger">☰</label>
-
+  <div class="nav-header">
+    <img class="logo" src="assets/logo/logo.png">
+    <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+    <label for="nav-trigger">☰</label>
+  </div>
   <div class="nav-collapsed">
     <ul>
       <li *ngFor="let element of data;">
