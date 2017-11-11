@@ -12,6 +12,10 @@ a {
   &.active{
     background-color: $activeMenuHighlight;
   }
+
+  &:hover {
+    background: darken($color4, 15%);
+  }
 }
 
 :host.logout {

@@ -32,23 +32,23 @@
 <div id="topnav" class="hidden-md hidden-lg col-sm-12 col-xs-12 hidden-md hidden-lg">
   <div class="nav-header">
     <img class="logo" src="assets/logo/logo.png">
-    <input type="checkbox" id="nav-trigger" class="nav-trigger" />
     <label for="nav-trigger">☰</label>
-  </div>
-  <div class="nav-collapsed">
-    <ul>
-      <li *ngFor="let element of data;">
-        <app-menu-element
-          [header]="element.header"
-          [route]="element.route"
-          [icon]="element.icon"
-          [conditional]="element.conditional"
-        ></app-menu-element>
-      </li>
-      <li>
-        <app-menu-element [header]="'Logout'" (click)="logout()" class="logout"
-                          [icon]="'assets/icons/logouticon.svg'"></app-menu-element>
-      </li>
-    </ul>
+    <input type="checkbox" id="nav-trigger" />
+    <div id="nav-collapsed">
+      <ul>
+        <li *ngFor="let element of data;">
+          <app-menu-element
+            [header]="element.header"
+            [route]="element.route"
+            [icon]="element.icon"
+            [conditional]="element.conditional"
+          ></app-menu-element>
+        </li>
+        <li>
+          <app-menu-element [header]="'Logout'" (click)="logout()" class="logout"
+                            [icon]="'assets/icons/logouticon.svg'"></app-menu-element>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
