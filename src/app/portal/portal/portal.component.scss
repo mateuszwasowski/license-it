@@ -1,7 +1,9 @@
+@import "../../shared/styles/shared";
+
 .main-content-container {
-  padding:20px;
-  margin:20px;
-  border: 2px solid rgba(0,0,1,0.1);
-  border-radius: 5px;
+  margin: 10px;
   background: white;
+  border: 2px solid darken($logo-color, 5%);
+  border-radius: 10px;
+  padding-bottom: 5px;
 }

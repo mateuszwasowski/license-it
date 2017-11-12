@@ -23,43 +23,34 @@ $success-color: yellowgreen;
 }
 
 .panel-header {
-  display: block;
+  background: darken($color4, 5%);
+  height: 60px;
+  border-top-left-radius: 8px; border-top-right-radius: 8px;
+  border-bottom: 2px solid darken($logo-color, 5%);
 
-  img {
-    height: 2em;
-    vertical-align: middle;
-    margin-bottom: 10px;
-  }
-
-  .label {
-    display: inline-block;
-    color: black;
+  .main-page-label {
+    border-top-left-radius: 8px;
+    float: left;
+    height: 100%;
+    color: white;
+    background: darken($color1, 5%);
     font-size: 2em;
     font-weight: 900;
-    padding: 4px;
-    opacity: .7;
+    padding: 7px 10px 0 10px;
+  }
+  .sub-page-label {
+    float: left;
+    height: 100%;
+    color: white;
+    font-size: 2em;
+    font-weight: 900;
+    padding: 7px 10px 0 10px;
   }
 }
 
-.panel-header1 {
-  display: block;
-  border-top: 2px solid rgba(0,0,1,0.1);
-  padding-top: 10px;
-
-  img {
-    height: 2em;
-    vertical-align: middle;
-    margin-bottom: 10px;
-  }
-
-  .label{
-    display: inline-block;
-    color: black;
-    font-size: 2em;
-    font-weight: 900;
-    padding: 4px;
-    opacity: .7;
-  }
+.button-header {
+  background: $color5;
+  padding: 5px 10px 5px 10px !important;
 }
 
 .input-box {
