@@ -12,6 +12,9 @@ import {LoginComponent} from './login/login.component';
 
 import {DashboardAuthGuard} from './dashboard-auth.guard';
 import {IndexComponent} from './index/index.component';
+import {AboutComponent} from './index/about/about.component';
+import {DocsComponent} from './index/docs/docs.component';
+import {NavComponent} from './index/nav/nav.component';
 
 @NgModule({
   imports: [
@@ -22,8 +25,24 @@ import {IndexComponent} from './index/index.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  declarations: [DashboardComponent, LoginComponent, NotFoundComponent, IndexComponent],
-  exports: [DashboardComponent, LoginComponent, NotFoundComponent, IndexComponent],
+  declarations: [
+    DashboardComponent,
+    LoginComponent,
+    NotFoundComponent,
+    IndexComponent,
+    AboutComponent,
+    NavComponent,
+    DocsComponent
+  ],
+  exports: [
+    DashboardComponent,
+    LoginComponent,
+    NotFoundComponent,
+    IndexComponent,
+    AboutComponent,
+    NavComponent,
+    DocsComponent
+  ],
   providers: [
     DashboardAuthGuard
   ]

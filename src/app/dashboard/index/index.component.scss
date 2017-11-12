@@ -5,32 +5,6 @@
 
   a { cursor: pointer; }
 
-  .header-container {
-    height: 50px;
-    background: darken($color4, 5%);
-
-    .logo {
-      float:left;
-      max-height: 40px;
-      margin-top: 5px; margin-left: 130px;
-    }
-
-    a {
-      color: lighten($mainBackground, 60%);
-      border-bottom: 1px solid lighten($mainBackground, 60%);
-      float: right;
-      margin-right: 130px;
-      margin-top: 11px;
-      font-size: 1.2em;
-    }
-
-    a:hover {
-      color: white;
-      border-bottom: 2px solid white;
-    }
-
-  }
-
   .logo-container {
     padding-top: 50px; padding-bottom: 50px;
     background: $color5;
@@ -115,7 +89,7 @@
       .logo {
         margin-left: 20px;
       }
-      a {
+      .nav-right-links {
         margin-right: 20px;
       }
     }
