@@ -1,7 +1,8 @@
+<header class="button-header">
+  {{ formObject.header }}
+</header>
+
 <section class="panel">
-  <header class="panel-heading">
-    {{ formObject.header }}
-  </header>
   <div class="panel-body">
     <form class="form-horizontal " method="get">
       <app-input-row
@@ -10,7 +11,7 @@
         *ngFor="let item of formObject.list; let i = index;">
       </app-input-row>
 
-      <button type="submit" class="custom-btn blue" (click)="showModel($event)">Submit</button>
+      <button type="submit" class="custom-btn submit-btn" (click)="showModel($event)">Submit</button>
       <a class="custom-btn" (click)="backToPrevious()">Back to list</a>
     </form>
   </div>

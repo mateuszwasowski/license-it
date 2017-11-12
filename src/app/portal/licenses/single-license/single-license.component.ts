@@ -11,7 +11,7 @@ export class SingleLicenseComponent implements OnInit {
   private clientsList = [];
   public categoryForm: any = {
     headers: {
-      add: 'Add a license and attach it to a client, to enable functionalities assigned in your application.',
+      add: 'Add license',
       edit: 'Edit license'
     },
     newResponse: true,

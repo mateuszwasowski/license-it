@@ -1,10 +1,8 @@
 <div class="panel-header">
-  <img src="assets/icons/3.png">
-  <span class="label">Licenses</span>
+  <div class="main-page-label">Licenses</div> <div class="sub-page-label">{{ appName }}</div>
 </div>
-<div class="panel-header1">
-  <img src="assets/icons/4.png">
-  <span class="label">Licenses list for application <span>{{ appName }}</span></span>
+<div class="button-header">
+
   <app-form-buttons [creationLink]="singleElement"></app-form-buttons>
 </div>
 <app-data-table [data]="data"

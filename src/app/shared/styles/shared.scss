@@ -17,19 +17,21 @@ $activeNavHighlight: $hoverNavHighlight;
 $error-color: #FF3333;
 $success-color: yellowgreen;
 
+$mainbutton-color: $color1;
+$submit-btn: $mainbutton-color;
+
+
 * {
  font-family: 'Lato', sans-serif !important;
  text-decoration: none !important;
 }
 
 .panel-header {
-  background: darken($color4, 5%);
+  background: $color4;
   height: 60px;
-  border-top-left-radius: 8px; border-top-right-radius: 8px;
   border-bottom: 2px solid darken($logo-color, 5%);
 
   .main-page-label {
-    border-top-left-radius: 8px;
     float: left;
     height: 100%;
     color: white;
@@ -49,42 +51,12 @@ $success-color: yellowgreen;
 }
 
 .button-header {
-  background: $color5;
+  background: white;
   padding: 5px 10px 5px 10px !important;
 }
 
 .input-box {
   background-color: lighten($color4, 70%);
-}
-
-.custom-btn {
-  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12) inset, 0 0 1px rgba(0, 0, 0, 0.08), 0 2px 3px rgba(0, 0, 0, 0.08), 0 2px 3px rgba(0, 0, 0, 0.08);
-  background: $color1;
-  border-radius: 5px;
-  color: #fff;
-  cursor: pointer;
-  display: inline-block;
-  padding: 5px 20px;
-  font-weight: 700px;
-  font-size: 1em;
-  transition: all 0.3s ease-in-out;
-  white-space: nowrap;
-  text-align: center;
-  outline: none;
-  border: none;
-}
-
-.blue{
-  background: $color4;
-}
-
-.blue:hover{
-  background: lighten($color4, 2%) !important;
-}
-
-.custom-btn:hover {
-  box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.3) inset, 0 0 1px rgba(0, 0, 0, 0.08), 0 2px 3px rgba(0, 0, 0, 0.08), 0 2px 3px rgba(0, 0, 0, 0.08);
-  background: lighten($color1, 2%);
 }
 
 .logo{
@@ -102,4 +74,41 @@ $success-color: yellowgreen;
 }
 .success {
   background-color: $success-color;
+}
+
+/* BUTTONS */
+
+.custom-btn {
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12) inset, 0 0 1px rgba(0, 0, 0, 0.08), 0 2px 3px rgba(0, 0, 0, 0.08), 0 2px 3px rgba(0, 0, 0, 0.08);
+  background: $mainbutton-color;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  padding: 5px 20px;
+  font-weight: 700px;
+  font-size: 1em;
+  transition: all 0.3s ease-in-out;
+  white-space: nowrap;
+  text-align: center;
+  outline: none;
+  border: none;
+}
+
+.custom-btn:hover {
+  box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.3) inset, 0 0 1px rgba(0, 0, 0, 0.08), 0 2px 3px rgba(0, 0, 0, 0.08), 0 2px 3px rgba(0, 0, 0, 0.08);
+  background: lighten($mainbutton-color, 3%);
+}
+
+.custom-btn.danger:hover {
+  box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.3) inset, 0 0 1px rgba(0, 0, 0, 0.08), 0 2px 3px rgba(0, 0, 0, 0.08), 0 2px 3px rgba(0, 0, 0, 0.08);
+  background: darken($error-color, 5%);
+}
+
+.submit-btn{
+  background: $submit-btn;
+}
+
+.submit-btn:hover{
+  background: lighten($submit-btn, 2%) !important;
 }
