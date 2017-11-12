@@ -6,20 +6,23 @@ $logoAndTitleMargin: 5px;
 #sidenav {
   height: 100%;
   padding: 0;
-  background: darken($color4, 5%);
+  background: $logo-color;
+  position: fixed;
 
   .logo {
-    margin-left: $logoAndTitleMargin;
-    width: 90%;
+    padding: 10px $logoAndTitleMargin 10px $logoAndTitleMargin;
+    width: 100%;
     height: auto;
-    margin-top: 10px;
+    background: $color5;
   }
 
   .team-header {
     display: block;
-    margin-left: $logoAndTitleMargin;
-    margin-top: 10px;
-    
+    padding: $logoAndTitleMargin 0 $logoAndTitleMargin 0;
+    text-align: center;
+    border-top: 2px solid darken($logo-color, 5%); border-bottom: 2px solid darken($logo-color, 5%);
+    background: darken($color4, 5%);
+
     div {
       display: flex;
       align-items: center;
@@ -44,16 +47,6 @@ $logoAndTitleMargin: 5px;
       }
     }
   }
-
-  .menu-border {
-    width: 100%;
-    height: auto;
-  }
-
-  .menu-border-bottom {
-    position: absolute;
-    bottom: 0;
-  }
 }
 
 /* TOPNAV CSS */
@@ -63,7 +56,7 @@ $logoAndTitleMargin: 5px;
 
   .nav-header {
     min-height: 50px;
-    background: darken($color4, 5%);
+    background: $navBg;
 
     label {
       float: right;
@@ -72,6 +65,18 @@ $logoAndTitleMargin: 5px;
       padding: 2px;
       margin-right: 15px;
       color: white;
+    }
+
+    .team-header {
+      color: white;
+      float: left;
+      border-right: 2px solid darken($logo-color, 5%); border-left: 2px solid darken($logo-color, 5%);
+      padding: 8px 10px 0px 10px;
+      font-size: 1.4em;
+      font-weight: 600;
+      height: 50px;
+      max-width: 200px;
+      text-overflow: ellipsis;
     }
   }
 
@@ -99,8 +104,9 @@ $logoAndTitleMargin: 5px;
 
   .logo {
     float:left;
-    max-height: 40px;
-    margin-top: 5px; margin-left: 15px;
+    background: $color5;
+    height: 50px;
+    padding: 5px;
   }
 }
 
@@ -108,10 +114,11 @@ $logoAndTitleMargin: 5px;
 
 ul {
   padding: 0;
+  list-style-type: none;
 
   li {
-    list-style: none;
-    color: white;
+    display:inline;
+    color: whitesmoke;
     opacity: .7;
   }
 }

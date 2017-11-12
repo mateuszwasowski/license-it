@@ -9,12 +9,13 @@ a {
   width: 100%;
   text-decoration: none;
   font-weight: 900;
+  
   &.active{
-    background-color: $activeMenuHighlight;
+    background-color: $activeNavHighlight;
   }
 
   &:hover {
-    background: darken($color4, 15%);
+    background: $hoverNavHighlight;
   }
 }
 

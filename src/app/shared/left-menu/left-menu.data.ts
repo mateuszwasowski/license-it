@@ -2,8 +2,8 @@ import { MenuElementClass } from './menu-element/menu-element.class';
 
 export const LeftMenuData: Array<MenuElementClass> = [
   {
-    header: 'Account',
-    route: 'account/groups',
+    header: 'Dashboard',
+    route: '/',
     icon: 'assets/icons/accounticon.svg'
   },
   {
@@ -21,5 +21,10 @@ export const LeftMenuData: Array<MenuElementClass> = [
     route: 'group',
     icon: 'assets/icons/groupicon1.svg',
     conditional: true
+  },
+  {
+    header: 'My account',
+    route: 'account/groups',
+    icon: 'assets/icons/singleperson.svg'
   }
 ];

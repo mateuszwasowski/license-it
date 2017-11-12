@@ -1,16 +1,19 @@
-$menuBackground: #30343F;
-$activeMenuHighlight: #1B1717;
-$logo-color: #7d961e;
 /* RGB PALLETE */
 $color1: #B9C410;
 $color2: #D8F793;
 $color3: #447604;
 $color4: #30343F;
 $color5: #3C6E71;
-$color6: lighten($color5, 5%);
-$color7: darken($color5, 5%);
 
-$error-color: #ff3333;
+$logo-color: #7D961E;
+$mainBackground: #30343F;
+
+/* Nav Colors */
+$navBg: darken($color4, 5%);
+$activeNavHighlight: darken($logo-color, 15%);
+$hoverNavHighlight: darken($logo-color, 20%);
+
+$error-color: #FF3333;
 $success-color: yellowgreen;
 
 * {
@@ -20,12 +23,14 @@ $success-color: yellowgreen;
 
 .panel-header {
   display: block;
+
   img {
     height: 2em;
     vertical-align: middle;
     margin-bottom: 10px;
   }
-  .label{
+
+  .label {
     display: inline-block;
     color: black;
     font-size: 2em;
@@ -35,15 +40,17 @@ $success-color: yellowgreen;
   }
 }
 
-.panel-header1   {
+.panel-header1 {
   display: block;
   border-top: 2px solid rgba(0,0,1,0.1);
   padding-top: 10px;
+
   img {
     height: 2em;
     vertical-align: middle;
     margin-bottom: 10px;
   }
+
   .label{
     display: inline-block;
     color: black;
@@ -74,12 +81,15 @@ $success-color: yellowgreen;
   outline: none;
   border: none;
 }
+
 .blue{
   background: $color4;
 }
+
 .blue:hover{
   background: lighten($color4, 2%) !important;
 }
+
 .custom-btn:hover {
   box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.3) inset, 0 0 1px rgba(0, 0, 0, 0.08), 0 2px 3px rgba(0, 0, 0, 0.08), 0 2px 3px rgba(0, 0, 0, 0.08);
   background: lighten($color1, 2%);
@@ -87,4 +97,17 @@ $success-color: yellowgreen;
 
 .logo{
   margin: 0 auto;
+}
+
+.errors > div {
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.danger {
+  background-color: $error-color;
+  border-radius: 5px;
+}
+.success {
+  background-color: $success-color;
 }

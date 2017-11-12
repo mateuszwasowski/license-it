@@ -1,13 +1,9 @@
 @import "../styles/shared";
 
-
-html {
-  background: $menuBackground;
-}
-
 .single-choose-container {
   height: 100%;
   padding-top: 100px;
+
   .logo-container{
     -webkit-box-align: center;
     -ms-flex-align: center;
@@ -16,9 +12,11 @@ html {
     text-align: center;
     margin: 0 auto;
   }
+
   * {
     color:white;
   }
+
   .container-body{
     background: lighten($color4, 20%);
     margin-top: 20px;
