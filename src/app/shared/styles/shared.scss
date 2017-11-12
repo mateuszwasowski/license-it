@@ -10,9 +10,10 @@ $mainBackground: #30343F;
 
 /* Nav Colors */
 $navBg: darken($color4, 5%);
-$activeNavHighlight: darken($logo-color, 15%);
 $hoverNavHighlight: darken($logo-color, 20%);
+$activeNavHighlight: $hoverNavHighlight;
 
+/* Flash error colors */
 $error-color: #FF3333;
 $success-color: yellowgreen;
 

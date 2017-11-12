@@ -1,7 +1,5 @@
 @import "../styles/shared";
 
-$logoAndTitleMargin: 5px;
-
 /* SIDENAV CSS */
 #sidenav {
   height: 100%;
@@ -10,7 +8,7 @@ $logoAndTitleMargin: 5px;
   position: fixed;
 
   .logo {
-    padding: 10px $logoAndTitleMargin 10px $logoAndTitleMargin;
+    padding: 10px 20px 10px 20px;
     width: 100%;
     height: auto;
     background: $color5;
@@ -18,7 +16,7 @@ $logoAndTitleMargin: 5px;
 
   .team-header {
     display: block;
-    padding: $logoAndTitleMargin 0 $logoAndTitleMargin 0;
+    padding: 5px 0 5px 0;
     text-align: center;
     border-top: 2px solid darken($logo-color, 5%); border-bottom: 2px solid darken($logo-color, 5%);
     background: darken($color4, 5%);

@@ -1,13 +1,13 @@
 <div id="sidenav" class="hidden-xs hidden-sm col-md-2 col-lg-2">
   <img class="logo" src="assets/logo/logo.png">
-  <a role="button" class="team-header" [routerLink]="['/group']" routerLinkActive="active">
+  <div class="team-header">
     <div tooltip="{{ teamName }}"
          [tooltipDisabled]="false"
          [tooltipAnimation]="true"
          tooltipPlacement="top">
       <span class="team-label">{{ teamName }}</span>
     </div>
-  </a>
+  </div>
   <ul>
     <li *ngFor="let element of data;">
       <app-menu-element
@@ -19,7 +19,7 @@
     </li>
     <li>
       <app-menu-element [header]="'Logout'" (click)="logout()" class="logout"
-                        [icon]="'assets/icons/logouticon.svg'"></app-menu-element>
+                        [icon]="'assets/icons/logout_icon.svg'"></app-menu-element>
     </li>
   </ul>
 </div>
@@ -45,7 +45,7 @@
         </li>
         <li>
           <app-menu-element [header]="'Logout'" (click)="logout()" class="logout"
-                            [icon]="'assets/icons/logouticon.svg'"></app-menu-element>
+                            [icon]="'assets/icons/logout_icon.svg'"></app-menu-element>
         </li>
       </ul>
     </div>

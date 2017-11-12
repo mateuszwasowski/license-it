@@ -4,27 +4,32 @@ export const LeftMenuData: Array<MenuElementClass> = [
   {
     header: 'Dashboard',
     route: '/',
-    icon: 'assets/icons/accounticon.svg'
+    icon: 'assets/icons/dashboard_icon.svg'
   },
   {
     header: 'Clients',
     route: 'clients',
-    icon: 'assets/icons/groupicon1.svg'
+    icon: 'assets/icons/group_icon.svg'
   },
   {
     header: 'Licenses',
     route: 'licenses',
-    icon: 'assets/icons/permissionsicon.svg'
+    icon: 'assets/icons/permissions_icon.svg'
   },
   {
     header: 'Group',
     route: 'group',
-    icon: 'assets/icons/groupicon1.svg',
+    icon: 'assets/icons/group_icon.svg',
     conditional: true
   },
   {
     header: 'My account',
     route: 'account/groups',
-    icon: 'assets/icons/singleperson.svg'
+    icon: 'assets/icons/singleperson_icon.svg'
+  },
+  {
+    header: 'Switch group',
+    route: '/group',
+    icon: 'assets/icons/switchgroup_icon.svg'
   }
 ];
