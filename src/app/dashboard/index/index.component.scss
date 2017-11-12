@@ -109,12 +109,20 @@
         font-size: 4em;
         color: $color1;
       }
+
+      &:first-child { border: none; }
     }
   }
 
-  .bignum-col-container .bignum-container:first-child { border: none; }
-
   @media (max-width: 991px) {
+    .header-container {
+      .logo {
+        margin-left: 20px;
+      }
+      a {
+        margin-right: 20px;
+      }
+    }
     .get-started-container {
       margin-top: 50px !important;
 
