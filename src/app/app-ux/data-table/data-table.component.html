@@ -1,21 +1,23 @@
-<table class="table table-bordered table-striped">
-  <thead>
-  <tr>
-    <th *ngIf="idColumn">ID</th>
-    <th style="display: none;">Object id</th>
-    <th *ngFor="let headerElement of header;">{{ headerElement }}</th>
-    <th *ngIf="actionTemp">Actions</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let object of data;let i = index"
-      [routerLink]="singleElementUrl ? singleElementUrl + '/' + object[0] : null">
-    <td *ngIf="idColumn">{{ (i + 1) }}</td>
-    <td *ngFor="let element of object; let name = index" [innerHtml]="getValue(name, element)">
-    </td>
-    <td *ngIf="actionTemp">
-      <template [ngTemplateOutlet]="actionTemp" [ngOutletContext]="{id: object[0]}"></template>
-    </td>
-  </tr>
-  </tbody>
-</table>
+<div class="table-wrap">
+  <table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+      <th *ngIf="idColumn">ID</th>
+      <th style="display: none;">Object id</th>
+      <th *ngFor="let headerElement of header;">{{ headerElement }}</th>
+      <th *ngIf="actionTemp">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let object of data;let i = index"
+        [routerLink]="singleElementUrl ? singleElementUrl + '/' + object[0] : null">
+      <td *ngIf="idColumn">{{ (i + 1) }}</td>
+      <td *ngFor="let element of object; let name = index" [innerHtml]="getValue(name, element)">
+      </td>
+      <td *ngIf="actionTemp">
+        <template [ngTemplateOutlet]="actionTemp" [ngOutletContext]="{id: object[0]}"></template>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
