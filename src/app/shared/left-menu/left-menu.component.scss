@@ -2,6 +2,7 @@
 
 $logoAndTitleMargin: 5px;
 
+/* SIDENAV CSS */
 #sidenav {
   height: 100%;
   padding: 0;
@@ -17,7 +18,8 @@ $logoAndTitleMargin: 5px;
   .team-header {
     display: block;
     margin-left: $logoAndTitleMargin;
-
+    margin-top: 10px;
+    
     div {
       display: flex;
       align-items: center;
@@ -41,10 +43,8 @@ $logoAndTitleMargin: 5px;
         width: calc(100% - 12px);
       }
     }
-
-    margin-top: 10px;
   }
-    
+
   .menu-border {
     width: 100%;
     height: auto;
@@ -56,17 +56,7 @@ $logoAndTitleMargin: 5px;
   }
 }
 
-
-  #menu-toggle {
-  display: none; /* hide the checkbox */
-  }
-  #menu {
-    display: none;
-  }
-  #menu-toggle:checked + #menu {
-    display: block;
-  }
-
+/* TOPNAV CSS */
 
 #topnav {
   padding: 0;
@@ -87,6 +77,10 @@ $logoAndTitleMargin: 5px;
 
   #nav-trigger {
     display: none;
+
+    &:checked + #nav-collapsed {
+      display: block;
+    }
   }
 
   #nav-collapsed {
@@ -103,10 +97,6 @@ $logoAndTitleMargin: 5px;
     }
   }
 
-  #nav-trigger:checked + #nav-collapsed {
-    display: block;
-  }
-
   .logo {
     float:left;
     max-height: 40px;
@@ -114,8 +104,11 @@ $logoAndTitleMargin: 5px;
   }
 }
 
+/* SHAREDNAV CSS */
+
 ul {
   padding: 0;
+
   li {
     list-style: none;
     color: white;
