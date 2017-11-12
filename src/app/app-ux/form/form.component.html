@@ -16,7 +16,7 @@
     </form>
   </div>
   <div class="errors" *ngIf="validationMessage.length > 0">
-    <div *ngIf="isErrorValidation"  class="panel-heading danger">{{ validationMessage }}</div>
-    <div *ngIf="!isErrorValidation"  class="panel-heading success">{{ validationMessage }}</div>
+    <div *ngIf="isErrorValidation"  class="flash-heading danger">{{ validationMessage }}</div>
+    <div *ngIf="!isErrorValidation"  class="flash-heading success">{{ validationMessage }}</div>
   </div>
 </section>
