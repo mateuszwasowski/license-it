@@ -1,17 +1,13 @@
-<div class="row">
-  <img class="menu-border" src="assets/left-menu/top.png">
-  <a role="button" [routerLink]="['/panel']">
-    <img class="logo" src="assets/logo/logo.png">
-  </a>
-  <a role="button" class="team-header" [routerLink]="['/group']" routerLinkActive="active">
+<div id="sidenav" class="hidden-xs hidden-sm col-md-2 col-lg-2">
+  <img class="logo" src="assets/logo/logo.png">
+  <div class="team-header">
     <div tooltip="{{ teamName }}"
          [tooltipDisabled]="false"
          [tooltipAnimation]="true"
          tooltipPlacement="top">
-      <img src="assets/icons/team-label.png">
       <span class="team-label">{{ teamName }}</span>
     </div>
-  </a>
+  </div>
   <ul>
     <li *ngFor="let element of data;">
       <app-menu-element
@@ -23,8 +19,35 @@
     </li>
     <li>
       <app-menu-element [header]="'Logout'" (click)="logout()" class="logout"
-                        [icon]="'assets/icons/logouticon.svg'"></app-menu-element>
+                        [icon]="'assets/icons/logout_icon.svg'"></app-menu-element>
     </li>
   </ul>
-  <img class="menu-border menu-border-bottom" src="assets/left-menu/bottom.png">
+</div>
+
+<div id="topnav" class="hidden-md hidden-lg col-sm-12 col-xs-12 hidden-md hidden-lg">
+  <div class="nav-header">
+    <img class="logo" src="assets/logo/logo.png">
+    <div class="team-header">
+      {{ teamName }}
+    </div>
+
+    <label for="nav-trigger">☰</label>
+    <input type="checkbox" id="nav-trigger" />
+    <div id="nav-collapsed">
+      <ul>
+        <li *ngFor="let element of data;">
+          <app-menu-element
+            [header]="element.header"
+            [route]="element.route"
+            [icon]="element.icon"
+            [conditional]="element.conditional"
+          ></app-menu-element>
+        </li>
+        <li>
+          <app-menu-element [header]="'Logout'" (click)="logout()" class="logout"
+                            [icon]="'assets/icons/logout_icon.svg'"></app-menu-element>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>

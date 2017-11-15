@@ -1,0 +1,20 @@
+@import "../../../shared/styles/shared";
+@import "../index.component.scss";
+
+.logo {
+  max-width: 300px;
+  margin-bottom: 30px;
+}
+
+a {
+  color: white;
+  font-size: 0.7em;
+  img {
+    width: 50px;
+  }
+}
+
+.alt-color {
+  font-size: 1.4em;
+  padding: 30px;
+}

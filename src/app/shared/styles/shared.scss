@@ -1,15 +1,25 @@
-$menuBackground: #30343F;
-$activeMenuHighlight: #1B1717;
-$logo-color: #7d961e;
 /* RGB PALLETE */
-$color1: rgba(185, 196, 16, 1);
-$color2: rgba(216, 247, 147, 1);
+$color1: #B9C410;
+$color2: #D8F793;
 $color3: #447604;
 $color4: #30343F;
-$color5: #6CC551;
+$color5: #3C6E71;
 
-$error-color: #ff3333;
+$logo-color: #7D961E;
+$mainBackground: #30343F;
+
+/* Nav Colors */
+$navBg: darken($color4, 5%);
+$hoverNavHighlight: darken($logo-color, 20%);
+$activeNavHighlight: $hoverNavHighlight;
+
+/* Flash error colors */
+$error-color: #FF3333;
 $success-color: yellowgreen;
+
+$mainbutton-color: $color1;
+$submit-btn: $mainbutton-color;
+
 
 * {
  font-family: 'Lato', sans-serif !important;
@@ -17,48 +27,64 @@ $success-color: yellowgreen;
 }
 
 .panel-header {
-  display: block;
-  img {
-    height: 3em;
-    vertical-align: middle;
-    margin-bottom: 20px;
-  }
-  .label{
-    display: inline-block;
-    color: black;
-    font-size: 3em;
+  background: $color4;
+  height: 60px;
+
+  .main-page-label {
+    float: left;
+    height: 100%;
+    color: white;
+    background: darken($color1, 5%);
+    font-size: 2em;
     font-weight: 900;
-    padding: 4px;
-    opacity: .7;
+    padding: 8px 10px 0 10px;
+  }
+  .sub-page-label {
+    float: left;
+    height: 100%;
+    color: white;
+    font-size: 2em;
+    font-weight: 900;
+    padding: 8px 10px 0 10px;
   }
 }
 
-.panel-header1   {
-  display: block;
-  border-top: 2px solid rgba(0,0,1,0.1);
-  padding-top: 10px;
-  img {
-    height: 2em;
-    vertical-align: middle;
-    margin-bottom: 10px;
-  }
-  .label{
-    display: inline-block;
-    color: black;
-    font-size: 2em;
-    font-weight: 900;
-    padding: 4px;
-    opacity: .7;
-  }
+.flash-heading {
+  color: white;
+  margin: 0px 5px;
+}
+
+.button-header {
+  background: white;
+  padding: 5px 10px 5px 10px !important;
 }
 
 .input-box {
   background-color: lighten($color4, 70%);
 }
 
+.logo {
+  margin: 0 auto;
+}
+
+.errors > div {
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.danger {
+  background-color: $error-color;
+  border-radius: 5px;
+}
+.success {
+  background-color: $success-color;
+}
+
+/* BUTTONS */
+
 .custom-btn {
   box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12) inset, 0 0 1px rgba(0, 0, 0, 0.08), 0 2px 3px rgba(0, 0, 0, 0.08), 0 2px 3px rgba(0, 0, 0, 0.08);
-  background: $color1;
+  background: $mainbutton-color;
   border-radius: 5px;
   color: #fff;
   cursor: pointer;
@@ -72,17 +98,23 @@ $success-color: yellowgreen;
   outline: none;
   border: none;
 }
-.blue{
-  background: $color4;
-}
-.blue:hover{
-  background: lighten($color4, 2%) !important;
-}
+
+.custom-btn.danger { background: $error-color }
+
 .custom-btn:hover {
   box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.3) inset, 0 0 1px rgba(0, 0, 0, 0.08), 0 2px 3px rgba(0, 0, 0, 0.08), 0 2px 3px rgba(0, 0, 0, 0.08);
-  background: lighten($color1, 2%);
+  background: lighten($mainbutton-color, 3%);
 }
 
-.logo{
-  margin: 0 auto;
+.custom-btn.danger:hover {
+  box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.3) inset, 0 0 1px rgba(0, 0, 0, 0.08), 0 2px 3px rgba(0, 0, 0, 0.08), 0 2px 3px rgba(0, 0, 0, 0.08);
+  background: darken($error-color, 5%);
+}
+
+.submit-btn{
+  background: $submit-btn;
+}
+
+.submit-btn:hover{
+  background: lighten($submit-btn, 2%) !important;
 }

@@ -1,63 +1,122 @@
 @import "../styles/shared";
 
-$logoAndTitleMargin: 5px;
-
-:host {
-  display: block;
-  background-color: $color4;
+/* SIDENAV CSS */
+#sidenav {
   height: 100%;
-}
+  padding: 0;
+  background: $logo-color;
+  position: fixed;
 
-.logo {
-  margin-left: $logoAndTitleMargin;
-  width: 90%;
-  height: auto;
-  margin-top: 10px;
-}
+  .logo {
+    padding: 10px 20px 10px 20px;
+    width: 100%;
+    height: auto;
+    background: $color5;
+  }
 
-.team-header {
-  display: block;
-  margin-left: $logoAndTitleMargin;
-  div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    img {
-      height: 2em;
-      vertical-align: middle;
-      width: 7px;
+  .team-header {
+    display: block;
+    padding: 5px 0 5px 0;
+    text-align: center;
+    border-top: 2px solid darken($logo-color, 5%); border-bottom: 2px solid darken($logo-color, 5%);
+    background: darken($color4, 5%);
+
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        height: 2em;
+        vertical-align: middle;
+        width: 7px;
+      }
+
+      .team-label {
+        display: inline-block;
+        color: whitesmoke;
+        font-size: 2em;
+        font-weight: 900;
+        padding: 4px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: calc(100% - 12px);
+      }
     }
-    .team-label {
-      display: inline-block;
-      color: whitesmoke;
+  }
+}
+
+/* TOPNAV CSS */
+
+#topnav {
+  padding: 0;
+
+  .nav-header {
+    min-height: 50px;
+    background: $navBg;
+
+    label {
+      float: right;
       font-size: 2em;
-      font-weight: 900;
-      padding: 4px;
-      white-space: nowrap;
+      cursor: pointer;
+      padding: 2px;
+      margin-right: 15px;
+      color: white;
+    }
+
+    .team-header {
+      color: white;
+      float: left;
+      border-right: 2px solid darken($logo-color, 5%); border-left: 2px solid darken($logo-color, 5%);
+      padding: 8px 10px 0px 10px;
+      font-size: 1.4em;
+      font-weight: 600;
+      height: 50px;
+      max-width: 200px;
       text-overflow: ellipsis;
-      overflow: hidden;
-      width: calc(100% - 12px);
     }
   }
 
-  margin-top: 10px;
+  #nav-trigger {
+    display: none;
+
+    &:checked + #nav-collapsed {
+      display: block;
+    }
+  }
+
+  #nav-collapsed {
+    padding-top: 50px;
+    z-index: 3;
+    display: none;
+
+    ul {
+      background: $logo-color;
+
+      li:hover {
+        background: darken($logo-color, 10%);
+      }
+    }
+  }
+
+  .logo {
+    float:left;
+    background: $color5;
+    height: 50px;
+    padding: 5px;
+  }
 }
 
-.menu-border {
-  width: 100%;
-  height: auto;
-}
-
-.menu-border-bottom {
-  position: absolute;
-  bottom: 0;
-}
+/* SHAREDNAV CSS */
 
 ul {
   padding: 0;
+  list-style-type: none;
+
   li {
-    list-style: none;
-    color: white;
+    display:inline;
+    color: whitesmoke;
     opacity: .7;
   }
 }
