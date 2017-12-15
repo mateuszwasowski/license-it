@@ -1,3 +1,47 @@
-<p>
-  group-manage works!
-</p>
+<div class="panel-header">
+  <div class="main-page-label">Group management</div>
+</div>
+
+<div class="group-container">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+      <a>Invite user</a>
+    </li>
+    <li role="presentation" [routerLinkActive]="'active'">
+      <a role="button" (click)="deleteGroupPopup(true)">Delete group</a>
+    </li>
+  </ul>
+  <div class="row">
+    <div class="col-xs-offset-2 col-xs-8">
+      <div class="group-invitation-container">
+        <h2 class="text-uppercase text-center">Invite user to current group</h2>
+        <form name="form" (submit)="inviteUser()" [formGroup]="form">
+          <div class="errors" *ngIf="!form.valid && form.touched">
+            <div class="danger">You have to type user email.</div>
+          </div>
+          <div class="form-group">
+            <label for="email">User email</label>
+            <input id="email"
+                   type="text"
+                   name="email"
+                   class="form-control"
+                   formControlName="email"
+                   required/>
+          </div>
+          <button class="custom-btn submit-form-btn">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="confirmation-dialog text-center" *ngIf="groupConfirmationPopup">
+  <div *ngIf="!groupDeleteStatus">
+    <h4>Are you sure you want to delete this group?</h4>
+    <button class="custom-btn submit-form-btn" (click)="deleteGroup()">Yes</button>
+    <button class="custom-btn submit-form-btn" (click)="deleteGroupPopup(false)">No</button>
+  </div>
+  <div class="danger" *ngIf="groupDeleteStatus">
+    Something went wrong during remove group.
+  </div>
+</div>

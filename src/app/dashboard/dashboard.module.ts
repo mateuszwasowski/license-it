@@ -15,6 +15,7 @@ import {IndexComponent} from './index/index.component';
 import {AboutComponent} from './index/about/about.component';
 import {DocsComponent} from './index/docs/docs.component';
 import {NavComponent} from './index/nav/nav.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   imports: [
@@ -32,7 +33,8 @@ import {NavComponent} from './index/nav/nav.component';
     IndexComponent,
     AboutComponent,
     NavComponent,
-    DocsComponent
+    DocsComponent,
+    RegisterComponent
   ],
   exports: [
     DashboardComponent,
@@ -41,7 +43,8 @@ import {NavComponent} from './index/nav/nav.component';
     IndexComponent,
     AboutComponent,
     NavComponent,
-    DocsComponent
+    DocsComponent,
+    RegisterComponent
   ],
   providers: [
     DashboardAuthGuard

@@ -101,6 +101,28 @@ export class BackendSimpleCommunicationService {
     return this.editObject(url, data);
   }
 
+  register(data) {
+    const url = this.urlCreator.getRegister();
+
+    return this.postObject(url, data);
+  }
+
+  inviteUserToGroup(data) {
+    const url = this.urlCreator.inviteUserToGroup();
+    data.groupId = this.userService.getGroup().groupId;
+
+    return this.postObject(url, data);
+  }
+
+  deleteGroup() {
+    const url = this.urlCreator.deleteGroup();
+    const data = {
+      groupId: this.userService.getGroup().groupId
+    };
+
+    return this.delete(url, data);
+  }
+
   private prepareAuthorizationHeader() {
     const string = `Bearer ${this.userService.getToken()}`;
     return new Headers({'Authorization': string});

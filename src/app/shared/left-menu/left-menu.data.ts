@@ -2,11 +2,6 @@ import { MenuElementClass } from './menu-element/menu-element.class';
 
 export const LeftMenuData: Array<MenuElementClass> = [
   {
-    header: 'Dashboard',
-    route: '/',
-    icon: 'assets/icons/dashboard_icon.svg'
-  },
-  {
     header: 'Clients',
     route: 'clients',
     icon: 'assets/icons/group_icon.svg'

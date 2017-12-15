@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
 @Injectable()
 export class CreateLinkService {
@@ -51,6 +51,21 @@ export class CreateLinkService {
 
   getUserEdit() {
     const data = 'api/User/Edit';
+    return this.prepareLink(data);
+  }
+
+  getRegister() {
+    const data = 'api/register';
+    return this.prepareLink(data);
+  }
+
+  inviteUserToGroup() {
+    const data = 'api/group/invite';
+    return this.prepareLink(data);
+  }
+
+  deleteGroup() {
+    const data = 'api/group/delete';
     return this.prepareLink(data);
   }
 

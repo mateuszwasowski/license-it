@@ -1,0 +1,24 @@
+@import "../../shared/styles/shared";
+
+.group-container {
+  margin: 10px;
+}
+
+.group-invitation-container {
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid #c3c3c3;
+  background-color: #ececec;
+}
+
+.confirmation-dialog {
+  position: fixed;
+  top: 20%;
+  right: 0;
+  padding: 10px;
+  width: 250px;
+  z-index: 100;
+  border: 1px solid #d8d8d8;
+  border-right: none;
+  background-color: white;
+}

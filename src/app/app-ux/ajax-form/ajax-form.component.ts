@@ -51,10 +51,10 @@ export class AjaxFormComponent implements OnInit {
     promise.subscribe(
       (res) => {
         this.isErrorValidation = false;
-        this.validationMessage = 'Zapisano poprawnie rekord';
+        this.validationMessage = 'Object saved successfully.';
       }, () => {
         this.isErrorValidation = true;
-        this.validationMessage = 'Wystapił błąd podczas zapisu.';
+        this.validationMessage = 'Something went wrong during save. Please try again.';
       });
   }
 
