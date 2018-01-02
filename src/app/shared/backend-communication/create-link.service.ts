@@ -55,7 +55,7 @@ export class CreateLinkService {
   }
 
   getRegister() {
-    const data = 'api/register';
+    const data = 'api/User/Add';
     return this.prepareLink(data);
   }
 
