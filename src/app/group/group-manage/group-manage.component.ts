@@ -14,6 +14,10 @@ export class GroupManageComponent {
   form: FormGroup;
   groupConfirmationPopup = false;
   groupDeleteStatus = false;
+  dialogs = {
+    error: '',
+    success: ''
+  };
 
   constructor(private router: Router,
               private userService: UserService,
@@ -46,7 +50,39 @@ export class GroupManageComponent {
 
   inviteUser() {
     if (this.form.valid) {
-      this.requestService.inviteUserToGroup(this.form.value);
+      this.requestService.inviteUserToGroup(this.form.value).subscribe(resp => {
+        if (resp.status === 200) {
+          this.showHint('success', 'Invitation send.');
+        } else {
+          this.showHint('error', resp.description);
+        }
+      });
     }
+  }
+
+  showHint(variable, message, time = 3000) {
+    this.dialogs[variable] = message;
+
+    Observable.timer(time).take(1).subscribe(() => {
+      this.dialogs[variable] = '';
+    });
+  }
+
+  isHintVisible() {
+    return this.dialogs.error.length > 0 || this.dialogs.success.length > 0;
+  }
+
+  getHintMessage() {
+    return this.dialogs.success || this.dialogs.error;
+  }
+
+  getHintClass() {
+    for (const name in this.dialogs) {
+      if (this.dialogs.hasOwnProperty(name) && this.dialogs[name].length > 0) {
+        return name;
+      }
+    }
+
+    return '';
   }
 }

@@ -32,6 +32,8 @@ export class AuthenticationService {
 
   logout(): void {
     this.userService.removeToken();
+    this.userService.removeGroup();
+    this.userService.removeUserData();
     this.router.navigateByUrl('/');
   }
 

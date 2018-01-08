@@ -60,7 +60,7 @@ export class CreateLinkService {
   }
 
   inviteUserToGroup() {
-    const data = 'api/group/invite';
+    const data = 'api/GroupInvitations/InviteUser';
     return this.prepareLink(data);
   }
 

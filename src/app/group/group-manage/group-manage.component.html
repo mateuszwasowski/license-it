@@ -28,7 +28,7 @@
                    formControlName="email"
                    required/>
           </div>
-          <button class="custom-btn submit-form-btn">Submit</button>
+          <button class="custom-btn submit-form-btn" [disabled]="isHintVisible()">Submit</button>
         </form>
       </div>
     </div>
@@ -45,3 +45,8 @@
     Something went wrong during remove group.
   </div>
 </div>
+
+<div class="confirmation-dialog text-center" *ngIf="isHintVisible()" [ngClass]="getHintClass()">
+    {{ getHintMessage() }}
+</div>
+

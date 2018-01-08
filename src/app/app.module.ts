@@ -1,18 +1,14 @@
+import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {HttpModule} from '@angular/http';
 import {RouterModule} from '@angular/router';
-
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
-
 import {AppUxModule} from './app-ux/app-ux.module';
 import {SharedModule} from './shared/shared.module';
 import {PortalModule} from './portal/portal.module';
 import {DashboardModule} from './dashboard/dashboard.module';
-
-import {appRoutes} from './routes';
-
 import {AppComponent} from './app.component';
+import {appRoutes} from './routes';
 
 @NgModule({
   declarations: [

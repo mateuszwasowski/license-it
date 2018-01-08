@@ -103,6 +103,7 @@ export class BackendSimpleCommunicationService {
 
   register(data) {
     const url = this.urlCreator.getRegister();
+    data.isActive = true;
 
     return this.postObject(url, data);
   }
@@ -110,8 +111,9 @@ export class BackendSimpleCommunicationService {
   inviteUserToGroup(data) {
     const url = this.urlCreator.inviteUserToGroup();
     data.groupId = this.userService.getGroup().groupId;
+    data.IdUserInviting = this.userService.getUserData().id;
 
-    return this.postObject(url, data);
+    return this.postObject(url, data).map(resp => JSON.parse(resp._body));
   }
 
   deleteGroup() {
