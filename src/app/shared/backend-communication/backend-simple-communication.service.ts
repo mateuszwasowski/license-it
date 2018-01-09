@@ -71,10 +71,15 @@ export class BackendSimpleCommunicationService {
     return this.get(url, this.getRequestOptionsWithAuthorization());
   }
 
+  getGroupUsers() {
+    const url = this.urlCreator.getGroupUsers(this.userService.getGroup().idGroup);
+    return this.get(url, this.getRequestOptionsWithAuthorization());
+  }
+
   getUserGroups() {
     const user = this.userService.getUserData().userId;
-
     const url = this.urlCreator.getUserGroup(user);
+
     return this.get(url, this.getRequestOptionsWithAuthorization());
   }
 
@@ -117,10 +122,18 @@ export class BackendSimpleCommunicationService {
   }
 
   deleteGroup() {
-    const url = this.urlCreator.deleteGroup();
+    const url = this.urlCreator.editGroup();
     const data = {
-      groupId: this.userService.getGroup().groupId
+      id: this.userService.getGroup().idGroup,
+      isDelete: 0,
+      isActive: 0
     };
+    return this.editObject(url, data);
+  }
+
+  changeGroupName(data) {
+    const url = this.urlCreator.editGroup();
+    data.id = this.userService.getGroup().groupId;
 
     return this.delete(url, data);
   }

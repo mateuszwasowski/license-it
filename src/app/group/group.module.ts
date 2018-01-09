@@ -12,6 +12,7 @@ import {GroupFormComponent} from './group-form/group-form.component';
 import {GroupGuard} from './group.guard';
 import {GroupAdminGuard} from './group-admin.guard';
 import {GroupManageComponent} from './group-manage/group-manage.component';
+import { GroupUsersListComponent } from './group-manage/group-users-list/group-users-list.component';
 
 @NgModule({
   imports: [
@@ -25,7 +26,8 @@ import {GroupManageComponent} from './group-manage/group-manage.component';
   declarations: [
     GroupChangerComponent,
     GroupFormComponent,
-    GroupManageComponent
+    GroupManageComponent,
+    GroupUsersListComponent
   ],
   providers: [
     GroupGuard,

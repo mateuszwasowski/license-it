@@ -1,6 +1,6 @@
-import {Component} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {BackendSimpleCommunicationService} from "../../shared/backend-communication/backend-simple-communication.service";
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {Observable} from "rxjs/Observable";
 import {UserService} from "../../shared/user/user.service";
 import {Router} from "@angular/router";
@@ -11,12 +11,17 @@ import {Router} from "@angular/router";
   styleUrls: ['./group-manage.component.scss']
 })
 export class GroupManageComponent {
+  state = 'invite';
   form: FormGroup;
-  groupConfirmationPopup = false;
-  groupDeleteStatus = false;
+  nameForm: FormGroup;
   dialogs = {
     error: '',
     success: ''
+  };
+
+  popup = {
+    changeGroupNamePopup: false,
+    deleteGroupPopup: false
   };
 
   constructor(private router: Router,
@@ -26,16 +31,10 @@ export class GroupManageComponent {
     this.form = fb.group({
       'email': [null, Validators.email]
     });
-  }
 
-  deleteGroupPopup(show: boolean) {
-    this.groupConfirmationPopup = show;
-    if (show) {
-      Observable.timer(15000).take(1).subscribe(val => {
-        this.groupConfirmationPopup = false;
-        this.groupDeleteStatus = false;
-      });
-    }
+    this.nameForm = fb.group({
+      'name': new FormControl()
+    });
   }
 
   deleteGroup() {
@@ -43,8 +42,16 @@ export class GroupManageComponent {
       this.userService.removeGroup();
       this.router.navigate(['/group']);
     }, () => {
-      this.groupDeleteStatus = true;
-      this.deleteGroupPopup(true);
+    });
+  }
+
+  changeGroupName() {
+    this.requestService.changeGroupName(this.nameForm.value).subscribe(resp => {
+      if (resp.status === 200) {
+        this.dialogs.success = 'Group name changed.';
+      } else {
+        this.dialogs.error = 'Something went wrong.';
+      }
     });
   }
 
@@ -52,37 +59,32 @@ export class GroupManageComponent {
     if (this.form.valid) {
       this.requestService.inviteUserToGroup(this.form.value).subscribe(resp => {
         if (resp.status === 200) {
-          this.showHint('success', 'Invitation send.');
+          this.dialogs.success = 'Invitation send.';
         } else {
-          this.showHint('error', resp.description);
+          this.dialogs.error = 'Something went wrong.';
         }
+        console.log(this.dialogs);
       });
     }
   }
 
-  showHint(variable, message, time = 3000) {
-    this.dialogs[variable] = message;
-
-    Observable.timer(time).take(1).subscribe(() => {
-      this.dialogs[variable] = '';
-    });
-  }
-
-  isHintVisible() {
-    return this.dialogs.error.length > 0 || this.dialogs.success.length > 0;
-  }
-
-  getHintMessage() {
-    return this.dialogs.success || this.dialogs.error;
-  }
-
-  getHintClass() {
-    for (const name in this.dialogs) {
-      if (this.dialogs.hasOwnProperty(name) && this.dialogs[name].length > 0) {
-        return name;
-      }
+  changeGroupNamePopup() {
+    if (this.nameForm.valid) {
+      this.showPopup('changeGroupNamePopup');
     }
-
-    return '';
   }
+
+  showPopup(name) {
+    this.popup[name] = true;
+    console.log(this.popup);
+  }
+
+  setActiveTab(string) {
+    this.state = string;
+  }
+
+  getActiveTab(string) {
+    return this.state === string;
+  }
+
 }

@@ -34,6 +34,12 @@ export class CreateLinkService {
     return this.prepareLink(data);
   }
 
+  getGroupUsers(group) {
+    console.log(group);
+    const data = ['api/UserGroup/GetByIdGroup', group];
+    return this.prepareLink(data);
+  }
+
   getUserGroup(user) {
     const data = ['api/UserGroup/GetByIdUser', user];
     return this.prepareLink(data);
@@ -64,8 +70,13 @@ export class CreateLinkService {
     return this.prepareLink(data);
   }
 
-  deleteGroup() {
-    const data = 'api/group/delete';
+  editGroup() {
+    const data = 'api/Groups/Edit';
+    return this.prepareLink(data);
+  }
+
+  changeGroupName() {
+    const data = 'api/group/change';
     return this.prepareLink(data);
   }
 

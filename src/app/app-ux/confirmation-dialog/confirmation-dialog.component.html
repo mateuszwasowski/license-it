@@ -1,0 +1,5 @@
+<app-dialog [(status)]="status" [time]="0" class="success">
+  <h4>{{ text }}</h4>
+  <button class="custom-btn submit-form-btn" (click)="submitEvent()">Yes</button>
+  <button class="custom-btn submit-form-btn" (click)="close()">No</button>
+</app-dialog>
