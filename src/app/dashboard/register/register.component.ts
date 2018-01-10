@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
-import {FormGroup, FormControl} from '@angular/forms';
+import {FormGroup, FormControl, FormBuilder, Validators} from '@angular/forms';
 import {BackendSimpleCommunicationService} from "../../shared/backend-communication/backend-simple-communication.service";
 import {of} from "rxjs/observable/of";
 
@@ -15,13 +15,13 @@ export class RegisterComponent {
   errors: Observable<boolean | string>;
   success: Observable<boolean | string>;
 
-  constructor(private service: BackendSimpleCommunicationService) {
-    this.loginForm = new FormGroup({
-      firstName: new FormControl(),
-      lastName: new FormControl(),
-      email: new FormControl(),
-      password: new FormControl(),
-      repassword: new FormControl()
+  constructor(private service: BackendSimpleCommunicationService, private fb: FormBuilder) {
+    this.loginForm = fb.group({
+      email: [null, Validators.email],
+      firstName: [],
+      lastName: [],
+      password: [],
+      repassword: []
     });
   }
 

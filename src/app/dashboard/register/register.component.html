@@ -4,13 +4,16 @@
   </div>
   <div class="nonheader-container">
     <form name="form" (submit)="login()" [formGroup]="loginForm">
-      <div class="errors" *ngIf="!loginForm.valid && submitted">
+      <div class="errors" *ngIf="!loginForm.valid && loginForm.controls.email.valid && submitted">
         <div class="danger">All fields are required.</div>
+      </div>
+      <div class="errors" *ngIf="!loginForm.valid && !loginForm.controls.email.valid && submitted">
+        <div class="danger">Email field should contain email.</div>
       </div>
       <div class="errors" *ngIf="errors | async">
         <div class="danger">{{ errors | async }}</div>
       </div>
-      <div class="errors" *ngIf="success | async">
+      <div class="errors" *ngIf="(success | async) && loginForm.valid">
         <div class="success">{{ success | async }}</div>
       </div>
       <div class="form-group">

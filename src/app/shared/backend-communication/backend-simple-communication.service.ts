@@ -85,7 +85,7 @@ export class BackendSimpleCommunicationService {
 
   addGroup(name) {
     const idUserCreator = this.userService.getUserData().userId;
-    const data = {name, idUserCreator};
+    const data = {name, idUserCreator, isActive: 1};
     const url = this.urlCreator.getGroupAddition();
 
     return this.postObject(url, data);
@@ -115,7 +115,7 @@ export class BackendSimpleCommunicationService {
 
   inviteUserToGroup(data) {
     const url = this.urlCreator.inviteUserToGroup();
-    data.groupId = this.userService.getGroup().groupId;
+    data.GroupId = this.userService.getGroup().groupId;
     data.IdUserInviting = this.userService.getUserData().id;
 
     return this.postObject(url, data).map(resp => JSON.parse(resp._body));
