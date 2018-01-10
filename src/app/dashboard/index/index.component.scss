@@ -51,12 +51,12 @@ a {
       background: lighten($color1, 2%);
     }
 
-    .register-link {
+    .login-link {
       color: lighten($mainBackground, 50%);
-      margin-left: 60px;
+      margin-left: 65px;
     }
 
-    .register-link:hover {
+    .login-link:hover {
       color: white;
     }
   }
@@ -110,7 +110,7 @@ a {
     .get-started-wrap {
       text-align: center;
 
-      .register-link {
+      .login-link {
         margin-left: 5px !important;
       }
     }

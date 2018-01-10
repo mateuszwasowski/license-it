@@ -1,8 +1,35 @@
 @import "../../shared/styles/shared";
 
+label {
+  color:white;
+}
+
 .form-container {
-  padding: 20px;
-  background-color: white;
-  border: 1px solid #ffffff;
-  margin-top: 40px;
+  background: lighten($color4, 20%);
+  margin-top: 20px;
+  margin-bottom: 50px;
+  padding: 0px;
+
+  .header-container {
+    display: block;
+    img {
+      height: 2em;
+      vertical-align: middle;
+      margin-bottom: 11px;
+    }
+    .label{
+      display: inline-block;
+      font-size: 2em;
+      font-weight: 900;
+      padding: 4px;
+      opacity: .9;
+    }
+    background: darken($color1, 5%);
+    padding: 10px 20px 10px 20px;
+    border-bottom: 1px solid rgba(256,256,256,0.5);
+  }
+
+  .nonheader-container {
+    padding: 10px 20px 20px 20px;
+  }
 }
