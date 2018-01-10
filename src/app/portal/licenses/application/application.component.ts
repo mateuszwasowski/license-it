@@ -11,6 +11,7 @@ import {BooleanIconPipe} from '../../../shared/boolean-icon/boolean-icon.pipe';
 export class ApplicationComponent implements OnInit {
   data = [];
   appName = '';
+  hash = '';
   singleElement = '/panel/licenses/application/:id/license/add';
   id = 0;
   header = [
@@ -47,6 +48,7 @@ export class ApplicationComponent implements OnInit {
       this.singleElement = this.singleElement.replace(':id', params['id'].toString());
       this.service.getApplicationLicenses(params['id']).subscribe((response) => {
         this.appName = response.data[0].applicationModel.name;
+        this.hash = response.data[0].applicationModel.hash;
         this.data = response.data;
       });
     });

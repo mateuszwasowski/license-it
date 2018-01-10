@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {UserService} from '../../shared/user/user.service';
 import {Router} from '@angular/router';
 import {BackendSimpleCommunicationService} from '../../shared/backend-communication/backend-simple-communication.service';
+import {AuthenticationService} from "../../shared/authentication/authentication.service";
 
 @Component({
   selector: 'app-group-changer',
@@ -12,7 +13,8 @@ export class GroupChangerComponent implements OnInit {
   options = [];
 
   constructor(private userService: UserService, private router: Router,
-              private backendService: BackendSimpleCommunicationService) {
+              private backendService: BackendSimpleCommunicationService,
+              private auth: AuthenticationService) {
   }
 
   ngOnInit() {
@@ -24,5 +26,9 @@ export class GroupChangerComponent implements OnInit {
   submitGroup(value) {
     this.userService.setGroup(value);
     this.router.navigate(['panel']);
+  }
+
+  logout() {
+    this.auth.logout();
   }
 }
