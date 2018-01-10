@@ -14,9 +14,9 @@
         <p> - <i>License It team</i></p>
 
         <div class="btn-container col-sm-12 col-md-12 col-lg-12 col-xs-12">
-          <a class="get-started-btn" routerLink="../login" routerLinkActive="active">Get started</a>
+          <a class="get-started-btn" [routerLink]="['register']" >Get started</a>
           <br/>
-          <a class="register-link" [routerLink]="['register']">Click here to register</a>
+          <a class="login-link" routerLink="../login" routerLinkActive="active">Click here to login</a>
         </div>
       </div>
     </div>
@@ -46,4 +46,3 @@
       <p>Now you can add clients and their licenses. You can deactivate licenses as well as schedule expiration dates and many more. A worthy note to add is that one client can have multiple licenses!</p>
     </div>
   </div>
-
