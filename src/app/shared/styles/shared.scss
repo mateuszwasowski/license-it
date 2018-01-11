@@ -119,3 +119,22 @@ $submit-btn: $mainbutton-color;
 .submit-btn:hover{
   background: lighten($submit-btn, 2%) !important;
 }
+
+ul.nav-tabs {
+  border: none;
+
+  li a {
+    background: lighten(gray, 35%);
+    border: none;
+    border-radius: 0;
+    color: $mainBackground;
+
+    &:hover {
+      background: lighten(gray, 40%);
+    }
+  }
+
+  li.active a {
+    background: lighten(gray, 45%);
+  }
+}

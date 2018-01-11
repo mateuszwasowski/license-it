@@ -1,21 +1,20 @@
 :host {
   position: fixed;
-  top: 20%;
-  right: 0;
+  top: 30%;
+  left: 40%;
+
   >div {
     padding: 10px;
     width: 250px;
     z-index: 100;
     border: 1px solid #d8d8d8;
-    border-right: none;
-    background-color: black;
     text-align: center;
-    color: white;
+    color: black;
   }
   &.error > div{
-    background-color: red;
+    background-color: lighten(red, 30%);
   }
   &.success > div{
-    background-color: #7D961E;
+    background-color: lighten(#7D961E, 30%);
   }
 }

@@ -18,12 +18,12 @@
     </li>
   </ul>
   <div class="row" *ngIf="getActiveTab('invite')">
-    <div class="col-xs-offset-2 col-xs-8">
-      <div class="group-invitation-container">
-        <h2 class="text-uppercase text-center">Invite user to current group</h2>
-        <form name="form" (submit)="inviteUser()" [formGroup]="form">
+    <div class="col-md-12">
+      <div class="group-invitation-container col-md-12">
+        <div class="tab-label">Invite user to group</div>
+        <form name="form" (submit)="inviteUser()" [formGroup]="form" class="col-md-6">
           <div class="errors" *ngIf="!form.valid && form.touched">
-            <div class="danger">You have to type user email.</div>
+            <div class="danger">You have to type a user email.</div>
           </div>
           <div class="form-group">
             <label for="email">User email</label>
@@ -40,12 +40,12 @@
     </div>
   </div>
   <div class="row" *ngIf="getActiveTab('change')">
-    <div class="col-xs-offset-2 col-xs-8">
-      <div class="group-invitation-container">
-        <h2 class="text-uppercase text-center">Change current group name</h2>
-        <form name="nameForm" (submit)="changeGroupNamePopup()" [formGroup]="nameForm">
+    <div class="col-md-12">
+      <div class="group-invitation-container col-md-12">
+        <div class="tab-label">Change group name</div>
+        <form name="nameForm" (submit)="changeGroupNamePopup()" [formGroup]="nameForm" class="col-md-6">
           <div class="errors" *ngIf="!nameForm.valid && nameForm.touched">
-            <div class="danger">You have to type group name.</div>
+            <div class="danger">You have to type a new group name.</div>
           </div>
           <div class="form-group">
             <label for="name">Group name</label>
@@ -62,7 +62,7 @@
     </div>
   </div>
   <div class="row" *ngIf="getActiveTab('usersList')">
-    <div class="col-xs-offset-2 col-xs-8">
+    <div class="col-md-12">
       <app-group-users-list></app-group-users-list>
     </div>
   </div>
