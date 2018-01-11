@@ -1,8 +1,88 @@
-<div class="container-fluid big-text text-center col-md-12 col-lg-12 col-sm-12 col-xs-12 alt-color">
-  <div>
-    <a href="https://documenter.getpostman.com/view/3083830/licenseitpublicapi/7LgFRyg#cf518648-a77f-6e47-04dd-888bab828519">
-      Public Api Docs
-    </a>
+<div class="row row-eq-height">
+  <div class="col-xs-6 description doc-container" style="padding-top: 20px;">
+    <div class="section">
+      <h3>Introduction</h3>
+      <p>Welcome to the LicenseIt API! You can use our API to connect yourself to LicenseIt endpoints,
+        which can get information about licenses in your applications.</p>
+      <p>You can view endpoint responses to the right, and the description of each request on the left. Let us know if you need any help setting up!</p>
+      <p>If you wish to see other code examples (Ruby, Javascript, other), feel free to visit this:
+        <a href="https://documenter.getpostman.com/view/3083830/licenseitpublicapi/7LgFRyg#fad688c0-a7ba-8d6f-8a9e-84df1f37fbdb">
+          Public Api Docs
+        </a>
+      </p>
+    </div>
+  </div>
+  <div class="col-xs-6 code doc-container" style="padding-top: 20px;">
+    <div class="section">
+    </div>
+  </div>
+</div>
+<div class="row row-eq-height">
+  <div class="col-xs-6 description doc-container">
+    <div class="section">
+      <h3>Get a specific license</h3>
+      <p>This endpoint retrieves info about a specific license</p>
+      <div class="http-request">
+        <strong>HTTP Request</strong>
+        <p><strong>POST</strong> licenseit.pro:5001/api/License/Get</p>
+      </div>
+      <table class="table body-params">
+        <tr><th colspan="2">BODY Parameters</th></tr>
+        <tr><td class="col-sm-4"><strong>License Number</strong></td><td>License key you wish to access</td></tr>
+        <tr><td><strong>Identity Number</strong></td><td>This is your personal identifier key</td></tr>
+        <tr><td><strong>Application Hash</strong></td><td>This is your application secret in which the license is registered. The secret key can be found in the main application view.</td></tr>
+      </table>
+
+      <p class="info-box"><img src="assets/icons/info-fa.png" style="height:15px;margin-right:5px;margin-bottom:2px;"> Please note that all request should have content-type: <span>application/json</span><p>
+    </div>
+  </div>
+  <div class="col-xs-6 code doc-container">
+    <div class="section">
+      <pre>
+        [
+          {{"\{"}}
+            <span class="c1">"id"</span>: <span class="c2">1</span>,
+            <span class="c1">"name"</span>: <span class="c2">"Fluffums"</span>,
+            <span class="c1">"breed"</span>: <span class="c2">"calico"</span>,
+            <span class="c1">"fluffiness"</span>: <span class="c2">6</span>,
+            <span class="c1">"cuteness"</span>: <span class="c2">7</span>
+          {{"\}"}}
+        ]
+      </pre>
+    </div>
   </div>
 </div>
 
+<div class="row row-eq-height">
+  <div class="col-xs-6 description doc-container">
+    <div class="section">
+      <h3>Activate a license</h3>
+      <p>This endpoint retrieves info about a specific license</p>
+      <div class="http-request">
+        <strong>HTTP Request</strong>
+        <p><strong>POST</strong> licenseit.pro:5001/api/License/Active</p>
+      </div>
+      <table class="table body-params">
+        <tr><th colspan="2">BODY Parameters</th></tr>
+        <tr><td class="col-sm-4"><strong>License Number</strong></td><td>License key you wish to activate</td></tr>
+        <tr><td><strong>Identity Number</strong></td><td>This is your personal key to identify the license within your app, feel free to name it as you wish. You can use this to allow specific licenses to access specific functions within your app.</td></tr>
+        <tr><td><strong>Application Hash</strong></td><td>This is your application secret in which the license is registered.  The secret key can be found in the main application view.</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="col-xs-6 code doc-container">
+    <div class="section">
+      <pre>
+        [
+          {{"\{"}}
+            <span class="c1">"id"</span>: <span class="c2">1</span>,
+            <span class="c1">"name"</span>: <span class="c2">"Fluffums"</span>,
+            <span class="c1">"breed"</span>: <span class="c2">"calico"</span>,
+            <span class="c1">"fluffiness"</span>: <span class="c2">6</span>,
+            <span class="c1">"cuteness"</span>: <span class="c2">7</span>
+          {{"\}"}}
+        ]
+      </pre>
+    </div>
+  </div>
+</div>

@@ -1,2 +1,79 @@
 @import "../../../shared/styles/shared";
 @import "../index.component.scss";
+
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.description {
+  background: white;
+  color: gray;
+
+  .section {
+    margin-left: 120px;
+    padding-right: 10px;
+    h3 {
+      border-bottom: 1px solid gray;
+    }
+  }
+}
+
+.code {
+  background: $color5;
+
+  .section {
+    margin-right: 120px;
+    margin-left: 20px;
+
+    pre {
+      margin-top: 55px;
+      background: $mainBackground;
+      color: whitesmoke;
+      font-size: 1em;
+      padding: 20px;
+      padding-bottom: 0;
+      .c1 {
+        color: #e6db74;
+      }
+      .c2 {
+        color: #ae81ff;
+      }
+    }
+  }
+}
+
+.doc-container {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+@media (max-width: 991px) {
+  .description .section {
+    margin-left: 40px;
+  }
+
+  .code .section {
+    margin-right: 40px;
+  }
+}
+
+.http-request p {
+  margin-top: 5px;
+  margin-bottom: 15px;
+  padding: 5px;
+  border: 1px solid lighten(orange, 30%);
+  background: lighten(orange, 35%);
+}
+
+.info-box {
+  background-color: #6ac174;
+  color: $mainBackground;
+  padding: 10px;
+
+  span {
+    font-weight: bold;
+  }
+}
