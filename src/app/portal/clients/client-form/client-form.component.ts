@@ -10,7 +10,7 @@ export class ClientFormComponent {
 
   public clientForm: any = {
     headers: {
-      add: 'Add a new client.',
+      add: 'Add a new client',
       edit: 'Edit client'
     },
     urlList: 'http://www.licenseit.pro:5000/api/Clients/Add',

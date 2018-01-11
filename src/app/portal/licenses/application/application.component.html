@@ -1,9 +1,9 @@
 <div class="panel-header">
   <div class="main-page-label">Licenses</div>
-  <div class="sub-page-label">{{ appName }} - {{ hash }}</div>
+  <div class="sub-page-label">{{ appName }}</div>
 </div>
+<div class="hash-info">Application Secret: <span class="secret">{{ hash }}</span></div>
 <div class="button-header">
-
   <app-form-buttons [creationLink]="singleElement"></app-form-buttons>
 </div>
 <app-data-table [data]="data"
