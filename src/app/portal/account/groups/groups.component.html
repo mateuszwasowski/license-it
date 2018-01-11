@@ -1,5 +1,5 @@
-<app-data-table [data]="data" [header]="header" [order]="order">
+<app-data-table [data]="data" [header]="header" [order]="order" class="non-pointer">
   <ng-template #temp let-id="id">
-    <app-group-action-button [id]="id"></app-group-action-button>
+    <app-group-action-button [id]="id" (reload)="removeFromGroup($event)"></app-group-action-button>
   </ng-template>
 </app-data-table>

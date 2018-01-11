@@ -24,4 +24,8 @@ export class GroupsComponent implements OnInit {
       this.data = response.data;
     });
   }
+
+  removeFromGroup(id) {
+    this.data.filter((a) => a.id !== id);
+  }
 }

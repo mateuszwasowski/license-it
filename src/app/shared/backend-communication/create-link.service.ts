@@ -75,6 +75,11 @@ export class CreateLinkService {
     return this.prepareLink(data);
   }
 
+  removeMeFromGroup(groupId, userId) {
+    const data = ['api/UserGroup/Delete', userId, groupId];
+    return this.prepareLink(data);
+  }
+
   changeGroupName() {
     const data = 'api/group/change';
     return this.prepareLink(data);

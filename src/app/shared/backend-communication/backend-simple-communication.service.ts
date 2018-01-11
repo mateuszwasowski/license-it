@@ -116,7 +116,7 @@ export class BackendSimpleCommunicationService {
   inviteUserToGroup(data) {
     const url = this.urlCreator.inviteUserToGroup();
     data.GroupId = this.userService.getGroup().groupId;
-    data.IdUserInviting = this.userService.getUserData().id;
+    data.IdUserInviting = this.userService.getUserData().userId;
 
     return this.postObject(url, data).map(resp => JSON.parse(resp._body));
   }
@@ -133,9 +133,16 @@ export class BackendSimpleCommunicationService {
 
   changeGroupName(data) {
     const url = this.urlCreator.editGroup();
-    data.id = this.userService.getGroup().groupId;
+    data.id = this.userService.getGroup().idGroup;
 
     return this.delete(url, data);
+  }
+
+  deleteFromGroup(groupId) {
+    const userId = this.userService.getUserData().userId;
+    const url = this.urlCreator.removeMeFromGroup(groupId, userId);
+
+    return this.delete(url, this.getRequestOptionsWithAuthorization());
   }
 
   private prepareAuthorizationHeader() {
