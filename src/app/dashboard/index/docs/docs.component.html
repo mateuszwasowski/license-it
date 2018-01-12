@@ -39,15 +39,22 @@
   <div class="col-xs-6 code doc-container">
     <div class="section">
       <pre>
-        [
-          {{"\{"}}
-            <span class="c1">"id"</span>: <span class="c2">1</span>,
-            <span class="c1">"name"</span>: <span class="c2">"Fluffums"</span>,
-            <span class="c1">"breed"</span>: <span class="c2">"calico"</span>,
-            <span class="c1">"fluffiness"</span>: <span class="c2">6</span>,
-            <span class="c1">"cuteness"</span>: <span class="c2">7</span>
-          {{"\}"}}
-        ]
+        When license is incorrect:
+        {{"\{"}}
+            <span class="c1">"isActive"</span>: <span class="c2">false</span>,
+            <span class="c1">"assignedVersion"</span>: <span class="c2">0</span>,
+            <span class="c1">"expiration"</span>: <span class="c2">null</span>,
+            <span class="c1">"description"</span>: <span class="c2">"No active license"</span>,
+        {{"\}"}}
+      </pre>
+      <pre style="margin-top: 20px;">
+        When license is correct:
+        {{"\{"}}
+            <span class="c1">"isActive"</span>: <span class="c2">true</span>,
+            <span class="c1">"assignedVersion"</span>: <span class="c2">1</span>,
+            <span class="c1">"expiration"</span>: <span class="c2">"2018-04-12T17:17:48"</span>,
+            <span class="c1">"description"</span>: <span class="c2">"License Active"</span>,
+        {{"\}"}}
       </pre>
     </div>
   </div>
@@ -73,15 +80,13 @@
   <div class="col-xs-6 code doc-container">
     <div class="section">
       <pre>
-        [
-          {{"\{"}}
-            <span class="c1">"id"</span>: <span class="c2">1</span>,
-            <span class="c1">"name"</span>: <span class="c2">"Fluffums"</span>,
-            <span class="c1">"breed"</span>: <span class="c2">"calico"</span>,
-            <span class="c1">"fluffiness"</span>: <span class="c2">6</span>,
-            <span class="c1">"cuteness"</span>: <span class="c2">7</span>
-          {{"\}"}}
-        ]
+        When license is activated:
+        {{"\{"}}
+            <span class="c1">"isActive"</span>: <span class="c2">true</span>,
+            <span class="c1">"assignedVersion"</span>: <span class="c2">1</span>,
+            <span class="c1">"expiration"</span>: <span class="c2">"2018-04-12T17:17:48"</span>,
+            <span class="c1">"description"</span>: <span class="c2">"License Active"</span>,
+        {{"\}"}}
       </pre>
     </div>
   </div>
